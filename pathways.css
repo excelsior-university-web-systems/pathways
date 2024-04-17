@@ -1,0 +1,281 @@
+@import url('https://use.typekit.net/qco1tuw.css');
+body{
+  font-family:"Proxima Nova", Helvetica,sans-serif !important;
+  color:var(--text-regular);
+  font-weight:400;
+  background:black;
+}
+a {
+  color:var(--text-regular) !important;
+}
+:root {
+  --app-background:#e5e5e5;
+  --blue:#005fc3;
+  --darker-purple:#360040;
+  --dark-purple:#642667;
+  --light-purple:#88288A;
+  --text-regular:#585858;
+  --dark-blue:#00629B;
+  --light-blue:#62B5E5;
+  --link-blue:#0000FF;
+  --link-blue-acc:#0056B3;
+  --old-link-blue:#0000EE;
+  --yellow:#FED141;
+  --dark-green:#1D7732;
+  --green:#488529;
+  --light-green:#6cc24a;
+  --dark-red:#912f46;
+  --light-red:#CE0058;
+  --dark-grey:#585858;
+  --light-grey:#F5F5F5;
+  --old-light-grey:#C1C6C8;
+}
+.major-requirement{
+  background-image:linear-gradient(to left, var(--light-purple), var(--dark-purple));
+}
+.general-education{
+  background-image:linear-gradient(to left, var(--light-blue), var(--dark-blue));
+}
+.university-requirement{
+  background-image:linear-gradient(to left, var(--light-red), var(--dark-red));
+}
+.arts-science{
+  background-image:linear-gradient(to left, var(--light-green), var(--dark-green));
+}
+.concentration{
+  background:var(--dark-purple)
+}
+#pathwaycontainer button{
+  all:initial;
+  font:inherit;
+  color:inherit;
+}
+/* CONTAINER */
+#pathwaycontainer{
+  width:600px;
+  margin:auto;
+  background:var(--app-background);
+  padding:1px 1em 1em 1em;
+}
+#pathwaycontainer ul{
+  list-style:none;
+  padding-left:0;
+}
+/* NAVIGATION */
+#pathwaynav ul li ul{
+  display:none;
+}
+#pathwaynav{
+  font-weight:bold;
+  background:var(--app-background);
+  position:-webkit-sticky;
+  position:sticky;
+  top:0;
+  z-index:1;
+  height:35px;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+}
+#jumpToYearContainer button, #toggleCourseVisibilityContainer label, #toggleCourseVisibility, #sortable-list .course label, #sortable-list .course button{
+  cursor:pointer;
+}
+.sticky-shadow{
+  box-shadow: 0 8px 6px -6px black;
+}
+/* HIDE COMPLETED COURSES */
+#toggleCourseVisibilityContainer, #jumpToYearContainer{
+  float:right;
+  position:relative;
+}
+/* JUMP TO YEAR */
+#jumpToYearContainer ul {
+  display:none;
+  position:absolute;
+  margin-top:5px;
+  margin-left:7px;
+  padding:10px;
+  background:var(--app-background);
+  border:1px solid #ccc;
+}
+#jumpToYearContainer ul li a{
+  text-decoration:none;
+  color:initial;
+}
+#jumpToYearContainer ul.show {
+  display: block;
+}
+#jumpToYearContainer{
+  float:left;
+  position:relative;
+}
+/* LIST UTILITIES */
+#pathwaycontainer li{
+  position:relative;
+  padding:5px;
+}
+/* TERM STYLING */
+#sortable-list .term:first-of-type i{
+  opacity:0;
+}
+#sortable-list .term i:nth-of-type(odd){
+  position:absolute;
+  top:5px;
+  left:.75em;
+}
+#sortable-list .term i:nth-of-type(even){
+  position:absolute;
+  bottom:5px;
+  left:.75em;
+}
+#pathwaycontainer .term{
+  background-image: linear-gradient(to left, var(--dark-purple), var(--light-purple));
+  color:white;
+  text-align:center;
+  cursor:grab;
+  padding:.75em;
+  margin:.5em 0;
+}
+#pathwaycontainer .term:first-of-type{
+  cursor:default;
+}
+/* COURSE STYLING */
+#sortable-list .course-name, .courseid{
+  font-weight:bold;
+}
+#sortable-list .accordion-button::after{
+  margin-top:15px;
+  margin-right:5px;
+  content:'\f078' !important;
+  font-family:FontAwesome;
+  background-image:none !important;
+  transform-origin: center !important;    
+}
+#sortable-list .accordion-button:not(.collapsed)::after{
+  background-image:none !important;
+  transform-origin:center !important;    
+}
+#sortable-list .course, #sortable-list label {
+  display:flex;
+}
+#sortable-list .course .accordion-button, #sortable-list .course .options {
+  display:flex;
+  align-self:flex-start !important;
+}
+#sortable-list .course label span:hover, #sortable-list .accordion:hover, #sortable-list .options:hover{
+  box-shadow:0 0 2px 1px var(--light-purple);
+}
+/* Create the checkmark/indicator (hidden when not checked) */
+#sortable-list .checkmark:after {
+  content:'';
+  position:absolute;
+  display:none;
+}
+/* Show the checkmark when checked */
+#sortable-list input:checked ~ .checkmark:after {
+  display: block;
+}
+/* Style the checkmark/indicator */
+#sortable-list .checkmark:after {
+  left:1px;
+  top:-15px;
+  content:'\f00c';
+  font-family:FontAwesome;
+  font-size:1.75em;
+  color:var(--dark-purple);
+}
+#sortable-list .checkmark {
+  background:var(--app-background);
+  position:absolute;
+  top:25px;
+  left:15px;
+  height:20px;
+  width:20px;
+  border:2px solid black;
+}
+#sortable-list input {
+  opacity:0;
+  height:0;
+  width:0;
+}
+#sortable-list label{
+  margin-left:40px;
+}
+#sortable-list .courseid{
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  min-width:100px;
+  padding:1em;
+}
+#sortable-list .course-name{
+  background:white;
+  padding:.5em;
+  min-width:275px;
+  line-height:1.25em;
+  display:flex;
+  align-items: center;
+}
+/* COURSE DETAILS */
+#sortable-list .course-details{
+  display:flex;
+  margin-top:1em;
+}
+#sortable-list .prerequisites{
+  margin-right:4em;
+}
+#sortable-list .prerequisites strong, #sortable-list .credit-hours strong{
+  color:var(--green);
+}
+/* COURSE: OPTIONS AVAILABLE */
+#sortable-list .options{
+  line-height:1.25em;
+  position:relative;
+  color:var(--green);
+  background:white;
+  padding:.5em;
+  padding-left:2em;
+  margin-left:.5em;
+  border-radius:.25rem;
+}
+#sortable-list .options:hover{
+  background:var(--green);
+  color:white;
+}
+#sortable-list .options i{
+  position:absolute;
+  -ms-transform:translateX(-50%);
+  transform:translateX(-50%);
+  left:18px;
+  top:20px;
+}
+/* COURSE HIDE ANIMATION */
+.course {
+  transition:opacity 0.5s, visibility 0.5s;
+  opacity:1;
+  height:100%;
+  visibility:visible;
+}
+.course.hidden {
+  visibility:hidden;
+  padding:0 !important;
+  opacity:0;
+  height:0;
+  overflow:hidden;
+  transition:opacity .5s, visibility .5s, height .5s, padding .5s; /* Delay collapsing the height */
+}
+/* MODAL STYLING */
+#sortable-list .modal-header, #sortable-list .modal-footer{
+  background:var(--dark-purple);
+  color:white;
+}
+#sortable-list .modal-header button span{
+  font-size:2em;
+  padding-top:15px;
+  line-height:0;
+}
