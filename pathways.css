@@ -147,6 +147,10 @@ a {
 #sortable-list .course-name, .courseid{
   font-weight:bold;
 }
+/* ACCORDION STYLING */
+#sortable-list .accordion, #sortable-list .accordion-item button{
+  width:100% !important;
+}
 #sortable-list .accordion-button::after{
   margin-top:15px;
   margin-right:5px;
@@ -159,15 +163,15 @@ a {
   background-image:none !important;
   transform-origin:center !important;    
 }
-#sortable-list .course, #sortable-list label {
-  display:flex;
-}
 #sortable-list .course .accordion-button, #sortable-list .course .options {
   display:flex;
   align-self:flex-start !important;
 }
 #sortable-list .course label span:hover, #sortable-list .accordion:hover, #sortable-list .options:hover{
   box-shadow:0 0 2px 1px var(--light-purple);
+}
+#sortable-list .course, #sortable-list label {
+  display:flex;
 }
 /* Create the checkmark/indicator (hidden when not checked) */
 #sortable-list .checkmark:after {
@@ -217,7 +221,6 @@ a {
 #sortable-list .course-name{
   background:white;
   padding:.5em;
-  min-width:275px;
   line-height:1.25em;
   display:flex;
   align-items: center;
