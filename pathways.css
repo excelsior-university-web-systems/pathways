@@ -36,13 +36,13 @@ a {
 /* RESPONSIVE RULES */
 @media only screen and (max-width: 768px){
   #pathwaycontainer{
-    width:auto;
+    width:auto !important;
   }
   #sortable-list .checkmark{
-    left:5px;
+    left:5px !important;
   }
   .accordion {
-    margin-left:30px;
+    margin-left:30px !important;
   }
 }
 .major-requirement{
