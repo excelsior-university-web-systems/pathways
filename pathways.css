@@ -36,7 +36,7 @@ html{
 #pathwaycontainer h5{
   margin:0 !important;
 }
-.bpress-wrap{
+.bpress-wrap, .ast-container{
   padding:0;
 }
 /* RESPONSIVE RULES */
