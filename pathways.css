@@ -54,8 +54,12 @@ html{
     flex-wrap:wrap;
   }
   #sortable-list .options{
-    margin-top:6px !important;
+    display:block !important;
+    margin-top:3px !important;
+    padding:0 !important;
     width:100% !important;
+    background:none !important;
+    color:inherit !important;
   }
   #sortable-list .options i{
     top:10px !important;
