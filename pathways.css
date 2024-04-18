@@ -41,8 +41,17 @@ a {
   #sortable-list .checkmark{
     left:5px !important;
   }
-  .accordion {
+  #sortable-list label {
     margin-left:30px !important;
+  }
+  #sortable-list .course{
+    flex-wrap:wrap;
+  }
+  #sortable-list .options{
+    margin-top:6px;
+  }
+  #sortable-list .options i{
+    top:10px !important;
   }
 }
 .major-requirement{
