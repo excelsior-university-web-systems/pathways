@@ -1,4 +1,4 @@
-@import url('https://use.typekit.net/qco1tuw.css');
+/* @import url('https://use.typekit.net/qco1tuw.css');
 body{
   font-family:"Proxima Nova", Helvetica,sans-serif !important;
   color:var(--text-regular);
@@ -7,7 +7,7 @@ body{
 }
 a {
   color:var(--text-regular) !important;
-}
+} */
 :root {
   --app-background:#e5e5e5;
   --blue:#005fc3;
@@ -37,6 +37,12 @@ a {
 @media only screen and (max-width: 768px){
   #pathwaycontainer{
     width:auto;
+  }
+  #sortable-list .checkmark{
+    left:5px;
+  }
+  .accordion {
+    margin-left:30px;
   }
 }
 .major-requirement{
