@@ -47,9 +47,9 @@ function toggleCoursesVisibility() {
 
   // Update the label text based on the toggle state
   if (isHidden) {
-    toggleLabel.textContent = "Show Completed Courses";
+    toggleLabel.textContent = "Show Completed ";
   } else {
-    toggleLabel.textContent = "Hide Completed Courses";
+    toggleLabel.textContent = "Hide Completed ";
   }
 
   // Get all course items
