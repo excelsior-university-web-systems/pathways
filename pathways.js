@@ -88,30 +88,34 @@ function toggleDropdown() {
   const jumpToYearBtn = document.querySelector('#jumpToYearContainer > button');
   const yearMenu = document.querySelector('#jumpToYearContainer > ul');
   // Function to set aria-expanded attribute based on visibility of the menu
-  function updateAriaExpanded() {
-    // Check if the menu is currently shown
-    const isShown = yearMenu.classList.contains('show');
-    // Set aria-expanded attribute based on menu visibility
-    jumpToYearBtn.setAttribute('aria-expanded', isShown.toString());
-  }
-  // Toggle menu visibility and aria-expanded on button click
-  jumpToYearBtn.onclick = function() { yearMenu.classList.toggle('show');
+function updateAriaExpanded() {
+  // Check if the menu is currently shown
+  const isShown = yearMenu.classList.contains('show');
+  // Set aria-expanded attribute based on menu visibility
+  jumpToYearBtn.setAttribute('aria-expanded', isShown.toString());
+}
+// Toggle menu visibility and aria-expanded on button click
+jumpToYearBtn.onclick = function() {
+  yearMenu.classList.toggle('show');
+  // Delay the update of aria-expanded to ensure class changes have taken effect
+  setTimeout(() => {
     updateAriaExpanded();
-  };
-  // Hide the menu when a sub-item is clicked
+  }, 0);
+};
+// Hide the menu when a sub-item is clicked
 yearMenu.addEventListener('click', function(e) {
-    if (e.target.tagName === 'A') {
-yearMenu.classList.remove('show');
-      updateAriaExpanded();
-    }
-  });
-  // Hide the menu when clicking outside of it
-  document.addEventListener('click', function(e) {
-    if (!jumpToYearContainer.contains(e.target)) {
-yearMenu.classList.remove('show');
-      updateAriaExpanded();
-    }
-  }, true);
+  if (e.target.tagName === 'A') {
+    yearMenu.classList.remove('show');
+    updateAriaExpanded();
+  }
+});
+// Hide the menu when clicking outside of it
+document.addEventListener('click', function(e) {
+  if (!jumpToYearContainer.contains(e.target)) {
+    yearMenu.classList.remove('show');
+    updateAriaExpanded();
+  }
+}, true);
 }
 // NAVIGATION STICKY SHADOW
 window.addEventListener('scroll', function() {
