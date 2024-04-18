@@ -19,7 +19,6 @@ a {
   --light-blue:#62B5E5;
   --link-blue:#0000FF;
   --link-blue-acc:#0056B3;
-  --old-link-blue:#0000EE;
   --yellow:#FED141;
   --dark-green:#1D7732;
   --green:#488529;
@@ -28,7 +27,17 @@ a {
   --light-red:#CE0058;
   --dark-grey:#585858;
   --light-grey:#F5F5F5;
-  --old-light-grey:#C1C6C8;
+}
+
+/* PORTAL PAGE OVERRIDES */
+.bpress-wrap{
+  padding:0;
+}
+/* RESPONSIVE RULES */
+@media only screen and (max-width: 768px){
+  #pathwaycontainer{
+    width:auto;
+  }
 }
 .major-requirement{
   background-image:linear-gradient(to left, var(--light-purple), var(--dark-purple));
