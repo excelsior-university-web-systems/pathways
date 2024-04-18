@@ -44,6 +44,9 @@ html{
   #pathwaycontainer{
     width:auto !important;
   }
+  #pathwaynav{
+    padding:0 10px;    
+  }
   #sortable-list .checkmark{
     left:5px !important;
   }
@@ -59,12 +62,13 @@ html{
     padding:0 !important;
     width:100% !important;
     background:none !important;
-    color:inherit !important;
+    color:black !important;
   }
   #sortable-list .options i{
     top:10px !important;
   }
 }
+/* REQUIREMENTS */
 .major-requirement{
   background-image:linear-gradient(to left, var(--light-purple), var(--dark-purple));
 }
@@ -80,6 +84,7 @@ html{
 .concentration{
   background:var(--dark-purple)
 }
+/* CLEAR BUTTON STYLES */
 #pathwaycontainer button{
   all:initial;
   font:inherit;
