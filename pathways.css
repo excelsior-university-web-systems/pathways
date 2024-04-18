@@ -30,6 +30,12 @@ a {
 }
 
 /* PORTAL PAGE OVERRIDES */
+html{
+  overflow-x:hidden;
+}
+#pathwaycontainer h5{
+  margin:0 !important;
+}
 .bpress-wrap{
   padding:0;
 }
