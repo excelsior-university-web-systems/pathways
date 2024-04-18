@@ -41,14 +41,15 @@ a {
   #sortable-list .checkmark{
     left:5px !important;
   }
-  #sortable-list label {
+  #sortable-list .accordion, #sortable-list .options {
     margin-left:30px !important;
   }
   #sortable-list .course{
     flex-wrap:wrap;
   }
   #sortable-list .options{
-    margin-top:6px;
+    margin-top:6px !important;
+    width:100% !important;
   }
   #sortable-list .options i{
     top:10px !important;
@@ -255,7 +256,7 @@ a {
   margin-top:1em;
 }
 #sortable-list .prerequisites{
-  margin-right:4em;
+  margin-right:3em;
 }
 #sortable-list .prerequisites strong, #sortable-list .credit-hours strong{
   color:var(--green);
