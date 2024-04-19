@@ -89,10 +89,6 @@ function toggleDropdown() {
     yearMenu.classList.toggle('show');
     jumpToYearBtn.setAttribute('aria-expanded', (!isCurrentlyShown).toString());
   }
-  // Attach click event to button for toggling menu
-  jumpToYearBtn.addEventListener('click', function() {
-    toggleMenuVisibility();
-  });
   // Hide the menu when a sub-item is clicked
   yearMenu.addEventListener('click', function(e) {
     if (e.target.tagName === 'A') {
