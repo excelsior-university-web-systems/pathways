@@ -113,14 +113,16 @@ document.addEventListener('DOMContentLoaded', function() {
   }, true);
 });
 // NAVIGATION STICKY SHADOW
-window.addEventListener('scroll', function() {
-  var stickyElement = document.getElementById('pathwaynav');
-  var stickyRect = stickyElement.getBoundingClientRect();
-  var stickyActivateHeight = stickyElement.offsetTop; // Height at which sticky is activated
-  // Check if the sticky element has moved from its original position
-  if (stickyRect.top <= 0) {
-    stickyElement.classList.add('sticky-shadow');
-  } else {
-    stickyElement.classList.remove('sticky-shadow');
-  }
+document.addEventListener('DOMContentLoaded', function() {
+  window.addEventListener('scroll', function() {
+    var stickyElement = document.getElementById('pathwaynav');
+    if (!stickyElement) return; // Safeguard against null reference
+    var stickyRect = stickyElement.getBoundingClientRect();
+    if (stickyRect.top <= 0) {
+      stickyElement.classList.add('sticky-shadow');
+    } else {
+      stickyElement.classList.remove('sticky-shadow');
+    }
+  });
 });
+
