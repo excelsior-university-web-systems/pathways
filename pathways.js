@@ -38,50 +38,49 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 // CHECKED COURSE VISIBILITY
-function toggleCoursesVisibility() {
-  // Get the state of the master toggle
-  const isHidden = document.getElementById('toggleCourseVisibility').checked;
+document.addEventListener('DOMContentLoaded', function() {
+  function toggleCoursesVisibility() {
+    const isHidden = document.getElementById('toggleCourseVisibility').checked;
+    const toggleLabel = document.getElementById('toggleLabel');
 
-  // Get the label element
-  const toggleLabel = document.getElementById('toggleLabel');
+    if (isHidden) {
+      toggleLabel.textContent = "Show Completed Courses";
+    } else {
+      toggleLabel.textContent = "Hide Completed Courses";
+    }
 
-  // Update the label text based on the toggle state
-  if (isHidden) {
-    toggleLabel.textContent = "Show Completed ";
-  } else {
-    toggleLabel.textContent = "Hide Completed ";
-  }
-
-  // Get all course items
-  const courses = document.querySelectorAll('.course');
-  let hiddenCount = 0; // Initialize a counter for hidden courses as 0
-  courses.forEach(course => {
-    // For each course, check if its checkbox is checked
-    if (course.querySelector('input[type="checkbox"]').checked) {
-      // Toggle 'hidden' class based on the master toggle's state
-      if (isHidden) {
-        course.classList.add('hidden');
-        hiddenCount++; // Increment the hidden counter
+    const courses = document.querySelectorAll('.course');
+    let hiddenCount = 0;
+    courses.forEach(course => {
+      if (course.querySelector('input[type="checkbox"]').checked) {
+        if (isHidden) {
+          course.classList.add('hidden');
+          hiddenCount++;
+        } else {
+          course.classList.remove('hidden');
+        }
       } else {
         course.classList.remove('hidden');
       }
+    });
+
+    const hiddenCourseCountElement = document.getElementById('hiddenCourseCount');
+    if (hiddenCourseCountElement) {
+      if (hiddenCount > 0) {
+        hiddenCourseCountElement.textContent = ` (${hiddenCount})`;
+      } else {
+        hiddenCourseCountElement.textContent = ''; // Set text to empty if no courses are hidden
+      }
     } else {
-      // Ensure course is visible if its checkbox is not checked
-      course.classList.remove('hidden');
+      console.error('The element #hiddenCourseCount does not exist in the DOM.');
     }
-  });
-  // Update the hidden course count in the span
-  const hiddenCourseCountElement = document.getElementById('hiddenCourseCount');
-  if (hiddenCount > 0) {
-    hiddenCourseCountElement.textContent = ` (${hiddenCount})`;
-  } else {
-    hiddenCourseCountElement.textContent = ''; // Set text to empty if no courses are hidden
   }
-}
-// Attach the visibility toggle function to changes on the master toggle and each course checkbox
-document.getElementById('toggleCourseVisibility').addEventListener('change', toggleCoursesVisibility);
-document.querySelectorAll('.course input[type="checkbox"]').forEach(courseCheckbox => {
-  courseCheckbox.addEventListener('change', toggleCoursesVisibility);
+
+  // Attach the visibility toggle function to changes on the master toggle and each course checkbox
+  document.getElementById('toggleCourseVisibility').addEventListener('change', toggleCoursesVisibility);
+  document.querySelectorAll('.course input[type="checkbox"]').forEach(courseCheckbox => {
+    courseCheckbox.addEventListener('change', toggleCoursesVisibility);
+  });
 });
 // JUMP TO YEAR MENU
 function toggleDropdown() {
