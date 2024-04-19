@@ -42,13 +42,11 @@ document.addEventListener('DOMContentLoaded', function() {
   function toggleCoursesVisibility() {
     const isHidden = document.getElementById('toggleCourseVisibility').checked;
     const toggleLabel = document.getElementById('toggleLabel');
-
     if (isHidden) {
-      toggleLabel.textContent = "Show Completed Courses";
+      toggleLabel.textContent = "Show Completed";
     } else {
-      toggleLabel.textContent = "Hide Completed Courses";
+      toggleLabel.textContent = "Hide Completed";
     }
-
     const courses = document.querySelectorAll('.course');
     let hiddenCount = 0;
     courses.forEach(course => {
@@ -63,7 +61,6 @@ document.addEventListener('DOMContentLoaded', function() {
         course.classList.remove('hidden');
       }
     });
-
     const hiddenCourseCountElement = document.getElementById('hiddenCourseCount');
     if (hiddenCourseCountElement) {
       if (hiddenCount > 0) {
@@ -75,7 +72,6 @@ document.addEventListener('DOMContentLoaded', function() {
       console.error('The element #hiddenCourseCount does not exist in the DOM.');
     }
   }
-
   // Attach the visibility toggle function to changes on the master toggle and each course checkbox
   document.getElementById('toggleCourseVisibility').addEventListener('change', toggleCoursesVisibility);
   document.querySelectorAll('.course input[type="checkbox"]').forEach(courseCheckbox => {
