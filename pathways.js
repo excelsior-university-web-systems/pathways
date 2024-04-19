@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (hiddenCount > 0) {
         hiddenCourseCountElement.textContent = ` (${hiddenCount})`;
       } else {
-        hiddenCourseCountElement.textContent = 'X'; // Set text to empty if no courses are hidden
+        hiddenCourseCountElement.textContent = `X`; // Set text to empty if no courses are hidden
       }
     } else {
       console.error('The element #hiddenCourseCount does not exist in the DOM.');
