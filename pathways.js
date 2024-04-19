@@ -79,32 +79,39 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 // JUMP TO YEAR MENU
-function toggleDropdown() {
+document.addEventListener('DOMContentLoaded', function() {
   const jumpToYearBtn = document.querySelector('#jumpToYearContainer > button');
   const yearMenu = document.querySelector('#jumpToYearContainer > ul');
-  const jumpToYearContainer = document.getElementById('jumpToYearContainer');
-  // Directly update aria-expanded and toggle visibility
-  function toggleMenuVisibility() {
-    const isCurrentlyShown = yearMenu.classList.contains('show');
+  const jumpToYearContainer = document.getElementById('jumpToYearContainer'); // Ensure this is defined
+  // Function to toggle dropdown and update aria-expanded
+  function toggleDropdown() {
     yearMenu.classList.toggle('show');
-    jumpToYearBtn.setAttribute('aria-expanded', (!isCurrentlyShown).toString());
+    updateAriaExpanded(); // Update immediately after toggle
   }
+  // Function to set aria-expanded attribute based on visibility of the menu
+  function updateAriaExpanded() {
+    const isShown = yearMenu.classList.contains('show');
+    jumpToYearBtn.setAttribute('aria-expanded', isShown.toString());
+  }
+  // Initialize the aria-expanded attribute based on the initial state
+  updateAriaExpanded();
+  // Bind toggle functionality and update aria-expanded on button click
+  jumpToYearBtn.addEventListener('click', toggleDropdown);
   // Hide the menu when a sub-item is clicked
   yearMenu.addEventListener('click', function(e) {
     if (e.target.tagName === 'A') {
       yearMenu.classList.remove('show');
-      jumpToYearBtn.setAttribute('aria-expanded', 'false');
+      updateAriaExpanded();
     }
   });
   // Hide the menu when clicking outside of it
   document.addEventListener('click', function(e) {
     if (!jumpToYearContainer.contains(e.target)) {
       yearMenu.classList.remove('show');
-      jumpToYearBtn.setAttribute('aria-expanded', 'false');
+      updateAriaExpanded();
     }
   }, true);
-}
-toggleDropdown(); // Ensure to call the function
+});
 // NAVIGATION STICKY SHADOW
 window.addEventListener('scroll', function() {
   var stickyElement = document.getElementById('pathwaynav');
