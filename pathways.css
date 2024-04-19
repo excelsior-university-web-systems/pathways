@@ -28,13 +28,15 @@ a {
   --dark-grey:#585858;
   --light-grey:#F5F5F5;
 }
-
 /* PORTAL PAGE OVERRIDES */
 #pathwaycontainer h5{
   margin:0 !important;
 }
 .bpress-wrap, .ast-container{
   padding:0;
+}
+.wpadminbar{
+  display:none;
 }
 /* RESPONSIVE RULES */
 @media only screen and (max-width: 768px){
