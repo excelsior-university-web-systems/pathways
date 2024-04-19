@@ -63,9 +63,11 @@ html{
     width:100% !important;
     background:none !important;
     color:black !important;
+    text-align:right !important;
   }
   #sortable-list .options i{
     top:10px !important;
+    display:contents !important;
   }
 }
 /* REQUIREMENTS */
