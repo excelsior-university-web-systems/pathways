@@ -82,36 +82,35 @@ document.addEventListener('DOMContentLoaded', function() {
 function toggleDropdown() {
   const jumpToYearBtn = document.querySelector('#jumpToYearContainer > button');
   const yearMenu = document.querySelector('#jumpToYearContainer > ul');
+  const jumpToYearContainer = document.getElementById('jumpToYearContainer'); // Ensure this is defined
   // Function to set aria-expanded attribute based on visibility of the menu
-function updateAriaExpanded() {
-  // Check if the menu is currently shown
-  const isShown = yearMenu.classList.contains('show');
-  // Set aria-expanded attribute based on menu visibility
-  jumpToYearBtn.setAttribute('aria-expanded', isShown.toString());
-}
-// Toggle menu visibility and aria-expanded on button click
-jumpToYearBtn.onclick = function() {
-  yearMenu.classList.toggle('show');
-  // Delay the update of aria-expanded to ensure class changes have taken effect
-  setTimeout(() => {
-    updateAriaExpanded();
-  }, 0);
-};
-// Hide the menu when a sub-item is clicked
-yearMenu.addEventListener('click', function(e) {
-  if (e.target.tagName === 'A') {
-    yearMenu.classList.remove('show');
-    updateAriaExpanded();
+  function updateAriaExpanded() {
+    const isShown = yearMenu.classList.contains('show');
+    jumpToYearBtn.setAttribute('aria-expanded', isShown.toString());
   }
-});
-// Hide the menu when clicking outside of it
-document.addEventListener('click', function(e) {
-  if (!jumpToYearContainer.contains(e.target)) {
-    yearMenu.classList.remove('show');
-    updateAriaExpanded();
-  }
-}, true);
+  // Initialize the aria-expanded attribute based on the initial state
+  updateAriaExpanded();
+  // Toggle menu visibility and update aria-expanded on button click
+  jumpToYearBtn.addEventListener('click', function() {
+    yearMenu.classList.toggle('show');
+    updateAriaExpanded(); // Update immediately after toggle
+  });
+  // Hide the menu when a sub-item is clicked
+  yearMenu.addEventListener('click', function(e) {
+    if (e.target.tagName === 'A') {
+      yearMenu.classList.remove('show');
+      updateAriaExpanded();
+    }
+  });
+  // Hide the menu when clicking outside of it
+  document.addEventListener('click', function(e) {
+    if (!jumpToYearContainer.contains(e.target)) {
+      yearMenu.classList.remove('show');
+      updateAriaExpanded();
+    }
+  }, true);
 }
+toggleDropdown(); // Ensure to call the function
 // NAVIGATION STICKY SHADOW
 window.addEventListener('scroll', function() {
   var stickyElement = document.getElementById('pathwaynav');
