@@ -29,18 +29,18 @@ a {
   --light-grey:#F5F5F5;
 }
 /* PORTAL PAGE OVERRIDES */
-.ast-main-header-wrap.main-header-bar-wrap {
+.ast-main-header-wrap {
   width:100% !important;
   overflow:hidden !important;
+}
+.ast-below-header-bar .site-below-header-wrap{
+  height:auto !important;
 }
 #pathwaycontainer h5{
   margin:0 !important;
 }
 .bpress-wrap, .ast-container{
   padding:0;
-}
-.wpadminbar{
-  display:none !important;
 }
 /* RESPONSIVE RULES */
 @media only screen and (max-width: 768px){
