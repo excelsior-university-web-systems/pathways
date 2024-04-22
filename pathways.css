@@ -230,8 +230,10 @@ a {
   display:flex;
 }
 /* COURSE OPTIONS/ALTERNATIVES MODAL STYLING */
+#sortable-list .options-list .modal-content {
+  max-height:80% !important;
+}
 #sortable-list .options-list li{
-  line-height:0 !important;
   padding-left:0 !important;
 }
 #sortable-list .options-list button{
@@ -245,7 +247,7 @@ a {
 }
 @keyframes spin {
     0% { transform: rotate(0deg); }
-    100% { transform: rotate(180deg); }
+    100% { transform: rotate(45deg); }
 }
 /* Create the checkmark/indicator (hidden when not checked) */
 #sortable-list .checkmark:after {
