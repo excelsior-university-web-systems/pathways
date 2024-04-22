@@ -29,6 +29,10 @@ a {
   --light-grey:#F5F5F5;
 }
 /* PORTAL PAGE OVERRIDES */
+.ast-main-header-wrap.main-header-bar-wrap {
+  width:100% !important;
+  overflow:hidden !important;
+}
 #pathwaycontainer h5{
   margin:0 !important;
 }
