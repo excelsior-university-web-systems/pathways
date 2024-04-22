@@ -239,15 +239,15 @@ a {
 #sortable-list .options-list button{
   float:right !important;
 }
-#sortable-list .options-list button[aria-expanded="true"] i {
-    animation: spin 0.5s linear 1;
+#sortable-list .options-list button i{
+    transition:transform 0.3s ease-in-out;
+    transform:rotate(0deg);
 }
-#sortable-list .options-list button[aria-expanded="false"] i {
-    animation: none;
+#sortable-list .options-list button[aria-expanded="true"] i{
+    transform:rotate(45deg);
 }
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(45deg); }
+#sortable-list .options-list button[aria-expanded="false"] i{
+    transform:rotate(0deg);
 }
 /* Create the checkmark/indicator (hidden when not checked) */
 #sortable-list .checkmark:after {
