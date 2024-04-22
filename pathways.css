@@ -234,8 +234,18 @@ a {
   line-height:0 !important;
   padding-left:0 !important;
 }
-#sortable-list .options-list i{
+#sortable-list .options-list button{
   float:right !important;
+}
+#sortable-list .options-list button[aria-expanded="true"] i {
+    animation: spin 0.5s linear 1;
+}
+#sortable-list .options-list button[aria-expanded="false"] i {
+    animation: none;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(180deg); }
 }
 /* Create the checkmark/indicator (hidden when not checked) */
 #sortable-list .checkmark:after {
