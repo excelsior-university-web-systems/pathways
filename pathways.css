@@ -229,6 +229,13 @@ a {
 #sortable-list .course, #sortable-list label {
   display:flex;
 }
+/* COURSE OPTIONS/ALTERNATIVES MODAL STYLING */
+#sortable-list .options-list li{
+  line-height:0 !important;
+}
+#sortable-list .options-list i{
+  float:right;
+}
 /* Create the checkmark/indicator (hidden when not checked) */
 #sortable-list .checkmark:after {
   content:'';
