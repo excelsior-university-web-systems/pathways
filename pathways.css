@@ -232,9 +232,10 @@ a {
 /* COURSE OPTIONS/ALTERNATIVES MODAL STYLING */
 #sortable-list .options-list li{
   line-height:0 !important;
+  padding-left:0 !important;
 }
 #sortable-list .options-list i{
-  float:right;
+  float:right !important;
 }
 /* Create the checkmark/indicator (hidden when not checked) */
 #sortable-list .checkmark:after {
