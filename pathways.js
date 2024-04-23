@@ -127,9 +127,10 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 // SELECT ALTERNATIVE COURSE OPTION
 document.addEventListener('DOMContentLoaded', function() {
-    // Attach a click event listener to the #options-list
-    const optionsList = document.getElementById('options-list');
-    if (optionsList) {
+    // Find all elements with the class .options-list
+    const optionsLists = document.querySelectorAll('.options-list');
+    // Attach a click event listener to each options-list
+    optionsLists.forEach(optionsList => {
         optionsList.addEventListener('click', function(event) {
             // Check if the clicked element is within an <li>
             let clickedLi = event.target.closest('li');
@@ -153,7 +154,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         });
-    }
+    });
 });
-
 
