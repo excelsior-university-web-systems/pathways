@@ -132,7 +132,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Attach a click event listener to each options-list
     optionsLists.forEach(optionsList => {
         optionsList.addEventListener('click', function(event) {
-          console.log('CLICKED!');
+            // Check if the clicked element or its parents is a button
+            if (event.target.closest('button')) return; // Ignore the click if it's on a button or within a button
             // Check if the clicked element is within an <li>
             let clickedLi = event.target.closest('li');
             if (!clickedLi) return; // Do nothing if the click was not inside a list item
@@ -152,9 +153,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 let accordionBody = document.querySelector('.accordion-item .accordion-body');
                 if (accordionBody) {
                     accordionBody.innerHTML = cardBody.innerHTML; // Replace the accordion content with new content
+
+                    // Trigger the modal-footer button when changes are made
+                    let modalFooterButton = document.querySelector('.modal-footer button');
+                    if (modalFooterButton) {
+                        modalFooterButton.click(); // Simulate a click on the modal footer button
+                    }
                 }
             }
         });
     });
 });
+
 
