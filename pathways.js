@@ -132,6 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Attach a click event listener to each options-list
     optionsLists.forEach(optionsList => {
         optionsList.addEventListener('click', function(event) {
+          console.log('CLICKED!');
             // Check if the clicked element is within an <li>
             let clickedLi = event.target.closest('li');
             if (!clickedLi) return; // Do nothing if the click was not inside a list item
