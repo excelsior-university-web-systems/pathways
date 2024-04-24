@@ -137,6 +137,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const spans = this.querySelectorAll('span');
             const courseIDText = spans[0].textContent;
             const courseNameText = spans[1].textContent;
+          console.log(courseIDText, ' ', courseNameText);
             // Update the '.courseid' and '.course-name' elements within the same list item
             const courseIDElement = li.querySelector('.courseid');
             const courseNameElement = li.querySelector('.course-name');
