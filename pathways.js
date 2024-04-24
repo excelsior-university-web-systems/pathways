@@ -141,6 +141,8 @@ document.addEventListener('DOMContentLoaded', function() {
             // Update the '.courseid' and '.course-name' elements within the same list item
             const courseIDElement = li.querySelector('.courseid');
             const courseNameElement = li.querySelector('.course-name');
+           console.log('Course ID Element:', courseIDElement); // Should not be null
+    console.log('Course Name Element:', courseNameElement); // Should not be null
             if (courseIDElement && courseNameElement) {
                 courseIDElement.textContent = courseIDText;
                 courseNameElement.textContent = courseNameText;
