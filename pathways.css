@@ -237,7 +237,7 @@ a {
   line-height:initial !important;
   padding-left:0 !important;
 }
-#sortable-list .options-list button button{
+#sortable-list .options-list button:nth-child(2){
   float:right !important;
 }
 #sortable-list .options-list button i{
