@@ -139,10 +139,11 @@ document.addEventListener('DOMContentLoaded', function() {
             const courseNameText = spans[1].textContent;
           console.log(courseIDText, ' ', courseNameText);
             // Update the '.courseid' and '.course-name' elements within the same list item
-            const courseIDElement = li.querySelector('.courseid');
-            const courseNameElement = li.querySelector('.course-name');
-           console.log('Course ID Element:', courseIDElement); // Should not be null
-    console.log('Course Name Element:', courseNameElement); // Should not be null
+            const accordion = this.closest('.accordion');
+            const courseIDElement = accordion.querySelector('.courseid');
+            const courseNameElement = accordion.querySelector('.course-name');
+            console.log('Course ID Element:', courseIDElement); // Should not be null
+            console.log('Course Name Element:', courseNameElement); // Should not be null
             if (courseIDElement && courseNameElement) {
                 courseIDElement.textContent = courseIDText;
                 courseNameElement.textContent = courseNameText;
