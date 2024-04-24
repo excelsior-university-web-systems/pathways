@@ -127,43 +127,33 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 // SELECT ALTERNATIVE COURSE OPTION
 document.addEventListener('DOMContentLoaded', function() {
-    // Find all elements with the class .options-list
-    const optionsLists = document.querySelectorAll('.options-list');
-    // Attach a click event listener to each options-list
-    optionsLists.forEach(optionsList => {
-        optionsList.addEventListener('click', function(event) {
-            // Check if the clicked element is a button and ensure it's the first button in its parent li
-            if (event.target.tagName === 'BUTTON' && event.target === event.target.closest('li').querySelector('button:first-of-type')) {
-                let clickedLi = event.target.closest('li');
-                if (!clickedLi) return; // Do nothing if the click was not inside a list item
-                
-                // Get the spans from the clicked list item
-                let spans = clickedLi.querySelectorAll('span');
-                if (spans.length < 2) return; // Ensure there are at least two spans
-
-                // Update the .accordion-item .courseid and .course-name elements
-                let courseidElement = document.querySelector('.accordion-item .courseid');
-                let coursenameElement = document.querySelector('.accordion-item .course-name');
-                if (courseidElement && coursenameElement) {
-                    courseidElement.textContent = spans[0].textContent; // First span is course ID
-                    coursenameElement.textContent = spans[1].textContent; // Second span is course name
-                }
-                
-                // Find the .card-body within the clicked li and copy its content
-                let cardBody = clickedLi.querySelector('.card-body');
-                if (cardBody) {
-                    let accordionBody = document.querySelector('.accordion-item .accordion-body');
-                    if (accordionBody) {
-                        accordionBody.innerHTML = cardBody.innerHTML; // Replace the accordion content with new content
-
-                        // Trigger the modal-footer button when changes are made
-                        let modalFooterButton = document.querySelector('.modal-footer button');
-                        if (modalFooterButton) {
-                            modalFooterButton.click(); // Simulate a click on the modal footer button
-                        }
-                    }
+    // Listen for click events on buttons with the class 'option-course' within 'options-list'
+    const optionButtons = document.querySelectorAll('.options-list .option-course');
+    optionButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Find the closest list item
+            const li = this.closest('li');  
+            // Extract text from the first and second span within the clicked button
+            const spans = this.querySelectorAll('span');
+            const courseIDText = spans[0].textContent;
+            const courseNameText = spans[1].textContent;
+            // Update the '.courseid' and '.course-name' elements within the same list item
+            const courseIDElement = li.querySelector('.courseid');
+            const courseNameElement = li.querySelector('.course-name');
+            if (courseIDElement && courseNameElement) {
+                courseIDElement.textContent = courseIDText;
+                courseNameElement.textContent = courseNameText;
+            }
+            // Close the modal in which the button was clicked
+            // Assuming Bootstrap 5 is used, as indicated by data-bs-toggle attributes
+            const modalElement = li.closest('.modal');
+            if (modalElement) {
+                var modalInstance = bootstrap.Modal.getInstance(modalElement);
+                if (modalInstance) {
+                    modalInstance.hide();
                 }
             }
         });
     });
 });
+
