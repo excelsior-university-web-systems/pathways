@@ -132,37 +132,38 @@ document.addEventListener('DOMContentLoaded', function() {
     // Attach a click event listener to each options-list
     optionsLists.forEach(optionsList => {
         optionsList.addEventListener('click', function(event) {
-            // Check if the clicked element or its parents is a button
-            if (event.target.closest('button')) return; // Ignore the click if it's on a button or within a button
-            // Check if the clicked element is within an <li>
-            let clickedLi = event.target.closest('li');
-            if (!clickedLi) return; // Do nothing if the click was not inside a list item
-            // Get the spans from the clicked list item
-            let spans = clickedLi.querySelectorAll('span');
-            if (spans.length < 2) return; // Ensure there are at least two spans
-            // Update the .accordion-item .courseid and .course-name elements
-            let courseidElement = document.querySelector('.accordion-item .courseid');
-            let coursenameElement = document.querySelector('.accordion-item .course-name');
-            if (courseidElement && coursenameElement) {
-                courseidElement.textContent = spans[0].textContent; // First span is course ID
-                coursenameElement.textContent = spans[1].textContent; // Second span is course name
-            }
-            // Find the .card-body within the clicked li and copy its content
-            let cardBody = clickedLi.querySelector('.card-body');
-            if (cardBody) {
-                let accordionBody = document.querySelector('.accordion-item .accordion-body');
-                if (accordionBody) {
-                    accordionBody.innerHTML = cardBody.innerHTML; // Replace the accordion content with new content
+            // Check if the clicked element is a button and ensure it's the first button in its parent li
+            if (event.target.tagName === 'BUTTON' && event.target === event.target.closest('li').querySelector('button:first-of-type')) {
+                let clickedLi = event.target.closest('li');
+                if (!clickedLi) return; // Do nothing if the click was not inside a list item
+                
+                // Get the spans from the clicked list item
+                let spans = clickedLi.querySelectorAll('span');
+                if (spans.length < 2) return; // Ensure there are at least two spans
 
-                    // Trigger the modal-footer button when changes are made
-                    let modalFooterButton = document.querySelector('.modal-footer button');
-                    if (modalFooterButton) {
-                        modalFooterButton.click(); // Simulate a click on the modal footer button
+                // Update the .accordion-item .courseid and .course-name elements
+                let courseidElement = document.querySelector('.accordion-item .courseid');
+                let coursenameElement = document.querySelector('.accordion-item .course-name');
+                if (courseidElement && coursenameElement) {
+                    courseidElement.textContent = spans[0].textContent; // First span is course ID
+                    coursenameElement.textContent = spans[1].textContent; // Second span is course name
+                }
+                
+                // Find the .card-body within the clicked li and copy its content
+                let cardBody = clickedLi.querySelector('.card-body');
+                if (cardBody) {
+                    let accordionBody = document.querySelector('.accordion-item .accordion-body');
+                    if (accordionBody) {
+                        accordionBody.innerHTML = cardBody.innerHTML; // Replace the accordion content with new content
+
+                        // Trigger the modal-footer button when changes are made
+                        let modalFooterButton = document.querySelector('.modal-footer button');
+                        if (modalFooterButton) {
+                            modalFooterButton.click(); // Simulate a click on the modal footer button
+                        }
                     }
                 }
             }
         });
     });
 });
-
-
