@@ -131,26 +131,22 @@ document.addEventListener('DOMContentLoaded', function() {
     const optionButtons = document.querySelectorAll('.options-list .option-course');
     optionButtons.forEach(button => {
         button.addEventListener('click', function() {
-            // Find the closest list item
-            const li = this.closest('li');  
+            // Find the closest parent with the class '.course'
+            const courseElement = this.closest('.course');
             // Extract text from the first and second span within the clicked button
             const spans = this.querySelectorAll('span');
             const courseIDText = spans[0].textContent;
             const courseNameText = spans[1].textContent;
-          console.log(courseIDText, ' ', courseNameText);
-            // Update the '.courseid' and '.course-name' elements within the same list item
-            const accordion = this.closest('.accordion');
-            const courseIDElement = accordion.querySelector('.courseid');
-            const courseNameElement = accordion.querySelector('.course-name');
-            console.log('Course ID Element:', courseIDElement); // Should not be null
-            console.log('Course Name Element:', courseNameElement); // Should not be null
+            // Update the '.courseid' and '.course-name' elements within the same '.course' parent
+            const courseIDElement = courseElement.querySelector('.courseid');
+            const courseNameElement = courseElement.querySelector('.course-name');
             if (courseIDElement && courseNameElement) {
                 courseIDElement.textContent = courseIDText;
                 courseNameElement.textContent = courseNameText;
             }
             // Close the modal in which the button was clicked
             // Assuming Bootstrap 5 is used, as indicated by data-bs-toggle attributes
-            const modalElement = li.closest('.modal');
+            const modalElement = courseElement.closest('.modal');
             if (modalElement) {
                 var modalInstance = bootstrap.Modal.getInstance(modalElement);
                 if (modalInstance) {
@@ -160,4 +156,5 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
 
