@@ -137,11 +137,12 @@ document.addEventListener('DOMContentLoaded', function() {
             const spans = this.querySelectorAll('span');
             const courseIDText = spans[0].textContent;
             const courseNameText = spans[1].textContent;
-            const courseDetails = this.querySelector('.card-body').textContent;
+            const cardBodyElement = this.querySelector('.card-body');
+            const courseDetails = cardBodyElement.textContent;          
             // Update the '.courseid' and '.course-name' elements within the same '.course' parent
             const courseIDElement = courseElement.querySelector('.courseid');
             const courseNameElement = courseElement.querySelector('.course-name');
-            const courseDetailsElement = courseElement.querySelector('.course-details');
+            const courseDetailsElement = courseElement.querySelector('.course-details');          
             if (courseIDElement && courseNameElement && courseDetailsElement) {
                 courseIDElement.textContent = courseIDText;
                 courseNameElement.textContent = courseNameText;
