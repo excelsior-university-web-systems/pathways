@@ -303,7 +303,7 @@ a {
   align-items: center;
 }
 /* COURSE DETAILS */
-#sortable-list .course-details{
+#sortable-list .course-pre-cred{
   display:flex;
   margin-top:1em;
 }
