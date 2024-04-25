@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             // Close the modal in which the button was clicked
             // Assuming Bootstrap 5 is used, as indicated by data-bs-toggle attributes
-            const modalElement = courseElement.closest('.modal');
+            const modalElement = this.closest('.modal');
             if (modalElement) {
                 var modalInstance = bootstrap.Modal.getInstance(modalElement);
                 if (modalInstance) {
