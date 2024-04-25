@@ -127,8 +127,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 // SELECT ALTERNATIVE COURSE OPTION
 document.addEventListener('DOMContentLoaded', function() {
-    // Listen for click events on buttons with the class 'option-course' within 'options-list'
-    const optionButtons = document.querySelectorAll('.options-list .option-course');
+    // Listen for click events on buttons with the class 'options'
+    const optionButtons = document.querySelectorAll('.options');
     optionButtons.forEach(button => {
         button.addEventListener('click', function() {
             // Count li options, ignore the first because it is the default and therefore not an alternative
@@ -144,6 +144,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     optionsCountSpan.textContent = count;
                 }
             }
+        }
+    });
+    // Listen for click events on buttons with the class 'option-course' within 'options-list'
+    const optionButtons = document.querySelectorAll('.options-list .option-course');
+    optionButtons.forEach(button => {
+        button.addEventListener('click', function() {
             // Find the closest parent with the class '.course'
             const courseElement = this.closest('.course');
             // Extract text from the first and second span within the clicked button
