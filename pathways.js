@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     optionsCountSpan.textContent = count;
                 }
             }
-        }
+        });
     });
     // Listen for click events on buttons with the class 'option-course' within 'options-list'
     const optionButtons = document.querySelectorAll('.options-list .option-course');
