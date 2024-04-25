@@ -28,6 +28,9 @@ a {
   --dark-grey:#585858;
   --light-grey:#F5F5F5;
 }
+.text-green{
+  color:var(--green);
+}
 /* PORTAL PAGE OVERRIDES */
 .ast-main-header-wrap {
   width:100% !important;
