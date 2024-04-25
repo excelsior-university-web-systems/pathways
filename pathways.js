@@ -126,35 +126,4 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 // SELECT ALTERNATIVE COURSE OPTION
-document.addEventListener('DOMContentLoaded', function() {
-    // Listen for click events on buttons with the class 'option-course' within 'options-list'
-    const optionButtons = document.querySelectorAll('.options-list .option-course');
-    optionButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            // Find the closest parent with the class '.course'
-            const courseElement = this.closest('.course');
-            // Extract text from the first and second span within the clicked button
-            const spans = this.querySelectorAll('span');
-            const courseIDText = spans[0].textContent;
-            const courseNameText = spans[1].textContent;
-            // Update the '.courseid' and '.course-name' elements within the same '.course' parent
-            const courseIDElement = courseElement.querySelector('.courseid');
-            const courseNameElement = courseElement.querySelector('.course-name');
-            if (courseIDElement && courseNameElement) {
-                courseIDElement.textContent = courseIDText;
-                courseNameElement.textContent = courseNameText;
-            }
-            // Close the modal in which the button was clicked
-            // Assuming Bootstrap 5 is used, as indicated by data-bs-toggle attributes
-            const modalElement = courseElement.closest('.modal');
-            if (modalElement) {
-                var modalInstance = bootstrap.Modal.getInstance(modalElement);
-                if (modalInstance) {
-                    modalInstance.hide();
-                }
-            }
-        });
-    });
-});
-
 
