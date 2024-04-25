@@ -137,12 +137,15 @@ document.addEventListener('DOMContentLoaded', function() {
             const spans = this.querySelectorAll('span');
             const courseIDText = spans[0].textContent;
             const courseNameText = spans[1].textContent;
+            const courseDetails = this.querySelector('.card-body').textContent;
             // Update the '.courseid' and '.course-name' elements within the same '.course' parent
             const courseIDElement = courseElement.querySelector('.courseid');
             const courseNameElement = courseElement.querySelector('.course-name');
-            if (courseIDElement && courseNameElement) {
+            const courseDetailsElement = courseElement.querySelector('.course-details');
+            if (courseIDElement && courseNameElement && courseDetailsElement) {
                 courseIDElement.textContent = courseIDText;
                 courseNameElement.textContent = courseNameText;
+                courseDetailsElement.textContent = courseDetails;
             }
             // Close the modal in which the button was clicked
             // Assuming Bootstrap 5 is used, as indicated by data-bs-toggle attributes
