@@ -253,8 +253,10 @@ h2{
 #sortable-list .options-list li{
   line-height:initial !important;
   padding-left:0 !important;
+}
+#sortable-list .options-container{
+  justify-content:space-between;
   display:flex;
-  flex-direction:column;
 }
 #sortable-list .options-list button i{
     transition:transform 0.3s ease-in-out;
