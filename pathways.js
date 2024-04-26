@@ -126,16 +126,36 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 // SELECT ALTERNATIVE COURSE OPTION
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {  
     // Listen for click events on buttons with the class 'options'
     const optionButtons = document.querySelectorAll('.options');
     optionButtons.forEach(button => {
         button.addEventListener('click', function() {
+
+          // COMPARE COURSE OPTIONS TO SELECTED COURSES, ADD OR REMOVE DISABLED AS APPROPRIATE
+            const modal = this.closest('.modal'); // Get the closest modal
+            const optionsList = modal.querySelector('.options-list'); // Get the options list within the modal
+            const courseIds = Array.from(document.querySelectorAll('#sortable-list .courseid'))
+                                  .map(courseid => courseid.textContent.trim()); // Get all course IDs from sortable list
+            // Iterate over each option-course within the options list
+            optionsList.querySelectorAll('.option-course').forEach(option => {
+                const spanText = option.querySelector('span').textContent; // Get the course ID from the first span of the option-course
+                if (courseIds.includes(spanText)) {
+                    // If the course ID is already in the sortable list, disable the button
+                    option.setAttribute('disabled');
+                    option.setAttribute('aria-disabled', 'true');
+                } else {
+                    // Otherwise, make sure the button is enabled
+                    option.removeAttribute('disabled');
+                    option.removeAttribute('aria-disabled');
+                }
+            });
+          
             // Count li options, ignore the first because it is the default and therefore not an alternative
-            const optionsList = this.closest('.course').querySelector('.options-list');
+            const optionsListCount = this.closest('.course').querySelector('.options-list');
             if (optionsList) {
                 // Get all 'li' elements except the first one
-                const listItems = optionsList.querySelectorAll('li:not(:first-child)');
+                const listItems = optionsListCount.querySelectorAll('li:not(:first-child)');
                 // Count the 'li' elements
                 const count = listItems.length;
                 // Find the '.options-count' span and update its content
