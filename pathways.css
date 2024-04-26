@@ -52,7 +52,7 @@ a {
 .bpress-wrap, .ast-container{
   padding:0;
 }
-h1, h2{
+h1, h2, .path-description{
   width:600px;
   margin:auto !important;
 }
@@ -64,7 +64,7 @@ h1, h2{
   .bpress-main-header, h2{
     margin-left:.5em !important;
   }
-  h1, h2{
+  h1, h2, .path-description{
     width:auto !important;
   }
   #pathwaycontainer{
