@@ -131,13 +131,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const optionButtons = document.querySelectorAll('.options');
     optionButtons.forEach(button => {
         button.addEventListener('click', function() {
-
           // COMPARE COURSE OPTIONS TO SELECTED COURSES, ADD OR REMOVE DISABLED AS APPROPRIATE
             const courseElement = this.closest('.course');
             const optionsList = courseElement.querySelector('.options-list');
             const courseIds = Array.from(document.querySelectorAll('#sortable-list .courseid'))
                                   .map(courseid => courseid.textContent.trim()); // Get all course IDs from sortable list
-
             // Iterate over each option-course within the options list
             optionsList.querySelectorAll('.option-course').forEach(option => {
                 const spanText = option.querySelector('span').textContent; // Get the course ID from the first span of the option-course
@@ -151,7 +149,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     option.removeAttribute('aria-disabled');
                 }
             });
-          
             // Count li options, ignore the first because it is the default and therefore not an alternative
             const optionsListCount = this.closest('.course').querySelector('.options-list');
             if (optionsList) {
