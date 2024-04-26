@@ -31,6 +31,10 @@ a {
 .text-green{
   color:var(--green);
 }
+*:disabled {
+  color:red;
+  opacity:.5;
+}
 /* PORTAL PAGE OVERRIDES */
 .ast-main-header-wrap {
   width:100% !important;
