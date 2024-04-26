@@ -56,9 +56,6 @@ h1, h2{
   width:600px;
   margin:auto !important;
 }
-h2{
-  margin-left:.5em !important;
-}
 /* RESPONSIVE RULES */
 @media only screen and (max-width: 768px){
   .ast-container{
@@ -66,6 +63,9 @@ h2{
   }
   .bpress-main-header{
     margin-left:.5em !important;
+  }
+  h1, h2{
+    width:auto !important;
   }
   #pathwaycontainer{
     width:auto !important;
