@@ -49,6 +49,10 @@ a {
 .bpress-wrap, .ast-container{
   padding:0;
 }
+h1{
+  width:600px;
+  margin:.5em auto !important;
+}
 /* RESPONSIVE RULES */
 @media only screen and (max-width: 768px){
   .ast-container{
