@@ -36,12 +36,12 @@ a {
   cursor: not-allowed !important;
 }
 /* PORTAL PAGE OVERRIDES */
-#page{
+/*#page{
   overflow-x:hidden;
-}
+}*/
 .ast-main-header-wrap {
   width:100% !important;
-  overflow:hidden !important;
+ /* overflow:hidden !important;*/
 }
 .ast-below-header-bar .site-below-header-wrap{
   height:auto !important;
