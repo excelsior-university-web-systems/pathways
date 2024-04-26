@@ -133,16 +133,17 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', function() {
 
           // COMPARE COURSE OPTIONS TO SELECTED COURSES, ADD OR REMOVE DISABLED AS APPROPRIATE
-            const modal = this.next().find('.modal'); // Get the closest modal
-            const optionsList = modal.querySelector('.options-list'); // Get the options list within the modal
+            const courseElement = this.closest('.course');
+            const optionsList = courseElement.querySelector('.options-list');
             const courseIds = Array.from(document.querySelectorAll('#sortable-list .courseid'))
                                   .map(courseid => courseid.textContent.trim()); // Get all course IDs from sortable list
+
             // Iterate over each option-course within the options list
             optionsList.querySelectorAll('.option-course').forEach(option => {
                 const spanText = option.querySelector('span').textContent; // Get the course ID from the first span of the option-course
                 if (courseIds.includes(spanText)) {
                     // If the course ID is already in the sortable list, disable the button
-                    option.setAttribute('disabled');
+                    option.setAttribute('disabled', 'disabled');
                     option.setAttribute('aria-disabled', 'true');
                 } else {
                     // Otherwise, make sure the button is enabled
