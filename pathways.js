@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', function() {
 
           // COMPARE COURSE OPTIONS TO SELECTED COURSES, ADD OR REMOVE DISABLED AS APPROPRIATE
-            const modal = this.next('.modal'); // Get the closest modal
+            const modal = this.next().find('.modal'); // Get the closest modal
             const optionsList = modal.querySelector('.options-list'); // Get the options list within the modal
             const courseIds = Array.from(document.querySelectorAll('#sortable-list .courseid'))
                                   .map(courseid => courseid.textContent.trim()); // Get all course IDs from sortable list
