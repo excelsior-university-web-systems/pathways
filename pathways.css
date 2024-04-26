@@ -49,6 +49,9 @@ a {
 .bpress-wrap, .ast-container{
   padding:0;
 }
+h1{
+  margin-bottom:0 !important;
+}
 h1, h2{
   width:600px;
   margin:.5em auto !important;
