@@ -299,7 +299,7 @@ a {
   align-items:center;
   justify-content:center;
   text-align:center;
-  min-width:100px;
+  min-width:105px;
   padding:1em;
 }
 #sortable-list .course-name{
