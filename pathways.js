@@ -169,6 +169,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     // Listen for click events on buttons with the class 'option-course' within 'options-list'
+document.addEventListener('DOMContentLoaded', function() {
     const courseOptionButtons = document.querySelectorAll('.options-list .option-course');
     courseOptionButtons.forEach(button => {
         button.addEventListener('click', function() {
@@ -200,5 +201,18 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+      // Add event listener to the modal for collapsing all expanded elements when it is closed
+      const modalElement = document.querySelector('.modal');
+      if (modalElement) {
+          modalElement.addEventListener('hidden.bs.modal', function() {
+              const expandedElements = this.querySelectorAll('.collapse.show');
+              expandedElements.forEach(element => {
+                  new bootstrap.Collapse(element, {
+                      toggle: false // Explicitly set to not toggle which ensures it hides
+                  });
+              });
+          });
+      }
+  });
 });
 // COLLAPSE ALL DESCRIPTIONS WHEN MODAL IS CLOSED
