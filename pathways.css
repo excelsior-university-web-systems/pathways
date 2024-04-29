@@ -56,6 +56,13 @@ h1, h2, .path-description{
   width:600px;
   margin:auto !important;
 }
+#pathwaycontainer{
+  -webkit-user-select:all !important;
+  -moz-user-select:all !important;
+  -ms-user-select:all !important;
+  user-select:all !important; 
+}
+}
 /* RESPONSIVE RULES */
 @media only screen and (max-width: 768px){
   .ast-container{
