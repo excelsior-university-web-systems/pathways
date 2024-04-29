@@ -195,6 +195,13 @@ document.addEventListener('DOMContentLoaded', function() {
             if (modalElement) {
                 var modalInstance = bootstrap.Modal.getInstance(modalElement);
                 if (modalInstance) {
+                  // Collapse all course descriptions when clicked
+                const collapsibleElements = modalElement.querySelectorAll('.collapse');
+                collapsibleElements.forEach(function(collapse) {
+                  if (collapse.classList.contains('show')) {
+                    new bootstrap.Collapse(collapse, 'hide');
+                  }
+                });
                     modalInstance.hide();
                 }
             }
