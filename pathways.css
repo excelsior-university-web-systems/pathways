@@ -147,12 +147,6 @@ h1, h2, .path-description{
   top:0;
   z-index:1;
   height:35px;
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-  -khtml-user-select: none; /* Konqueror HTML */
-  -moz-user-select: none; /* Old versions of Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none;
 }
 #jumpToYearContainer button, #toggleCourseVisibilityContainer label, #toggleCourseVisibility, #sortable-list .course label, #sortable-list .course button{
   cursor:pointer;
