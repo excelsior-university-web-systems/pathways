@@ -57,10 +57,10 @@ h1, h2, .path-description{
   margin:auto !important;
 }
 #pathwaycontainer{
-  -webkit-user-select:all !important;
-  -moz-user-select:all !important;
-  -ms-user-select:all !important;
-  user-select:all !important; 
+  -webkit-user-select:none !important;
+  -moz-user-select:none !important;
+  -ms-user-select:none !important;
+  user-select:none !important; 
 }
 }
 /* RESPONSIVE RULES */
@@ -328,6 +328,7 @@ h1, h2, .path-description{
 }
 #sortable-list .prerequisites{
   margin-right:3em;
+  max-width:60%;
 }
 #sortable-list .prerequisites strong, #sortable-list .credit-hours strong{
   color:var(--green);
