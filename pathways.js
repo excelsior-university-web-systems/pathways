@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const courseIDText = spans[0].textContent;
             const courseNameText = spans[1].textContent;
             const cardBodyElement = courseElement.querySelector('.card-body');
-            const courseDetails = cardBodyElement.textContent;          
+            const courseDetails = cardBodyElement.innerHTML;          
             // Update the '.courseid' and '.course-name' elements within the same '.course' parent
             const courseIDElement = courseElement.querySelector('.courseid');
             const courseNameElement = courseElement.querySelector('.course-name');
@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (courseIDElement && courseNameElement && courseDetailsElement) {
                 courseIDElement.textContent = courseIDText;
                 courseNameElement.textContent = courseNameText;
-                courseDetailsElement.textContent = courseDetails;
+                courseDetailsElement.innerHTML = courseDetails;
             }
             // Close the modal in which the button was clicked
             // Assuming Bootstrap 5 is used, as indicated by data-bs-toggle attributes
@@ -202,24 +202,3 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 // COLLAPSE ALL DESCRIPTIONS WHEN MODAL IS CLOSED
-document.addEventListener('DOMContentLoaded', function() {
-    // Select the modal by its content container
-    const modalElement = document.querySelector('.modal-content');
-    if (modalElement) {
-        // Add event listener for when the modal is hidden
-        modalElement.addEventListener('hidden.bs.modal', function() {
-            // Select all collapsible elements inside the 'options-list'
-            const collapsibleElements = document.querySelectorAll('.options-list .collapse');
-            // Collapse each element
-            collapsibleElements.forEach(function(collapseElement) {
-                // Check if the collapse element is actually shown
-                if (collapseElement.classList.contains('show')) {
-                    // Use Bootstrap's collapse method to hide it
-                    new bootstrap.Collapse(collapseElement, {
-                        toggle: true // this ensures the element is toggled to hidden
-                    });
-                }
-            });
-        });
-    }
-});
