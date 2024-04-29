@@ -150,16 +150,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
             // Count li options, ignore the first because it is the default and therefore not an alternative
-            const optionsListCount = this.closest('.course').querySelector('.options-list');
+            const optionsList = this.closest('.course').querySelector('.options-list');
             if (optionsList) {
                 // Get all 'li' elements except the first one
-                const listItems = optionsListCount.querySelectorAll('li:not(:first-child)');
+                const listItems = optionsList.querySelectorAll('li:not(:first-child)');
                 // Count the 'li' elements
                 const count = listItems.length;
                 // Find the '.options-count' span and update its content
                 const optionsCountSpan = this.closest('.course').querySelector('.options-count');
                 if (optionsCountSpan) {
-                    optionsCountSpan.textContent = count;
+                    if (count === 1) {
+                        optionsCountSpan.textContent = 'There is one alternative for this requirement.';
+                    } else {
+                        optionsCountSpan.textContent = `There are ${count} alternatives for this requirement`;
+                    }
                 }
             }
         });
