@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     // Listen for click events on buttons with the class 'option-course' within 'options-list'
 document.addEventListener('DOMContentLoaded', function() {
-    const courseOptionButtons = document.querySelectorAll('.options-list .option-course');
+    const courseOptionButtons = document.querySelector('.options-list .option-course');
     courseOptionButtons.forEach(button => {
         button.addEventListener('click', function() {
             // Find the closest parent with the class '.course'
