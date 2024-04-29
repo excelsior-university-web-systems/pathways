@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Add event listener for when the modal is hidden
         modalElement.addEventListener('hidden.bs.modal', function() {
             // Select all collapsible elements inside the 'options-list'
-            const collapsibleElements = document.querySelectorAll('.options-list .collapse.show');
+            const collapsibleElements = document.querySelectorAll('.options-list .collapse');
             // Collapse each element
             collapsibleElements.forEach(function(collapseElement) {
                 // Check if the collapse element is actually shown
