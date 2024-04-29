@@ -203,13 +203,23 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 // COLLAPSE ALL DESCRIPTIONS WHEN MODAL IS CLOSED
 document.addEventListener('DOMContentLoaded', function() {
-    const closeButton = document.querySelectorAll('.modal-content .close');
-    const collapsibleElements = document.querySelectorAll('.collapse');
-    closeButton.addEventListener('click', function() {
-        collapsibleElements.forEach(function(collapse) {
-            if (collapse.classList.contains('show')) {
-                new bootstrap.Collapse(collapse, 'hide');
-            }
+    // Select the modal by its content container
+    const modalElement = document.querySelector('.modal-content');
+    if (modalElement) {
+        // Add event listener for when the modal is hidden
+        modalElement.addEventListener('hidden.bs.modal', function() {
+            // Select all collapsible elements inside the 'options-list'
+            const collapsibleElements = document.querySelectorAll('.options-list .collapse.show');
+            // Collapse each element
+            collapsibleElements.forEach(function(collapseElement) {
+                // Check if the collapse element is actually shown
+                if (collapseElement.classList.contains('show')) {
+                    // Use Bootstrap's collapse method to hide it
+                    new bootstrap.Collapse(collapseElement, {
+                        toggle: true // this ensures the element is toggled to hidden
+                    });
+                }
+            });
         });
-    });
+    }
 });
