@@ -61,7 +61,7 @@ h1, h2, .path-description{
   .ast-container{
     padding:0 !important;
   }
-  .bpress-main-header, h2{
+  .bpress-main-header, h2, .path-description{
     margin-left:.5em !important;
   }
   h1, h2, .path-description{
