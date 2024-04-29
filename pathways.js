@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 // COLLAPSE ALL DESCRIPTIONS WHEN MODAL IS CLOSED
 document.addEventListener('DOMContentLoaded', function() {
-    const closeButton = document.querySelector('.modal-content .close');
+    const closeButton = document.querySelectorAll('.modal-content .close');
     const collapsibleElements = document.querySelectorAll('.collapse');
     closeButton.addEventListener('click', function() {
         collapsibleElements.forEach(function(collapse) {
