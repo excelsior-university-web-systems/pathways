@@ -107,16 +107,16 @@ h1, h2, .path-description{
   }
 }
 /* REQUIREMENTS */
-.major-requirement{
+.major, .english, .science, .elective{
   background-image:linear-gradient(to left, var(--light-purple), var(--dark-purple));
 }
-.general-education{
+.major-elective, .humanities, .math{
   background-image:linear-gradient(to left, var(--light-blue), var(--dark-blue));
 }
-.university-requirement{
+.prereq, .ethics, .science-or-math{
   background-image:linear-gradient(to left, var(--light-red), var(--dark-red));
 }
-.arts-science{
+.university, .history, .arts{
   background-image:linear-gradient(to left, var(--light-green), var(--dark-green));
 }
 .concentration{
