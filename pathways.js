@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             // Count li options, ignore the first because it is the default and therefore not an alternative
             const optionsListCount = this.closest('.course').querySelector('.options-list');
-            if (optionsList) {
+            if (optionsListCount) {
                 // Get all 'li' elements except the first one
                 const listItems = optionsList.querySelectorAll('li:not(:first-child)');
                 // Count the 'li' elements
