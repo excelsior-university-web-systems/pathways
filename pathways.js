@@ -195,15 +195,20 @@ document.addEventListener('DOMContentLoaded', function() {
             if (modalElement) {
                 var modalInstance = bootstrap.Modal.getInstance(modalElement);
                 if (modalInstance) {
-                  // Collapse all course descriptions when clicked
-                const collapsibleElements = modalElement.querySelectorAll('.collapse');
-                collapsibleElements.forEach(function(collapse) {
-                  if (collapse.classList.contains('show')) {
-                    new bootstrap.Collapse(collapse, 'hide');
-                  }
-                });
                     modalInstance.hide();
                 }
+            }
+        });
+    });
+});
+// COLLAPSE ALL DESCRIPTIONS WHEN MODAL IS CLOSED
+document.addEventListener('DOMContentLoaded', function() {
+    const closeButton = document.querySelector('.modal-content .close');
+    const collapsibleElements = document.querySelectorAll('.collapse');
+    closeButton.addEventListener('click', function() {
+        collapsibleElements.forEach(function(collapse) {
+            if (collapse.classList.contains('show')) {
+                new bootstrap.Collapse(collapse, 'hide');
             }
         });
     });
