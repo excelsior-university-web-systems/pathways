@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (count === 1) {
                         optionsCountSpan.textContent = 'There is one alternative for this requirement.';
                     } else {
-                        optionsCountSpan.textContent = `There are ${count} alternatives for this requirement`;
+                        optionsCountSpan.textContent = `There are ${count} alternatives for this requirement.`;
                     }
                 }
             }
