@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
             // Count li options, ignore the first because it is the default and therefore not an alternative
-            const optionsList = this.closest('.course').querySelector('.options-list');
+            const optionsListCount = this.closest('.course').querySelector('.options-list');
             if (optionsList) {
                 // Get all 'li' elements except the first one
                 const listItems = optionsList.querySelectorAll('li:not(:first-child)');
