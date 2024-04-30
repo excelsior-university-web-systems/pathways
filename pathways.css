@@ -253,14 +253,14 @@ h1, h2, .path-description{
   justify-content:space-between;
   display:flex;
 }
-#sortable-list .options-list button i{
+#sortable-list .options-list button i, #pathwaycontainer .accordion button i{
     transition:transform 0.3s ease-in-out;
     transform:rotate(0deg);
 }
-#sortable-list .options-list button[aria-expanded="true"] i{
+#sortable-list .options-list button[aria-expanded="true"] i, #pathwaycontainer .accordion button[aria-expanded="true"] i{
     transform:rotate(45deg);
 }
-#sortable-list .options-list button[aria-expanded="false"] i{
+#sortable-list .options-list button[aria-expanded="false"] i, #pathwaycontainer .accordion button[aria-expanded="false"] i{
     transform:rotate(0deg);
 }
 /* Create the checkmark/indicator (hidden when not checked) */
