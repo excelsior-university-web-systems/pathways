@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', function() {
               const spans = this.querySelectorAll('span');
               const courseIDText = spans[0].textContent;
               const courseNameText = spans[1].textContent;
-              const cardBodyElement = this.querySelector('.card-body');
+              const cardBodyElement = this.closest('.card-body');
               const courseDetails = cardBodyElement.innerHTML;          
               // Update the '.courseid' and '.course-name' elements within the same '.course' parent
               const courseIDElement = courseElement.querySelector('.courseid');
