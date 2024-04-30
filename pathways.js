@@ -164,7 +164,6 @@ document.addEventListener('DOMContentLoaded', function() {
               const spans = this.querySelectorAll('span');
               const courseIDText = spans[0].textContent;
               const courseNameText = spans[1].textContent;
-              // Assume the .card-body is within a specific collapsible associated with this button
               const collapseId = this.getAttribute('data-bs-target');
               const cardBodyElement = document.querySelector(collapseId + ' .card-body');
               const courseDetails = cardBodyElement.innerHTML;
@@ -187,5 +186,5 @@ document.addEventListener('DOMContentLoaded', function() {
               }
           });
       });
-    });    
+  });   
 // COLLAPSE ALL DESCRIPTIONS WHEN MODAL IS CLOSED
