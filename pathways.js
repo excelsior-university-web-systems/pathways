@@ -223,6 +223,5 @@ document.addEventListener('DOMContentLoaded', function() {
               }
           });
       });
-  });  
-// COLLAPSE ALL DESCRIPTIONS WHEN MODAL IS CLOSED
-
+  });
+});
