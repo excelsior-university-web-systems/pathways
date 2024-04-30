@@ -225,6 +225,9 @@ h1, h2, .path-description{
   font-weight:bold;
 }
 /* ACCORDION STYLING */
+#sortable-list .accordion-button::after{
+  display:none;
+}
 #sortable-list .accordion{
   width:100% !important;
 }
