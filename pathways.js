@@ -198,6 +198,8 @@ document.addEventListener('DOMContentLoaded', function() {
               } else {
                   console.error('Card body element not found for collapse ID:', collapseId);
               }
+              // Add animation effect on the clicked option course
+              this.classList.add('flash-animation');
               // COLLAPSE ALL DESCRIPTIONS WHEN MODAL IS CLOSED
               const modals = document.querySelectorAll('.modal');
               modals.forEach(modal => {
@@ -222,6 +224,10 @@ document.addEventListener('DOMContentLoaded', function() {
                   }
               }
           });
+          // Remove animation class after it completes
+          button.addEventListener('animationend', () => {
+            button.classList.remove('flash-animation');
+        });
       });
   });
 });
