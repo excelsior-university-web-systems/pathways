@@ -164,17 +164,23 @@ document.addEventListener('DOMContentLoaded', function() {
               const spans = this.querySelectorAll('span');
               const courseIDText = spans[0].textContent;
               const courseNameText = spans[1].textContent;
-              const collapseId = this.getAttribute('data-bs-target');
-              const cardBodyElement = document.querySelector(collapseId + ' .card-body');
-              const courseDetails = cardBodyElement.innerHTML;
-              // Update the '.courseid' and '.course-name' elements within the same '.course' parent
-              const courseIDElement = courseElement.querySelector('.courseid');
-              const courseNameElement = courseElement.querySelector('.course-name');
-              const courseDetailsElement = courseElement.querySelector('.course-details');
-              if (courseIDElement && courseNameElement && courseDetailsElement) {
-                  courseIDElement.textContent = courseIDText;
-                  courseNameElement.textContent = courseNameText;
-                  courseDetailsElement.innerHTML = courseDetails;
+              // Get the ID from the data-bs-target attribute of the collapse button related to this option
+              const collapseButton = this.nextElementSibling;
+              const collapseId = collapseButton.getAttribute('data-bs-target');
+              // Correctly select the card body within the specified collapsible element
+              const cardBodyElement = document.querySelector(collapseId + ' .card.card-body');
+              if (cardBodyElement) {
+                  const courseDetails = cardBodyElement.innerHTML;
+                  const courseIDElement = courseElement.querySelector('.courseid');
+                  const courseNameElement = courseElement.querySelector('.course-name');
+                  const courseDetailsElement = courseElement.querySelector('.course-details');
+                  if (courseIDElement && courseNameElement && courseDetailsElement) {
+                      courseIDElement.textContent = courseIDText;
+                      courseNameElement.textContent = courseNameText;
+                      courseDetailsElement.innerHTML = courseDetails;
+                  }
+              } else {
+                  console.error('Card body element not found for collapse ID:', collapseId);
               }
               // Close the modal in which the button was clicked
               const modalElement = this.closest('.modal');
@@ -186,5 +192,5 @@ document.addEventListener('DOMContentLoaded', function() {
               }
           });
       });
-  });   
+  });  
 // COLLAPSE ALL DESCRIPTIONS WHEN MODAL IS CLOSED
