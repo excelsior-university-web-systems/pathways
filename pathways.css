@@ -221,14 +221,17 @@ h1, h2, .path-description{
   cursor:default;
 }
 /* COURSE STYLING */
-#sortable-list .course-name, .courseid{
+#sortable-list .course-name, #sortable-list .courseid{
   font-weight:bold;
 }
 /* ACCORDION STYLING */
 #sortable-list .accordion-item button i{
   position:absolute;
-  right:20px;
-  top:24px;
+  right:15px;
+  top:20px;
+}
+#sortable-list .accordion-item{
+  position:relative;
 }
 #sortable-list .accordion-button::after{
   display:none;
@@ -318,7 +321,9 @@ h1, h2, .path-description{
   padding:.5em;
   line-height:1.25em;
   display:flex;
-  align-items: center;
+  align-items:center;
+  width:100%;
+  padding-right:40px !important;
 }
 /* COURSE DETAILS */
 #sortable-list .course-pre-cred{
