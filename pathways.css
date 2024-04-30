@@ -33,15 +33,11 @@ a {
 }
 :disabled {
   opacity:.5 !important;
-  cursor: not-allowed !important;
+  cursor:not-allowed !important;
 }
 /* PORTAL PAGE OVERRIDES */
-/*#page{
-  overflow-x:hidden;
-}*/
 .ast-main-header-wrap {
   width:100% !important;
- /* overflow:hidden !important;*/
 }
 .ast-below-header-bar .site-below-header-wrap{
   height:auto !important;
@@ -61,7 +57,6 @@ h1, h2, .path-description{
   -moz-user-select:none !important;
   -ms-user-select:none !important;
   user-select:none !important; 
-}
 }
 /* RESPONSIVE RULES */
 @media only screen and (max-width: 768px){
@@ -160,7 +155,10 @@ h1, h2, .path-description{
   z-index:1;
   height:35px;
 }
-#pathwaycontainer .button, #pathwaycontainer .modal button, #jumpToYearContainer button, #toggleCourseVisibilityContainer label, #toggleCourseVisibility, #sortable-list .course label, #sortable-list .course button{
+#pathwaycontainer .button, #jumpToYearContainer button, #toggleCourseVisibilityContainer label, #toggleCourseVisibility, #sortable-list .course label, #sortable-list .course button{
+  cursor:pointer !important;
+}
+#pathwaycontainer #resetPathway button{
   cursor:pointer !important;
 }
 #pathwaycontainer .sticky-shadow{
