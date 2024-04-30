@@ -164,19 +164,20 @@ document.addEventListener('DOMContentLoaded', function() {
               const spans = this.querySelectorAll('span');
               const courseIDText = spans[0].textContent;
               const courseNameText = spans[1].textContent;
-              const cardBodyElement = this.closest('.card-body');
-              const courseDetails = cardBodyElement.innerHTML;          
+              // Assume the .card-body is within a specific collapsible associated with this button
+              const collapseId = this.getAttribute('data-bs-target');
+              const cardBodyElement = document.querySelector(collapseId + ' .card-body');
+              const courseDetails = cardBodyElement.innerHTML;
               // Update the '.courseid' and '.course-name' elements within the same '.course' parent
               const courseIDElement = courseElement.querySelector('.courseid');
               const courseNameElement = courseElement.querySelector('.course-name');
-              const courseDetailsElement = courseElement.querySelector('.course-details');          
+              const courseDetailsElement = courseElement.querySelector('.course-details');
               if (courseIDElement && courseNameElement && courseDetailsElement) {
                   courseIDElement.textContent = courseIDText;
                   courseNameElement.textContent = courseNameText;
                   courseDetailsElement.innerHTML = courseDetails;
               }
               // Close the modal in which the button was clicked
-              // Assuming Bootstrap 5 is used, as indicated by data-bs-toggle attributes
               const modalElement = this.closest('.modal');
               if (modalElement) {
                   var modalInstance = bootstrap.Modal.getInstance(modalElement);
@@ -186,5 +187,5 @@ document.addEventListener('DOMContentLoaded', function() {
               }
           });
       });
-  });  
+    });    
 // COLLAPSE ALL DESCRIPTIONS WHEN MODAL IS CLOSED
