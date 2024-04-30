@@ -155,7 +155,7 @@ h1, h2, .path-description{
   z-index:1;
   height:35px;
 }
-#jumpToYearContainer button, #toggleCourseVisibilityContainer label, #toggleCourseVisibility, #sortable-list .course label, #sortable-list .course button{
+#pathwaycontainer .button, #jumpToYearContainer button, #toggleCourseVisibilityContainer label, #toggleCourseVisibility, #sortable-list .course label, #sortable-list .course button{
   cursor:pointer;
 }
 #pathwaycontainer .sticky-shadow{
