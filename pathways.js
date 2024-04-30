@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     // Listen for click events on buttons with the class 'option-course' within 'options-list'
-document.addEventListener('DOMContentLoaded', function() {
+
     const courseOptionButtons = document.querySelector('.options-list .option-course');
     courseOptionButtons.forEach(button => {
         button.addEventListener('click', function() {
@@ -199,6 +199,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-  });
+
 });
 // COLLAPSE ALL DESCRIPTIONS WHEN MODAL IS CLOSED
