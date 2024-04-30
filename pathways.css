@@ -155,7 +155,7 @@ h1, h2, .path-description{
   z-index:1;
   height:35px;
 }
-#pathwaycontainer .button, #jumpToYearContainer button, #toggleCourseVisibilityContainer label, #toggleCourseVisibility, #sortable-list .course label, #sortable-list .course button{
+#pathwaycontainer .button, #pathwaycontainer .modal button, #jumpToYearContainer button, #toggleCourseVisibilityContainer label, #toggleCourseVisibility, #sortable-list .course label, #sortable-list .course button{
   cursor:pointer;
 }
 #pathwaycontainer .sticky-shadow{
@@ -400,4 +400,12 @@ h1, h2, .path-description{
 }
 #pathwaycontainer .button:is(:focus, :active) {
 	outline:2px solid var(--light-blue);
+}
+/* FLASH ANIMATION */
+#pathwaycontainer .flash-animation {
+  animation: flash 0.5s ease-out;
+}
+@keyframes flash {
+  0% { background-color: #ffff99; }
+  100% { background-color: transparent; }
 }
