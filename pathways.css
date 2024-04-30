@@ -225,20 +225,8 @@ h1, h2, .path-description{
   font-weight:bold;
 }
 /* ACCORDION STYLING */
-#sortable-list .accordion, #sortable-list .accordion-item button{
+#sortable-list .accordion{
   width:100% !important;
-}
-#sortable-list .accordion-button::after{
-  margin-top:15px;
-  margin-right:5px;
-  content:'\f078' !important;
-  font-family:FontAwesome;
-  background-image:none !important;
-  transform-origin: center !important;    
-}
-#sortable-list .accordion-button:not(.collapsed)::after{
-  background-image:none !important;
-  transform-origin:center !important;    
 }
 #sortable-list .course .accordion-button, #sortable-list .course .options {
   display:flex;
@@ -409,6 +397,6 @@ h1, h2, .path-description{
   animation: flash 0.5s ease-out;
 }
 @keyframes flash {
-  0% { background-color: #ffff99; }
+  0% { background-color: yellowgreen; }
   100% { background-color: transparent; }
 }
