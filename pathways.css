@@ -225,10 +225,15 @@ h1, h2, .path-description{
   font-weight:bold;
 }
 /* ACCORDION STYLING */
+#sortable-list .accordion-item button i{
+  position:absolute;
+  right:20px;
+  top:24px;
+}
 #sortable-list .accordion-button::after{
   display:none;
 }
-#sortable-list .accordion{
+#sortable-list .accordion, #sortable-list .accordion-item > button{
   width:100% !important;
 }
 #sortable-list .course .accordion-button, #sortable-list .course .options {
@@ -253,14 +258,14 @@ h1, h2, .path-description{
   justify-content:space-between;
   display:flex;
 }
-#sortable-list .options-list button i, #pathwaycontainer .accordion button i{
+#sortable-list .options-list button i, #sortable-list .accordion button i{
     transition:transform 0.3s ease-in-out;
     transform:rotate(0deg);
 }
-#sortable-list .options-list button[aria-expanded="true"] i, #pathwaycontainer .accordion button[aria-expanded="true"] i{
+#sortable-list .options-list button[aria-expanded="true"] i, #sortable-list .accordion button[aria-expanded="true"] i{
     transform:rotate(45deg);
 }
-#sortable-list .options-list button[aria-expanded="false"] i, #pathwaycontainer .accordion button[aria-expanded="false"] i{
+#sortable-list .options-list button[aria-expanded="false"] i, #sortable-list .accordion button[aria-expanded="false"] i{
     transform:rotate(0deg);
 }
 /* Create the checkmark/indicator (hidden when not checked) */
