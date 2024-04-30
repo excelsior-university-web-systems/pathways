@@ -380,3 +380,24 @@ h1, h2, .path-description{
   padding-top:15px;
   line-height:0;
 }
+/* BUTTON */
+#pathwaycontainer .button{
+	width:fit-content;
+	background:var(--light-red);
+	padding:1em;
+	line-height:1.25;
+	border:none;
+	border-radius:.25em;
+	display:inline-block;
+	color:white !important;
+	text-align:center;
+	margin:1em auto;
+	text-decoration:none !important;
+}
+#pathwaycontainer .button:hover {
+	color:white !important;
+	background-color:var(--light-purple) !important;
+}
+#pathwaycontainer .button:is(:focus, :active) {
+	outline:2px solid var(--light-blue);
+}
