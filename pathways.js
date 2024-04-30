@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const optionButtons = document.querySelectorAll('.options');
     optionButtons.forEach(button => {
         button.addEventListener('click', function() {
-
+          // ADD COUNT SENTENCE IN OPTIONS MODAL
           const optionsList = this.closest('.course').querySelector('.options-list');
           if (optionsList) {
               // Get all 'li' elements except the first one
@@ -148,7 +148,6 @@ document.addEventListener('DOMContentLoaded', function() {
                   }
               }
           }
-
           // COMPARE COURSE OPTIONS TO SELECTED COURSES, ADD OR REMOVE DISABLED AS APPROPRIATE
             const courseElement = this.closest('.course');
            // const optionsList = courseElement.querySelector('.options-list');
@@ -199,7 +198,22 @@ document.addEventListener('DOMContentLoaded', function() {
               } else {
                   console.error('Card body element not found for collapse ID:', collapseId);
               }
-              // Close the modal in which the button was clicked
+              // COLLAPSE ALL DESCRIPTIONS WHEN MODAL IS CLOSED
+              const modals = document.querySelectorAll('.modal');
+              modals.forEach(modal => {
+                  // Listen for the modal closing event
+                  modal.addEventListener('hide.bs.modal', function() {
+                      // Find all expanded collapsible elements within this modal
+                      const expandedItems = modal.querySelectorAll('.collapse.show');
+                      // Collapse each expanded item
+                      expandedItems.forEach(item => {
+                          const collapseInstance = new bootstrap.Collapse(item, {
+                              toggle: false // This option disables toggling: it won't toggle to shown if it's already hidden
+                          });
+                          collapseInstance.hide(); // Explicitly hide the collapsible element
+                      });
+                  });
+              // CLOSE MODAL WHEN OPTION IS CLICKED
               const modalElement = this.closest('.modal');
               if (modalElement) {
                   var modalInstance = bootstrap.Modal.getInstance(modalElement);
