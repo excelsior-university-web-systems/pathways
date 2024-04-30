@@ -158,7 +158,7 @@ h1, h2, .path-description{
 #jumpToYearContainer button, #toggleCourseVisibilityContainer label, #toggleCourseVisibility, #sortable-list .course label, #sortable-list .course button{
   cursor:pointer;
 }
-.sticky-shadow{
+#pathwaycontainer .sticky-shadow{
   box-shadow: 0 8px 6px -6px black;
 }
 /* HIDE COMPLETED COURSES */
@@ -355,14 +355,14 @@ h1, h2, .path-description{
   left:18px;
   top:20px;
 }
-/* COURSE HIDE ANIMATION */
-.course {
+#pathwaycontainer .course {
   transition:opacity 0.5s, visibility 0.5s;
   opacity:1;
   height:100%;
   visibility:visible;
 }
-.course.hidden {
+/* COURSE HIDE ANIMATION */
+#pathwaycontainer .course.hidden {
   visibility:hidden;
   padding:0 !important;
   opacity:0;
@@ -371,11 +371,11 @@ h1, h2, .path-description{
   transition:opacity .5s, visibility .5s, height .5s, padding .5s; /* Delay collapsing the height */
 }
 /* MODAL STYLING */
-#sortable-list .modal-header, #sortable-list .modal-footer{
+#pathwaycontainer .modal-header, #sortable-list .modal-footer{
   background:var(--dark-purple);
   color:white;
 }
-#sortable-list .modal-header button span{
+#pathwaycontainer .modal-header button span{
   font-size:2em;
   padding-top:15px;
   line-height:0;
