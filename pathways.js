@@ -1,6 +1,7 @@
 
-// DRAGGABLE FUNCTIONALITY
+
 document.addEventListener('DOMContentLoaded', function () {
+  // DRAGGABLE FUNCTIONALITY
   // Add a specific class to the first 'term' item to mark it as non-draggable
   var firstTerm = document.querySelector('.term');
   if (firstTerm) {
@@ -36,9 +37,8 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     animation: 150,
   });
-});
+
 // CHECKED COURSE VISIBILITY
-document.addEventListener('DOMContentLoaded', function() {
   function toggleCoursesVisibility() {
     const isHidden = document.getElementById('toggleCourseVisibility').checked;
     const toggleLabel = document.getElementById('toggleLabel');
@@ -71,49 +71,47 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
       console.error('The element #hiddenCourseCount does not exist in the DOM.');
     }
-  }
+
   // Attach the visibility toggle function to changes on the master toggle and each course checkbox
   document.getElementById('toggleCourseVisibility').addEventListener('change', toggleCoursesVisibility);
   document.querySelectorAll('.course input[type="checkbox"]').forEach(courseCheckbox => {
     courseCheckbox.addEventListener('change', toggleCoursesVisibility);
   });
-});
-// JUMP TO YEAR MENU
-document.addEventListener('DOMContentLoaded', function() {
-  const jumpToYearBtn = document.querySelector('#jumpToYearContainer > button');
-  const yearMenu = document.querySelector('#jumpToYearContainer > ul');
-  const jumpToYearContainer = document.getElementById('jumpToYearContainer'); // Ensure this is defined
-  // Function to toggle dropdown and update aria-expanded
-  function toggleDropdown() {
-    yearMenu.classList.toggle('show');
-    updateAriaExpanded(); // Update immediately after toggle
-  }
-  // Function to set aria-expanded attribute based on visibility of the menu
-  function updateAriaExpanded() {
-    const isShown = yearMenu.classList.contains('show');
-    jumpToYearBtn.setAttribute('aria-expanded', isShown.toString());
-  }
-  // Initialize the aria-expanded attribute based on the initial state
-  updateAriaExpanded();
-  // Bind toggle functionality and update aria-expanded on button click
-  jumpToYearBtn.addEventListener('click', toggleDropdown);
-  // Hide the menu when a sub-item is clicked
-  yearMenu.addEventListener('click', function(e) {
-    if (e.target.tagName === 'A') {
-      yearMenu.classList.remove('show');
-      updateAriaExpanded();
-    }
-  });
-  // Hide the menu when clicking outside of it
-  document.addEventListener('click', function(e) {
-    if (!jumpToYearContainer.contains(e.target)) {
-      yearMenu.classList.remove('show');
-      updateAriaExpanded();
-    }
-  }, true);
-});
-// NAVIGATION STICKY SHADOW
-document.addEventListener('DOMContentLoaded', function() {
+
+   // JUMP TO YEAR MENU
+   const jumpToYearBtn = document.querySelector('#jumpToYearContainer > button');
+   const yearMenu = document.querySelector('#jumpToYearContainer > ul');
+   const jumpToYearContainer = document.getElementById('jumpToYearContainer'); // Ensure this is defined
+   // Function to toggle dropdown and update aria-expanded
+   function toggleDropdown() {
+     yearMenu.classList.toggle('show');
+     updateAriaExpanded(); // Update immediately after toggle
+   }
+   // Function to set aria-expanded attribute based on visibility of the menu
+   function updateAriaExpanded() {
+     const isShown = yearMenu.classList.contains('show');
+     jumpToYearBtn.setAttribute('aria-expanded', isShown.toString());
+   }
+   // Initialize the aria-expanded attribute based on the initial state
+   updateAriaExpanded();
+   // Bind toggle functionality and update aria-expanded on button click
+   jumpToYearBtn.addEventListener('click', toggleDropdown);
+   // Hide the menu when a sub-item is clicked
+   yearMenu.addEventListener('click', function(e) {
+     if (e.target.tagName === 'A') {
+       yearMenu.classList.remove('show');
+       updateAriaExpanded();
+     }
+   });
+   // Hide the menu when clicking outside of it
+   document.addEventListener('click', function(e) {
+     if (!jumpToYearContainer.contains(e.target)) {
+       yearMenu.classList.remove('show');
+       updateAriaExpanded();
+     }
+   }, true);
+
+     // NAVIGATION STICKY SHADOW
   window.addEventListener('scroll', function() {
     var stickyElement = document.getElementById('pathwaynav');
     if (!stickyElement) return; // Safeguard against null reference
@@ -124,9 +122,8 @@ document.addEventListener('DOMContentLoaded', function() {
       stickyElement.classList.remove('sticky-shadow');
     }
   });
-});
-// SELECT ALTERNATIVE COURSE OPTION
-document.addEventListener('DOMContentLoaded', function() {  
+
+    // SELECT ALTERNATIVE COURSE OPTION
     // Listen for click events on buttons with the class 'options'
     const optionButtons = document.querySelectorAll('.options');
     optionButtons.forEach(button => {
@@ -165,40 +162,5 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         });
     });
-    // Listen for click events on buttons with the class 'option-course' within 'options-list'
-
-    const courseOptionButtons = document.querySelector('.options-list .option-course');
-    courseOptionButtons.forEach(button => {
-        button.addEventListener('click', function() {
-          console.log('CLICK!');
-            // Find the closest parent with the class '.course'
-            const courseElement = this.closest('.course');
-            // Extract text from the first and second span within the clicked button
-            const spans = this.querySelectorAll('span');
-            const courseIDText = spans[0].textContent;
-            const courseNameText = spans[1].textContent;
-            const cardBodyElement = courseElement.querySelector('.card-body');
-            const courseDetails = cardBodyElement.innerHTML;          
-            // Update the '.courseid' and '.course-name' elements within the same '.course' parent
-            const courseIDElement = courseElement.querySelector('.courseid');
-            const courseNameElement = courseElement.querySelector('.course-name');
-            const courseDetailsElement = courseElement.querySelector('.course-details');          
-            if (courseIDElement && courseNameElement && courseDetailsElement) {
-                courseIDElement.textContent = courseIDText;
-                courseNameElement.textContent = courseNameText;
-                courseDetailsElement.innerHTML = courseDetails;
-            }
-            // Close the modal in which the button was clicked
-            // Assuming Bootstrap 5 is used, as indicated by data-bs-toggle attributes
-            const modalElement = this.closest('.modal');
-            if (modalElement) {
-                var modalInstance = bootstrap.Modal.getInstance(modalElement);
-                if (modalInstance) {
-                    modalInstance.hide();
-                }
-            }
-        });
-    });
 
 });
-// COLLAPSE ALL DESCRIPTIONS WHEN MODAL IS CLOSED
