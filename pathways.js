@@ -170,6 +170,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const courseOptionButtons = document.querySelector('.options-list .option-course');
     courseOptionButtons.forEach(button => {
         button.addEventListener('click', function() {
+          console.log('CLICK!');
             // Find the closest parent with the class '.course'
             const courseElement = this.closest('.course');
             // Extract text from the first and second span within the clicked button
