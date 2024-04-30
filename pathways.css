@@ -156,7 +156,7 @@ h1, h2, .path-description{
   height:35px;
 }
 #pathwaycontainer .button, #pathwaycontainer .modal button, #jumpToYearContainer button, #toggleCourseVisibilityContainer label, #toggleCourseVisibility, #sortable-list .course label, #sortable-list .course button{
-  cursor:pointer;
+  cursor:pointer !important;
 }
 #pathwaycontainer .sticky-shadow{
   box-shadow: 0 8px 6px -6px black;
