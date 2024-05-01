@@ -155,11 +155,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 const existingTooltip = option.querySelector('a[data-toggle="tooltip"]');
                 if (courseIds.includes(spanText)) {
                   if (!existingTooltip) {
-                      option.insertAdjacentHTML('beforebegin', tooltipLinkHtml); // Add tooltip
+                      option.insertAdjacentHTML('beforebegin', tooltipLinkHtml);
                   }
                 } else {
                     if (existingTooltip) {
-                      existingTooltip.parentNode.removeChild(existingTooltip); // Remove tooltip
+                      existingTooltip.remove();
                   }
                 }
             });
