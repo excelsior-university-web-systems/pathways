@@ -212,7 +212,7 @@ h1, h2, .path-description{
 }
 /* ACCORDION STYLING */
 #sortable-list .accordion{
-  margin-left:45px !important;
+  margin-left:45px;
 }
 #sortable-list .accordion-item button i{
   position:absolute;
