@@ -80,7 +80,7 @@ h1, h2, .path-description{
   #sortable-list .checkmark{
     left:5px !important;
   }
-  #sortable-list .accordion, #sortable-list .options {
+  #sortable-list .accordion{
     margin-left:30px !important;
   }
   #sortable-list .course{
@@ -88,6 +88,9 @@ h1, h2, .path-description{
   }
 }
 /* REQUIREMENTS */
+#sortable-list .requirement{
+  width:fit-content;
+}
 .major, .english, .science, .elective{
   background-image:linear-gradient(to left, var(--light-purple), var(--dark-purple));
   color:white !important;
