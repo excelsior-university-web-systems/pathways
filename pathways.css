@@ -80,6 +80,9 @@ h1, h2, .path-description{
   #sortable-list .checkmark{
     left:5px !important;
   }
+  #sortable-list .accordion{
+    margin-left:30px !important;
+  }
 }
 /* REQUIREMENTS */
 #sortable-list .requirement{
@@ -209,7 +212,7 @@ h1, h2, .path-description{
 }
 /* ACCORDION STYLING */
 #sortable-list .accordion{
-  margin-left:30px !important;
+  margin-left:40px !important;
 }
 #sortable-list .accordion-item button i{
   position:absolute;
