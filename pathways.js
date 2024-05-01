@@ -149,10 +149,10 @@ document.addEventListener('DOMContentLoaded', function () {
             const courseIds = Array.from(document.querySelectorAll('#sortable-list .courseid'))
                                   .map(courseid => courseid.textContent.trim()); // Get all course IDs from sortable list
             // Iterate over each option-course within the options list
-            optionsList.querySelectorAll('.option-course').forEach(option => {
+            optionsList.querySelectorAll('.options-container').forEach(option => {
                 const spanText = option.querySelector('span').textContent; // Get the course ID from the first span of the option-course
                 const tooltipLinkHtml = '<a data-toggle="tooltip" title="This course is already selected."><i class="fa-solid fa-triangle-exclamation"></i></a>';
-                const existingTooltip = option.closest(tooltipLinkHtml);
+                const existingTooltip = option.querySelector('a[data-toggle="tooltip"]');
                 if (courseIds.includes(spanText)) {
                   if (!existingTooltip) {
                       option.insertAdjacentHTML('beforebegin', tooltipLinkHtml); // Add tooltip
