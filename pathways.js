@@ -151,14 +151,14 @@ document.addEventListener('DOMContentLoaded', function () {
             // Iterate over each option-course within the options list
             optionsList.querySelectorAll('.option-course').forEach(option => {
                 const spanText = option.querySelector('span').textContent; // Get the course ID from the first span of the option-course
-                if (courseIds.includes(spanText)) {
-                    // If the course ID is already in the sortable list, disable the button
-                    option.setAttribute('disabled', 'disabled');
-                    option.setAttribute('aria-disabled', 'true');
+                const tooltipLinkHtml = '<a data-toggle="tooltip" title="This course is already selected."><i class="fa-solid fa-triangle-exclamation"></i></a>';
+                const existingTooltip = option.querySelector('a[data-toggle="tooltip"]');
+                if (courseIds.includes(spanText) && !existingTooltip) {
+                      option.insertAdjacentHTML('beforeend', tooltipLinkHtml); // Add tooltip
                 } else {
-                    // Otherwise, make sure the button is enabled
-                    option.removeAttribute('disabled');
-                    option.removeAttribute('aria-disabled');
+                    if (existingTooltip) {
+                      existingTooltip.parentNode.removeChild(existingTooltip); // Remove tooltip
+                  }
                 }
             });
           });
