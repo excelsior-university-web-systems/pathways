@@ -83,9 +83,6 @@ h1, h2, .path-description{
   #sortable-list .accordion{
     margin-left:30px !important;
   }
-  #sortable-list .course{
-    flex-wrap:wrap;
-  }
 }
 /* REQUIREMENTS */
 #sortable-list .requirement{
@@ -237,6 +234,7 @@ h1, h2, .path-description{
 }
 #sortable-list .course, #sortable-list label {
   display:flex;
+  flex-wrap:wrap;
 }
 /* COURSE OPTIONS/ALTERNATIVES MODAL STYLING */
 #sortable-list .options-list .modal-content {
