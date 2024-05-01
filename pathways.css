@@ -86,20 +86,6 @@ h1, h2, .path-description{
   #sortable-list .course{
     flex-wrap:wrap;
   }
-  #sortable-list .options{
-    display:block !important;
-    margin-top:3px !important;
-    margin-right:.5em !important;
-    padding:0 !important;
-    width:100% !important;
-    background:none !important;
-    color:black !important;
-    text-align:right !important;
-  }
-  #sortable-list .options i{
-    top:10px !important;
-    display:contents !important;
-  }
 }
 /* REQUIREMENTS */
 .major, .english, .science, .elective{
@@ -339,25 +325,18 @@ h1, h2, .path-description{
 }
 /* COURSE: OPTIONS AVAILABLE */
 #sortable-list .options{
+  display:block !important;
+  margin-top:3px !important;
+  margin-right:.5em !important;
+  width:100% !important;
+  background:none !important;
+  color:black !important;
+  text-align:right !important;
   line-height:1.25em;
-  position:relative;
-  color:var(--green);
-  background:white;
-  padding:.5em;
-  padding-left:2em;
-  margin-left:.5em;
-  border-radius:.25rem;
-}
-#sortable-list .options:hover{
-  background:var(--green);
-  color:white;
 }
 #sortable-list .options i{
-  position:absolute;
-  -ms-transform:translateX(-50%);
-  transform:translateX(-50%);
-  left:18px;
-  top:20px;
+  top:10px !important;
+  display:contents !important;
 }
 #pathwaycontainer .course {
   transition:opacity 0.5s, visibility 0.5s;
