@@ -5,10 +5,10 @@ body{
   font-weight:400;
   background:black;
 }
-a {
+a{
   color:var(--text-regular) !important;
 } */
-:root {
+:root{
   --app-background:#e5e5e5;
   --blue:#005fc3;
   --darker-purple:#360040;
@@ -31,12 +31,12 @@ a {
 .text-green{
   color:var(--green);
 }
-:disabled {
+:disabled{
   opacity:.5 !important;
   cursor:not-allowed !important;
 }
 /* PORTAL PAGE OVERRIDES */
-.ast-main-header-wrap {
+.ast-main-header-wrap{
   width:100% !important;
 }
 .ast-below-header-bar .site-below-header-wrap{
@@ -156,7 +156,7 @@ h1, h2, .path-description{
   position:relative;
 }
 /* JUMP TO YEAR */
-#jumpToYearContainer ul {
+#jumpToYearContainer ul{
   display:none;
   position:absolute;
   margin-top:5px;
@@ -169,7 +169,7 @@ h1, h2, .path-description{
   text-decoration:none;
   color:initial;
 }
-#jumpToYearContainer ul.show {
+#jumpToYearContainer ul.show{
   display: block;
 }
 #jumpToYearContainer{
@@ -228,14 +228,14 @@ h1, h2, .path-description{
 #sortable-list .accordion, #sortable-list .accordion-item > button{
   width:100% !important;
 }
-#sortable-list .course .accordion-button, #sortable-list .course .options {
+#sortable-list .course .accordion-button, #sortable-list .course .options{
   display:flex;
   align-self:flex-start !important;
 }
 #sortable-list .course label span:hover, #sortable-list .accordion:hover, #sortable-list .options:hover{
   box-shadow:0 0 2px 1px var(--light-purple);
 }
-#sortable-list .course, #sortable-list label {
+#sortable-list .course, #sortable-list label{
   display:flex;
   flex-wrap:wrap;
 }
@@ -244,7 +244,10 @@ h1, h2, .path-description{
   position:absolute;
   top:9px;
 }
-#sortable-list .options-list .modal-content {
+#sortable-list .options-list .alert a i{
+  top:48px;
+}
+#sortable-list .options-list .modal-content{
   max-height:80% !important;
 }
 #sortable-list .options-list li{
@@ -252,10 +255,14 @@ h1, h2, .path-description{
   padding-left:0 !important;
   position:relative;
 }
+#sortable-list .alert .options-container{
+  margin-right:0 !important;
+}
 #sortable-list .options-container{
   justify-content:space-between;
   display:flex;
   margin-left:1.5em;
+  margin-right:1.1em;
 }
 #sortable-list .options-list button i, #sortable-list .accordion button i{
     transition:transform 0.3s ease-in-out;
@@ -268,17 +275,17 @@ h1, h2, .path-description{
     transform:rotate(0deg);
 }
 /* Create the checkmark/indicator (hidden when not checked) */
-#sortable-list .checkmark:after {
+#sortable-list .checkmark:after{
   content:'';
   position:absolute;
   display:none;
 }
 /* Show the checkmark when checked */
-#sortable-list input:checked ~ .checkmark:after {
+#sortable-list input:checked ~ .checkmark:after{
   display: block;
 }
 /* Style the checkmark/indicator */
-#sortable-list .checkmark:after {
+#sortable-list .checkmark:after{
   left:1px;
   top:-13px;
   content:'\f00c';
@@ -286,7 +293,7 @@ h1, h2, .path-description{
   font-size:1.75em;
   color:var(--dark-purple);
 }
-#sortable-list .checkmark {
+#sortable-list .checkmark{
   background:var(--app-background);
   position:absolute;
   top:25px;
@@ -295,7 +302,7 @@ h1, h2, .path-description{
   width:20px;
   border:2px solid black;
 }
-#sortable-list input {
+#sortable-list input{
   opacity:0;
   height:0;
   width:0;
@@ -348,14 +355,14 @@ h1, h2, .path-description{
   top:10px !important;
   display:contents !important;
 }
-#pathwaycontainer .course {
+#pathwaycontainer .course{
   transition:opacity 0.5s, visibility 0.5s;
   opacity:1;
   height:100%;
   visibility:visible;
 }
 /* COURSE HIDE ANIMATION */
-#pathwaycontainer .course.hidden {
+#pathwaycontainer .course.hidden{
   visibility:hidden;
   padding:0 !important;
   opacity:0;
@@ -387,18 +394,18 @@ h1, h2, .path-description{
 	margin:1em auto;
 	text-decoration:none !important;
 }
-#pathwaycontainer .button:hover {
+#pathwaycontainer .button:hover{
 	color:white !important;
 	background-color:var(--light-purple) !important;
 }
-#pathwaycontainer .button:is(:focus, :active) {
+#pathwaycontainer .button:is(:focus, :active){
 	outline:2px solid var(--light-blue);
 }
 /* FLASH ANIMATION */
-#pathwaycontainer .flash-animation {
+#pathwaycontainer .flash-animation{
   animation: flash 0.5s ease-out;
 }
-@keyframes flash {
-  0% { background-color: yellowgreen; }
-  100% { background-color: transparent; }
+@keyframes flash{
+  0%{ background-color: yellowgreen; }
+  100%{ background-color: transparent; }
 }
