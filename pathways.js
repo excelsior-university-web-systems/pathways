@@ -1,6 +1,5 @@
-
-// DRAGGABLE FUNCTIONALITY
 document.addEventListener('DOMContentLoaded', function () {
+  // DRAGGABLE FUNCTIONALITY
   // Add a specific class to the first 'term' item to mark it as non-draggable
   var firstTerm = document.querySelector('.term');
   if (firstTerm) {
@@ -36,9 +35,8 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     animation: 150,
   });
-});
+
 // CHECKED COURSE VISIBILITY
-document.addEventListener('DOMContentLoaded', function() {
   function toggleCoursesVisibility() {
     const isHidden = document.getElementById('toggleCourseVisibility').checked;
     const toggleLabel = document.getElementById('toggleLabel');
@@ -77,9 +75,8 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.course input[type="checkbox"]').forEach(courseCheckbox => {
     courseCheckbox.addEventListener('change', toggleCoursesVisibility);
   });
-});
-// JUMP TO YEAR MENU
-document.addEventListener('DOMContentLoaded', function() {
+
+  // JUMP TO YEAR MENU
   const jumpToYearBtn = document.querySelector('#jumpToYearContainer > button');
   const yearMenu = document.querySelector('#jumpToYearContainer > ul');
   const jumpToYearContainer = document.getElementById('jumpToYearContainer'); // Ensure this is defined
@@ -111,9 +108,8 @@ document.addEventListener('DOMContentLoaded', function() {
       updateAriaExpanded();
     }
   }, true);
-});
+
 // NAVIGATION STICKY SHADOW
-document.addEventListener('DOMContentLoaded', function() {
   window.addEventListener('scroll', function() {
     var stickyElement = document.getElementById('pathwaynav');
     if (!stickyElement) return; // Safeguard against null reference
@@ -123,10 +119,9 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
       stickyElement.classList.remove('sticky-shadow');
     }
-  });
-});
-// SELECT ALTERNATIVE COURSE OPTION
-document.addEventListener('DOMContentLoaded', function() {  
+  });  
+
+    // SELECT ALTERNATIVE COURSE OPTION
     // Listen for click events on buttons with the class 'options'
     const optionButtons = document.querySelectorAll('.options');
     optionButtons.forEach(button => {
@@ -168,9 +163,9 @@ document.addEventListener('DOMContentLoaded', function() {
             });
           });
         });
-      });
+
+    // COURSE OPTIONS
     // Listen for click events on buttons with the class 'option-course' within 'options-list'
-    document.addEventListener('DOMContentLoaded', function() {
       const courseOptionButtons = document.querySelectorAll('.options-list .option-course');
       courseOptionButtons.forEach(button => {
           button.addEventListener('click', function() {
@@ -230,4 +225,5 @@ document.addEventListener('DOMContentLoaded', function() {
         });
       });
   });
+
 });
