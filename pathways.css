@@ -185,15 +185,13 @@ h1, h2, .path-description{
 #sortable-list .term:first-of-type i{
   opacity:0;
 }
-#sortable-list .term i:nth-of-type(odd){
+#sortable-list .term i:nth-of-type(odd), #sortable-list .term i:nth-of-type(even){
   position:absolute;
   top:5px;
   left:.75em;
 }
 #sortable-list .term i:nth-of-type(even){
-  position:absolute;
   bottom:5px;
-  left:.75em;
 }
 #pathwaycontainer .term{
   background-image: linear-gradient(to left, var(--dark-purple), var(--light-purple));
@@ -240,11 +238,11 @@ h1, h2, .path-description{
   flex-wrap:wrap;
 }
 /* COURSE OPTIONS/ALTERNATIVES MODAL STYLING */
-#sortable-list .options-list a i{
+#sortable-list .options-list button i{
   position:absolute;
   top:9px;
 }
-#sortable-list .options-list .alert a i{
+#sortable-list .options-list .alert button i{
   top:48px;
 }
 #sortable-list .options-list .modal-content{
