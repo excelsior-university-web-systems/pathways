@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const items = Array.from(document.getElementById('sortable-list').children);
         const draggedIndex = items.indexOf(dragged);
         let newIndex = items.indexOf(related) + (willInsertAfter ? 1 : 0);
-        let prevTermIndex = newIndex - 1;
+        let prevTermIndex = newIndex - 1;   
         let nextTermIndex = newIndex;
         while (prevTermIndex > 0 && !items[prevTermIndex].classList.contains('term')) {
           prevTermIndex--;
