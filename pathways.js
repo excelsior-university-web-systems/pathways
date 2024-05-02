@@ -1,8 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-  // INITIALIZE TOOLTIPS
-  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-  const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
-
   // DRAGGABLE FUNCTIONALITY
   // Add a specific class to the first 'term' item to mark it as non-draggable
   var firstTerm = document.querySelector('.term');
@@ -130,6 +126,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const optionButtons = document.querySelectorAll('.options');
     optionButtons.forEach(button => {
         button.addEventListener('click', function() {
+            // INITIALIZE TOOLTIPS
+          const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+          const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
           // ADD COUNT SENTENCE IN OPTIONS MODAL
           const optionsList = this.closest('.course').querySelector('.options-list');
           if (optionsList) {
