@@ -10,20 +10,7 @@ function initializeTooltips() {
       }
   });
 }
-
-// Function to be called whenever you add new elements dynamically that need tooltips
-function addDynamicElement() {
-  // Code to add new element to the DOM
-  // For example, let's assume you append a new button
-  var newButton = document.createElement('button');
-  newButton.setAttribute('data-bs-toggle', 'tooltip');
-  newButton.setAttribute('title', 'Dynamic Tooltip');
-  newButton.textContent = 'Hover me!';
-  document.body.appendChild(newButton);
-  
-  // Initialize tooltips again for new elements
-  initializeTooltips();
-}
+initializeTooltips();
 
   // DRAGGABLE FUNCTIONALITY
   // Add a specific class to the first 'term' item to mark it as non-draggable
