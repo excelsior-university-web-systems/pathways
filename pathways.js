@@ -1,4 +1,30 @@
 document.addEventListener('DOMContentLoaded', function () {
+  // INITIALIZE TOOLTIPS FUNCTION
+function initializeTooltips() {
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+  tooltipTriggerList.forEach(function(tooltipTriggerEl) {
+      // Check if the tooltip is already initialized to avoid re-initializing
+      if (!tooltipTriggerEl.classList.contains('tooltip-initialized')) {
+          new bootstrap.Tooltip(tooltipTriggerEl);
+          tooltipTriggerEl.classList.add('tooltip-initialized');
+      }
+  });
+}
+
+// Function to be called whenever you add new elements dynamically that need tooltips
+function addDynamicElement() {
+  // Code to add new element to the DOM
+  // For example, let's assume you append a new button
+  var newButton = document.createElement('button');
+  newButton.setAttribute('data-bs-toggle', 'tooltip');
+  newButton.setAttribute('title', 'Dynamic Tooltip');
+  newButton.textContent = 'Hover me!';
+  document.body.appendChild(newButton);
+  
+  // Initialize tooltips again for new elements
+  initializeTooltips();
+}
+
   // DRAGGABLE FUNCTIONALITY
   // Add a specific class to the first 'term' item to mark it as non-draggable
   var firstTerm = document.querySelector('.term');
@@ -126,9 +152,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const optionButtons = document.querySelectorAll('.options');
     optionButtons.forEach(button => {
         button.addEventListener('click', function() {
-            // INITIALIZE TOOLTIPS
-          const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-          const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+          // INITIALIZE TOOLTIPS
+          initializeTooltips();
           // ADD COUNT SENTENCE IN OPTIONS MODAL
           const optionsList = this.closest('.course').querySelector('.options-list');
           if (optionsList) {
