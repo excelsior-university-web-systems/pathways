@@ -1,17 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-  // INITIALIZE TOOLTIPS FUNCTION
-function initializeTooltips() {
-  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-  tooltipTriggerList.forEach(function(tooltipTriggerEl) {
-      // Check if the tooltip is already initialized to avoid re-initializing
-      if (!tooltipTriggerEl.classList.contains('tooltip-initialized')) {
-          new bootstrap.Tooltip(tooltipTriggerEl);
-          tooltipTriggerEl.classList.add('tooltip-initialized');
-      }
-  });
-}
-initializeTooltips();
-
   // DRAGGABLE FUNCTIONALITY
   // Add a specific class to the first 'term' item to mark it as non-draggable
   var firstTerm = document.querySelector('.term');
@@ -139,8 +126,6 @@ initializeTooltips();
     const optionButtons = document.querySelectorAll('.options');
     optionButtons.forEach(button => {
         button.addEventListener('click', function() {
-          // INITIALIZE TOOLTIPS
-          initializeTooltips();
           // ADD COUNT SENTENCE IN OPTIONS MODAL
           const optionsList = this.closest('.course').querySelector('.options-list');
           if (optionsList) {
@@ -167,7 +152,7 @@ initializeTooltips();
             optionsList.querySelectorAll('.options-container').forEach(option => {
                 const parentLi = option.closest('li'); // Find the parent 'li' of the options-container
                 const spanText = option.querySelector('span').textContent; // Get the course ID from the first span of the option-course
-                const tooltipLinkHtml = "<button class='dupe-alert' type='button' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='This course already appears in your pathway.'><i class='fa-solid fa-triangle-exclamation'></i></button>";
+                const tooltipLinkHtml = "<i class='dupe-alert fa-solid fa-triangle-exclamation' title='This course already appears in your pathway.' aria-label='This course already appears in your pathway.' role='img'></i>";
                 const existingTooltip = parentLi.querySelector('button[data-bs-toggle="tooltip"]');
                 if (courseIds.includes(spanText)) {
                   if (!existingTooltip) {
