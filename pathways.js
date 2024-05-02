@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', function () {
   // INITIALIZE BOOTSTRAP TOOLTIPS
   var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
   var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-  return new bootstrap.Tooltip(tooltipTriggerEl)
-})
+    return new bootstrap.Tooltip(tooltipTriggerEl)
+  })
 
   // DRAGGABLE FUNCTIONALITY
   // Add a specific class to the first 'term' item to mark it as non-draggable
@@ -158,8 +158,8 @@ document.addEventListener('DOMContentLoaded', function () {
             optionsList.querySelectorAll('.options-container').forEach(option => {
                 const parentLi = option.closest('li'); // Find the parent 'li' of the options-container
                 const spanText = option.querySelector('span').textContent; // Get the course ID from the first span of the option-course
-                const tooltipLinkHtml = '<a data-toggle="tooltip" title="This course is already selected."><i class="fa-solid fa-triangle-exclamation"></i></a>';
-                const existingTooltip = parentLi.querySelector('a[data-toggle="tooltip"]');
+                const tooltipLinkHtml = "<button type='button' class='' data-bs-toggle='tooltip' data-bs-placement='right' title='Tooltip on right'><i class='fa-solid fa-triangle-exclamation'></i></button>";
+                const existingTooltip = parentLi.querySelector('button[data-toggle="tooltip"]');
                 if (courseIds.includes(spanText)) {
                   if (!existingTooltip) {
                       option.insertAdjacentHTML('beforebegin', tooltipLinkHtml);
