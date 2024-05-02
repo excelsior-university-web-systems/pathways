@@ -59,7 +59,7 @@ h1, h2, .path-description{
   user-select:none !important; 
 }
 /* RESPONSIVE RULES */
-@media only screen and (max-width: 768px){
+@media only screen and (max-width:768px){
   .ast-container{
     padding:0 !important;
   }
@@ -148,7 +148,7 @@ h1, h2, .path-description{
   cursor:pointer !important;
 }
 #pathwaycontainer .sticky-shadow{
-  box-shadow: 0 8px 6px -6px black;
+  box-shadow:0 8px 6px -6px black;
 }
 /* HIDE COMPLETED COURSES */
 #toggleCourseVisibilityContainer, #jumpToYearContainer{
@@ -170,7 +170,7 @@ h1, h2, .path-description{
   color:initial;
 }
 #jumpToYearContainer ul.show{
-  display: block;
+  display:block;
 }
 #jumpToYearContainer{
   float:left;
@@ -196,7 +196,7 @@ h1, h2, .path-description{
   bottom:5px;
 }
 #pathwaycontainer .term{
-  background-image: linear-gradient(to left, var(--dark-purple), var(--light-purple));
+  background-image:linear-gradient(to left, var(--dark-purple), var(--light-purple));
   color:white;
   text-align:center;
   cursor:grab;
@@ -240,11 +240,11 @@ h1, h2, .path-description{
   flex-wrap:wrap;
 }
 /* COURSE OPTIONS/ALTERNATIVES MODAL STYLING */
-#sortable-list .options-list button i{
+#sortable-list .options-list button .fa-triangle-exclamation{
   position:absolute;
   top:9px;
 }
-#sortable-list .options-list .alert button i{
+#sortable-list .options-list .alert button .fa-triangle-exclamation{
   top:48px;
 }
 #sortable-list .options-list .modal-content{
@@ -264,14 +264,14 @@ h1, h2, .path-description{
   margin-left:1.5em;
   margin-right:1.1em;
 }
-#sortable-list .options-list button i, #sortable-list .accordion button i{
+#sortable-list .options-list button .fa-plus, #sortable-list .accordion button .fa-plus{
     transition:transform 0.3s ease-in-out;
     transform:rotate(0deg);
 }
-#sortable-list .options-list button[aria-expanded="true"] i, #sortable-list .accordion button[aria-expanded="true"] i{
+#sortable-list .options-list button[aria-expanded="true"] .fa-plus, #sortable-list .accordion button[aria-expanded="true"] .fa-plus{
     transform:rotate(45deg);
 }
-#sortable-list .options-list button[aria-expanded="false"] i, #sortable-list .accordion button[aria-expanded="false"] i{
+#sortable-list .options-list button[aria-expanded="false"] .fa-plus, #sortable-list .accordion button[aria-expanded="false"] .fa-plus{
     transform:rotate(0deg);
 }
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -282,7 +282,7 @@ h1, h2, .path-description{
 }
 /* Show the checkmark when checked */
 #sortable-list input:checked ~ .checkmark:after{
-  display: block;
+  display:block;
 }
 /* Style the checkmark/indicator */
 #sortable-list .checkmark:after{
@@ -340,7 +340,7 @@ h1, h2, .path-description{
 #sortable-list .prerequisites strong, #sortable-list .credit-hours strong{
   color:var(--green);
 }
-/* COURSE: OPTIONS AVAILABLE */
+/* COURSE:OPTIONS AVAILABLE */
 #sortable-list .options{
   display:block !important;
   margin-top:3px !important;
@@ -403,9 +403,9 @@ h1, h2, .path-description{
 }
 /* FLASH ANIMATION */
 #pathwaycontainer .flash-animation{
-  animation: flash 0.5s ease-out;
+  animation:flash 0.5s ease-out;
 }
 @keyframes flash{
-  0%{ background-color: yellowgreen; }
-  100%{ background-color: transparent; }
+  0%{ background-color:yellowgreen; }
+  100%{ background-color:transparent; }
 }
