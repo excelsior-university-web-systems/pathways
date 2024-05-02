@@ -198,35 +198,36 @@ document.addEventListener('DOMContentLoaded', function () {
               }
               // Add animation effect on the clicked option course
               this.classList.add('flash-animation');
-              // COLLAPSE ALL DESCRIPTIONS WHEN MODAL IS CLOSED
-              const modals = document.querySelectorAll('.modal');
-              modals.forEach(modal => {
-                  // Listen for the modal closing event
-                  modal.addEventListener('hide.bs.modal', function() {
-                      // Find all expanded collapsible elements within this modal
-                      const expandedItems = modal.querySelectorAll('.collapse.show');
-                      // Collapse each expanded item
-                      expandedItems.forEach(item => {
-                          const collapseInstance = new bootstrap.Collapse(item, {
-                              toggle: false // This option disables toggling: it won't toggle to shown if it's already hidden
-                          });
-                          collapseInstance.hide(); // Explicitly hide the collapsible element
-                      });
-                  });
-              // CLOSE MODAL WHEN OPTION IS CLICKED
-              const modalElement = this.closest('.modal');
-              if (modalElement) {
-                  var modalInstance = bootstrap.Modal.getInstance(modalElement);
-                  if (modalInstance) {
-                      modalInstance.hide();
-                  }
-              }
-          });
           // Remove animation class after it completes
           button.addEventListener('animationend', () => {
             button.classList.remove('flash-animation');
         });
       });
+  });
+
+      // COLLAPSE ALL DESCRIPTIONS WHEN MODAL IS CLOSED
+      const modals = document.querySelectorAll('.modal');
+      modals.forEach(modal => {
+          // Listen for the modal closing event
+          modal.addEventListener('hide.bs.modal', function() {
+              // Find all expanded collapsible elements within this modal
+              const expandedItems = modal.querySelectorAll('.collapse.show');
+              // Collapse each expanded item
+              expandedItems.forEach(item => {
+                  const collapseInstance = new bootstrap.Collapse(item, {
+                      toggle: false // This option disables toggling: it won't toggle to shown if it's already hidden
+                  });
+                  collapseInstance.hide(); // Explicitly hide the collapsible element
+              });
+          });
+      // CLOSE MODAL WHEN OPTION IS CLICKED
+      const modalElement = this.closest('.modal');
+      if (modalElement) {
+          var modalInstance = bootstrap.Modal.getInstance(modalElement);
+          if (modalInstance) {
+              modalInstance.hide();
+          }
+      }
   });
 
 });
