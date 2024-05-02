@@ -206,7 +206,6 @@ document.addEventListener('DOMContentLoaded', function () {
           button.addEventListener('animationend', () => {
             button.classList.remove('flash-animation');
         });
-      });
 
         // CLOSE MODAL WHEN OPTION IS CLICKED
         const modalElement = this.closest('.modal');
@@ -216,7 +215,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 modalInstance.hide();
             }
         }
-            
+      });
   });
 
   // COLLAPSE ALL DESCRIPTIONS WHEN MODAL IS CLOSED
