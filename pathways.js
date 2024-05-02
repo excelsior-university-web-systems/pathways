@@ -1,4 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
+  // INITIALIZE BOOTSTRAP TOOLTIPS
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+})
+
   // DRAGGABLE FUNCTIONALITY
   // Add a specific class to the first 'term' item to mark it as non-draggable
   var firstTerm = document.querySelector('.term');
