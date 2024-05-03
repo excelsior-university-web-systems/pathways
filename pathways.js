@@ -215,6 +215,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // COLLAPSE ALL DESCRIPTIONS WHEN ANY MODAL IS CLOSED
+  // FIND DUPLICATE COURSES, ADD FLAGS
   const modals = document.querySelectorAll('.modal');
   modals.forEach(modal => {
       // Listen for the modal closing event
@@ -223,17 +224,25 @@ document.addEventListener('DOMContentLoaded', function () {
           const courseIDs = document.querySelectorAll('.courseid');
           const courses = Array.from(courseIDs);
           let ids = courses.map(course => course.textContent.trim());
-          // First, clear all previous 'dupe' classes
+          // First, clear all previous 'dupe' classes and reset the dupe notification
           courses.forEach(course => {
               course.closest('.course').classList.remove('dupe');
           });
+  
+          const dupeNotification = document.getElementById('dupe-notification');
+          if (dupeNotification) {
+              dupeNotification.innerHTML = ''; // Clear previous notifications
+          }
           // Find duplicates and mark them
           ids.forEach((id, index) => {
-              // Check if there are any other instances of the same id
               if (ids.filter(x => x === id).length > 1) {
                   courses.forEach((course, idx) => {
                       if (course.textContent.trim() === id) {
-                          courses[idx].closest('.course').classList.add('dupe');
+                          const courseElement = courses[idx].closest('.course');
+                          courseElement.classList.add('dupe');
+                          if (!dupeNotification.innerHTML) { // Check if notification is not already set
+                              dupeNotification.innerHTML = `<i class='dupe-alert fa-solid fa-circle-exclamation' title='This course already appears in your pathway.' aria-label='This course already appears in your pathway.' role='img'></i> Duplicate Courses Found in Pathway`;
+                          }
                       }
                   });
               }
