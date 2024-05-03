@@ -71,14 +71,19 @@ function generate_educational_pathway() {
             					<li><a href='#year4term1'>Year 4</a></li> 
           					</ul>
        					 </li>
-        			<li id='toggleCourseVisibilityContainer'>
-          				<input id='toggleCourseVisibility' type='checkbox' name='toggleCourseVisibility' aria-checked='false'>
-         				<label for='toggleCourseVisibility'><span id='toggleLabel'>Hide Completed </span><span id='hiddenCourseCount' aria-live='polite'></span>
-						</label>
-        			</li>
-      			</ul>
-    		</nav>
-  		</div>
+						 <li id='notificationContainer'>
+                			<div role='status' aria-live='polite' class='notification-bar'>
+								<span></span>
+							</div>
+						</li>
+						<li id='toggleCourseVisibilityContainer'>
+							<input id='toggleCourseVisibility' type='checkbox' name='toggleCourseVisibility' aria-checked='false'>
+							<label for='toggleCourseVisibility'><span id='toggleLabel'>Hide Completed </span><span id='hiddenCourseCount' aria-live='polite'></span>
+							</label>
+						</li>
+					</ul>
+				</nav>
+			</div>
 		<ul id='sortable-list'>
 		";
 	$current_term = null;
@@ -151,11 +156,11 @@ function generate_educational_pathway() {
 									</button>
 								</div>
 							<div class='modal-body'>
-								<strong>Click on a course to replace your current selection. <span class='options-count'></span></strong>
-								</br>
+								<p><strong>Click on a course to replace your current selection. <span class='options-count'></span></strong></p>
+								<p><i class='fa-solid fa-triangle-exclamation' title='This icon indicates that this course already appears in your pathway.' aria-label='Indicates that this course already appears in your pathway.' role='img'></i> This icon denotes courses that already appear in your pathway.</p>
 							<ul class='options-list'>
 								<li aria-live='polite'>
-									<div class='alert alert-success mb-0 mt-2'>
+									<div class='alert alert-success mb-0'>
 										<h4 class='m-0 text-green'>Recommended Course</h4>
 										<div class='options-container'>
 											<button type='button' class='option-course'><span>{$course->course_number}</span> &nbsp;|&nbsp; <span>{$course->course_title}</span></button>
@@ -236,12 +241,12 @@ function generate_educational_pathway() {
 					</div>
 				</div>
 				<div class='modal-footer'>
-				<button class='close' type='button' class='button' data-bs-dismiss='modal' aria-label='Close'>Close</button>
+				<button class='close' type='button' class='button' data-bs-dismiss='modal' aria-label='Close'><strong>Close</strong></button>
 				</div>
 				</div>
 			</div>
 		</div>
-
+		
 		</div>";
     }
 // Shortcode integration
