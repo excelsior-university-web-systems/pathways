@@ -83,6 +83,9 @@ h1, h2, .path-description{
   #sortable-list .accordion{
     margin-left:30px !important;
   }
+  #dupe-notification .dupe-alert span{
+    display:none;
+  }
 }
 /* REQUIREMENTS */
 #sortable-list .requirement{
