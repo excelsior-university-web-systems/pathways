@@ -226,13 +226,16 @@ document.addEventListener('DOMContentLoaded', function () {
           // First, clear all previous 'dupe' classes
           courses.forEach(course => {
               course.closest('.course').classList.remove('dupe');
-              console.log('DUPE RESOLVED!');
           });
           // Find duplicates and mark them
           ids.forEach((id, index) => {
-              if (ids.indexOf(id) !== index && courses[index]) {
-                console.log('DUPE FOUND!');
-                  courses[index].closest('.course').classList.add('dupe');
+              // Check if there are any other instances of the same id
+              if (ids.filter(x => x === id).length > 1) {
+                  courses.forEach((course, idx) => {
+                      if (course.textContent.trim() === id) {
+                          courses[idx].closest('.course').classList.add('dupe');
+                      }
+                  });
               }
           });
           // Find all expanded collapsible elements within any modal
@@ -245,6 +248,7 @@ document.addEventListener('DOMContentLoaded', function () {
               collapseInstance.hide(); // Explicitly hide the collapsible element
           });
       });
-  });  
+  });
+  
 
 });
