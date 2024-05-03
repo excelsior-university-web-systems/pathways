@@ -281,6 +281,7 @@ h1, h2, .path-description{
 }
 #sortable-list .dupe .course-name{
   background:var(--dark-red);
+  color:white !important;
 }
 /* Create the checkmark/indicator (hidden when not checked) */
 #sortable-list .checkmark:after{
