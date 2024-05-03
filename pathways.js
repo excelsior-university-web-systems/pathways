@@ -219,16 +219,30 @@ document.addEventListener('DOMContentLoaded', function () {
   modals.forEach(modal => {
       // Listen for the modal closing event
       modal.addEventListener('hide.bs.modal', function() {
-          // Find all expanded collapsible elements in any modal
+          // Get all course IDs on the page
+          const courseIDs = document.querySelectorAll('.courseid');
+          const courses = Array.from(courseIDs);
+          let ids = courses.map(course => course.textContent.trim());
+          // First, clear all previous 'dupe' classes
+          courses.forEach(course => {
+              course.closest('.course').classList.remove('dupe');
+          });
+          // Find duplicates and mark them
+          ids.forEach((id, index) => {
+              if (ids.indexOf(id) !== index && courses[index]) {
+                  courses[index].closest('.course').classList.add('dupe');
+              }
+          });
+          // Find all expanded collapsible elements within any modal
           const expandedItems = document.querySelectorAll('.modal .collapse.show');
           // Collapse each expanded item
           expandedItems.forEach(item => {
               const collapseInstance = new bootstrap.Collapse(item, {
-                  toggle: false // This option disables toggling: it won't toggle to shown if it's already hidden
+                  toggle: false // This option ensures it doesn't toggle to shown if it's already hidden
               });
               collapseInstance.hide(); // Explicitly hide the collapsible element
           });
       });
-  });
+  });  
 
 });
