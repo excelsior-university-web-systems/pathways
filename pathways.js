@@ -262,6 +262,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // DUPE NAVIGATION BUTTON
     const dupeNotificationContainer = document.getElementById('dupe-notification');
     if (dupeNotificationContainer) {
+        let currentIndex = 0; // To track the current index of the visible dupe
         // Function to handle the setup of dupeLink when it's detected
         function setupDupeLink() {
             const dupeLink = document.getElementById('dupeLink');
@@ -269,19 +270,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 dupeLink.onclick = function() {
                     const dupes = document.querySelectorAll('.dupe');
                     if (dupes.length > 0) {
-                        let found = false;
-                        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-                        for (let i = 0; i < dupes.length; i++) {
-                            const dupe = dupes[i];
-                            if (dupe.offsetTop > currentScroll) {
-                                dupe.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                                found = true;
-                                break;
-                            }
-                        }
-                        if (!found) {
-                            dupes[0].scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        }
+                        currentIndex = (currentIndex + 1) % dupes.length; // Move to the next dupe, wrap around to the first
+                        dupes[currentIndex].scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }
                 };
                 console.log("dupeLink button setup completed.");
