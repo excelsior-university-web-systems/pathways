@@ -144,7 +144,7 @@ h1, h2, .path-description{
   z-index:1;
   height:35px;
 }
-#pathwaycontainer .button, #jumpToYearContainer button, #dupe-notification, #toggleCourseVisibilityContainer label, #toggleCourseVisibility, #sortable-list .course label, #sortable-list .course button, #pathwaycontainer #resetPathway button{
+#pathwaycontainer .button, #jumpToYearContainer button, #dupe-notification button, #toggleCourseVisibilityContainer label, #toggleCourseVisibility, #sortable-list .course label, #sortable-list .course button, #pathwaycontainer #resetPathway button{
   cursor:pointer !important;
 }
 #pathwaycontainer .sticky-shadow{
