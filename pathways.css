@@ -32,6 +32,9 @@ a{
   color:var(--green);
 }
 /* PORTAL PAGE OVERRIDES */
+#wpadminbar{
+  display:none !important;
+}
 .ast-main-header-wrap{
   width:100% !important;
 }
