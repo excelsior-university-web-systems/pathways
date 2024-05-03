@@ -276,4 +276,37 @@ document.addEventListener('DOMContentLoaded', function () {
       }
   });
 
+  // DUPE BUTTON LINKING
+  const dupeNotification = document.getElementById('dupe-notification');
+  const dupes = Array.from(document.querySelectorAll('.dupe'));
+  let currentIndex = 0; // Start before the first dupe index
+  if (dupeNotification) {
+      // Initialize the MutationObserver
+      const observer = new MutationObserver(function(mutations) {
+          mutations.forEach(mutation => {
+              mutation.addedNodes.forEach(node => {
+                  if (node.nodeType === 1 && node.classList.contains('dupeLink')) { // Check if it's an element node and has class 'dupeLink'
+                      node.addEventListener('click', function() {
+                          if (dupes.length === 0) return; // No dupe class elements, do nothing
+                          // Increment index safely
+                          currentIndex = (currentIndex + 1) % dupes.length;
+                          // Scroll to the dupe element
+                          const dupeElement = dupes[currentIndex];
+                          if (dupeElement) {
+                              dupeElement.scrollIntoView({
+                                  behavior: 'smooth',
+                                  block: 'center'
+                              });
+                          }
+                      });
+                  }
+              });
+          });
+      });
+      // Configure the observer:
+      const config = { childList: true, subtree: true }; // Options to observe direct children and descendants
+      // Start observing
+      observer.observe(dupeNotification, config);
+  }
+
 });
