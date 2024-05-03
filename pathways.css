@@ -179,6 +179,7 @@ h1, h2, .path-description{
 #dupeLink i {
   position:absolute;
   top:14px;
+  color:var(--light-red);
 }
 #dupeLink span {
   margin-left:1.5em;
