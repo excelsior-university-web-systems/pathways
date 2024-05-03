@@ -83,7 +83,7 @@ h1, h2, .path-description{
   #sortable-list .accordion{
     margin-left:30px !important;
   }
-  #dupe-notification .dupe-alert span{
+  #dupeLink span{
     display:none;
   }
 }
