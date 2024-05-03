@@ -171,6 +171,19 @@ h1, h2, .path-description{
 #jumpToYearContainer ul.show{
   display:block;
 }
+/* DUPLICATE NOTIFICATION */
+#dupe-notification {
+  height:100%;
+  align-items:center;
+  display:flex;
+}
+#dupe-notification .dupe-alert i {
+  position:absolute;
+  top:14px;
+}
+#dupe-notification .dupe-alert span {
+  margin-left:1em;
+}
 /* LIST UTILITIES */
 #pathwaycontainer li{
   position:relative;
