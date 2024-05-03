@@ -127,6 +127,10 @@ h1, h2, .path-description{
   margin:0;
 }
 /* NAVIGATION */
+#pathwaynav ul {
+  display:flex;
+  justify-content:space-between;
+}
 #pathwaynav ul li ul{
   display:none;
 }
@@ -151,7 +155,7 @@ h1, h2, .path-description{
   box-shadow:0 8px 6px -6px black;
 }
 /* HIDE COMPLETED COURSES */
-#toggleCourseVisibilityContainer, #jumpToYearContainer{
+#toggleCourseVisibilityContainer{
   float:right;
   position:relative;
 }
