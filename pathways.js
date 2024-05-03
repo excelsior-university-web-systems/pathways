@@ -241,7 +241,7 @@ document.addEventListener('DOMContentLoaded', function () {
                           const courseElement = courses[idx].closest('.course');
                           courseElement.classList.add('dupe');
                           if (!dupeNotification.innerHTML) { // Check if notification is not already set
-                              dupeNotification.innerHTML = `<i class='dupe-alert fa-solid fa-circle-exclamation' title='This course already appears in your pathway.' aria-label='This course already appears in your pathway.' role='img'></i> Duplicate Courses Found in Pathway`;
+                              dupeNotification.innerHTML = `<i class='dupe-alert fa-solid fa-circle-exclamation' title='Duplicate Courses Found in Pathway.' aria-label='Duplicate Courses Found in Pathway.' role='img'></i> <span>Duplicate Courses Found in Pathway</span>`;
                           }
                       }
                   });
