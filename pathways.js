@@ -259,37 +259,41 @@ document.addEventListener('DOMContentLoaded', function () {
       });
   });
 
-  // DUPE BUTTON LINKING
-  const dupeNotification = document.getElementById('dupe-notification');
-  const dupes = Array.from(document.querySelectorAll('.dupe'));
-  let currentIndex = 0; // Start before the first dupe index
-  if (dupeNotification) {
-      // Initialize the MutationObserver
-      const observer = new MutationObserver(function(mutations) {
-          mutations.forEach(mutation => {
-              mutation.addedNodes.forEach(node => {
-                  if (node.nodeType === 1 && node.classList.contains('dupeLink')) { // Check if it's an element node and has class 'dupeLink'
-                      node.addEventListener('click', function() {
-                          if (dupes.length === 0) return; // No dupe class elements, do nothing
-                          // Increment index safely
-                          currentIndex = (currentIndex + 1) % dupes.length;
-                          // Scroll to the dupe element
-                          const dupeElement = dupes[currentIndex];
-                          if (dupeElement) {
-                              dupeElement.scrollIntoView({
-                                  behavior: 'smooth',
-                                  block: 'center'
-                              });
-                          }
-                      });
-                  }
-              });
-          });
-      });
-      // Configure the observer:
-      const config = { childList: true, subtree: true }; // Options to observe direct children and descendants
-      // Start observing
-      observer.observe(dupeNotification, config);
-  }
+    function setupDupeLink() {
+        const dupeLink = document.getElementById('dupeLink');
+        if (dupeLink) {
+            dupeLink.addEventListener('click', function() {
+                const dupes = document.querySelectorAll('.dupe');
+                if (dupes.length > 0) {
+                    let found = false;
+                    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+                    for (let i = 0; i < dupes.length; i++) {
+                        const dupe = dupes[i];
+                        if (dupe.offsetTop > currentScroll) {
+                            dupe.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            found = true;
+                            break;
+                        }
+                    }
+                    if (!found) {
+                        dupes[0].scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+            console.log("dupeLink button setup completed.");
+            return true; // Return true when setup is successful
+        }
+        return false; // Return false if the button was not found
+    }
+    // Try to setup the dupeLink immediately
+    if (!setupDupeLink()) {
+        // If not immediately found, check periodically
+        const intervalId = setInterval(() => {
+            if (setupDupeLink()) {
+                clearInterval(intervalId); // Stop checking once the button is found and setup
+            }
+        }, 1000); // Check every second
+    }
+
 
 });
