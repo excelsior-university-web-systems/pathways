@@ -31,10 +31,6 @@ a{
 .text-green{
   color:var(--green);
 }
-:disabled{
-  opacity:.5 !important;
-  cursor:not-allowed !important;
-}
 /* PORTAL PAGE OVERRIDES */
 .ast-main-header-wrap{
   width:100% !important;
@@ -148,10 +144,7 @@ h1, h2, .path-description{
   z-index:1;
   height:35px;
 }
-#pathwaycontainer .button, #jumpToYearContainer button, #toggleCourseVisibilityContainer label, #toggleCourseVisibility, #sortable-list .course label, #sortable-list .course button{
-  cursor:pointer !important;
-}
-#pathwaycontainer #resetPathway button{
+#pathwaycontainer .button, #jumpToYearContainer button, #dupe-notification, #toggleCourseVisibilityContainer label, #toggleCourseVisibility, #sortable-list .course label, #sortable-list .course button, #pathwaycontainer #resetPathway button{
   cursor:pointer !important;
 }
 #pathwaycontainer .sticky-shadow{
