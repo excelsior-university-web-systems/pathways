@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', function () {
             optionsList.querySelectorAll('.options-container').forEach(option => {
                 const parentLi = option.closest('li'); // Find the parent 'li' of the options-container
                 const spanText = option.querySelector('span').textContent; // Get the course ID from the first span of the option-course
-                const tooltipLinkHtml = "<i class='dupe-alert fa-solid fa-triangle-exclamation' title='This course already appears in your pathway.' aria-label='This course already appears in your pathway.' role='img'></i>";
+                const tooltipLinkHtml = "<i class='dupe-alert fa-solid fa-circle-exclamation' title='This course already appears in your pathway.' aria-label='This course already appears in your pathway.' role='img'></i>";
                 const existingTooltip = parentLi.querySelector('.dupe-alert');
                 if (courseIds.includes(spanText)) {
                   if (!existingTooltip) {
@@ -226,10 +226,12 @@ document.addEventListener('DOMContentLoaded', function () {
           // First, clear all previous 'dupe' classes
           courses.forEach(course => {
               course.closest('.course').classList.remove('dupe');
+              console.log('DUPE RESOLVED!');
           });
           // Find duplicates and mark them
           ids.forEach((id, index) => {
               if (ids.indexOf(id) !== index && courses[index]) {
+                console.log('DUPE FOUND!');
                   courses[index].closest('.course').classList.add('dupe');
               }
           });
