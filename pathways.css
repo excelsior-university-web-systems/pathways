@@ -88,19 +88,19 @@ h1, h2, .path-description{
 #sortable-list .requirement{
   width:fit-content;
 }
-.major{
+#sortable-list .major{
   background-image:linear-gradient(to left, var(--light-purple), var(--dark-purple));
   color:white !important;
 }
-.major-elective{
+#sortable-list .major-elective{
   background-image:linear-gradient(to left, var(--light-blue), var(--dark-blue));
   color:white !important;
 }
-.prereq{
+#sortable-list .prereq{
   background-image:linear-gradient(to left, var(--light-red), var(--dark-red));
   color:white !important;
 }
-.university{
+#sortable-list .university{
   background-image:linear-gradient(to left, var(--light-green), var(--dark-green));
   color:white !important;
 }
@@ -154,11 +154,6 @@ h1, h2, .path-description{
 #pathwaycontainer .sticky-shadow{
   box-shadow:0 8px 6px -6px black;
 }
-/* HIDE COMPLETED COURSES */
-#toggleCourseVisibilityContainer{
-  float:right;
-  position:relative;
-}
 /* JUMP TO YEAR */
 #jumpToYearContainer ul{
   display:none;
@@ -175,10 +170,6 @@ h1, h2, .path-description{
 }
 #jumpToYearContainer ul.show{
   display:block;
-}
-#jumpToYearContainer{
-  float:left;
-  position:relative;
 }
 /* LIST UTILITIES */
 #pathwaycontainer li{
