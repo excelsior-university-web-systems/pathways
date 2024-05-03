@@ -88,23 +88,23 @@ h1, h2, .path-description{
 #sortable-list .requirement{
   width:fit-content;
 }
-.major, .english, .science, .elective{
+.major{
   background-image:linear-gradient(to left, var(--light-purple), var(--dark-purple));
   color:white !important;
 }
-.major-elective, .humanities, .math{
+.major-elective{
   background-image:linear-gradient(to left, var(--light-blue), var(--dark-blue));
   color:white !important;
 }
-.prereq, .ethics, .science-or-math{
+.prereq{
   background-image:linear-gradient(to left, var(--light-red), var(--dark-red));
   color:white !important;
 }
-.university, .history, .arts{
+.university{
   background-image:linear-gradient(to left, var(--light-green), var(--dark-green));
   color:white !important;
 }
-.concentration{
+.arts, .ethics, .history, .humanities, .science-or-math, .math, .english, .science, .elective, .concentration{
   background:var(--dark-purple);
   color:white !important;
 }
