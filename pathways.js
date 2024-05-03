@@ -259,23 +259,6 @@ document.addEventListener('DOMContentLoaded', function () {
       });
   });
 
-  // DUPE NAVIGATION BUTTON
-  const button = document.getElementById('dupeLink');
-  const dupes = Array.from(document.querySelectorAll('.dupe'));
-  let currentIndex = 0; // Start before the first dupe index
-  button.addEventListener('click', function() {
-      // Increment index safely
-      currentIndex = (currentIndex + 1) % dupes.length;
-      // Scroll to the dupe element
-      const dupeElement = dupes[currentIndex];
-      if (dupeElement) {
-          dupeElement.scrollIntoView({
-              behavior: 'smooth',
-              block: 'center'
-          });
-      }
-  });
-
   // DUPE BUTTON LINKING
   const dupeNotification = document.getElementById('dupe-notification');
   const dupes = Array.from(document.querySelectorAll('.dupe'));
