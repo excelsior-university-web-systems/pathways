@@ -242,10 +242,10 @@ h1, h2, .path-description{
 /* COURSE OPTIONS/ALTERNATIVES MODAL STYLING */
 #sortable-list .options-list .dupe-alert{
   position:absolute;
-  top:6px;
+  top:9px;
 }
 #sortable-list .options-list .alert .dupe-alert{
-  top:43px;
+  top:48px;
 }
 #sortable-list .options-list .modal-content{
   max-height:80% !important;
