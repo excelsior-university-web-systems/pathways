@@ -180,11 +180,11 @@ h1, h2, .path-description{
   align-items:center;
   display:flex;
 }
-#dupe-notification .dupe-alert i {
+#dupeLink i {
   position:absolute;
   top:14px;
 }
-#dupe-notification .dupe-alert span {
+#dupeLink span {
   margin-left:.5em;
 }
 /* LIST UTILITIES */
