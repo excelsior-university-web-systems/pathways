@@ -241,7 +241,7 @@ document.addEventListener('DOMContentLoaded', function () {
                           const courseElement = courses[idx].closest('.course');
                           courseElement.classList.add('dupe');
                           if (!dupeNotification.innerHTML) { // Check if notification is not already set
-                              dupeNotification.innerHTML = `<i class='dupe-alert fa-solid fa-circle-exclamation' title='Duplicate Courses Found in Pathway.' aria-label='Duplicate Courses Found in Pathway.' role='img'></i><span>Duplicate Courses Found in Pathway</span>`;
+                              dupeNotification.innerHTML = `<button type="button" id="dupeLink"><i class='dupe-alert fa-solid fa-circle-exclamation' title='Duplicate Courses Found in Pathway.' aria-label='Duplicate Courses Found in Pathway.' role='img'></i><span>Duplicate Courses Found in Pathway</span></button>`;
                           }
                       }
                   });
@@ -257,6 +257,23 @@ document.addEventListener('DOMContentLoaded', function () {
               collapseInstance.hide(); // Explicitly hide the collapsible element
           });
       });
+  });
+
+  // DUPE NAVIGATION BUTTON
+  const button = document.getElementById('dupeLink');
+  const dupes = Array.from(document.querySelectorAll('.dupe'));
+  let currentIndex = 0; // Start before the first dupe index
+  button.addEventListener('click', function() {
+      // Increment index safely
+      currentIndex = (currentIndex + 1) % dupes.length;
+      // Scroll to the dupe element
+      const dupeElement = dupes[currentIndex];
+      if (dupeElement) {
+          dupeElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'center'
+          });
+      }
   });
 
 });
