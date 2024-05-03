@@ -259,40 +259,47 @@ document.addEventListener('DOMContentLoaded', function () {
       });
   });
 
-    function setupDupeLink() {
-        const dupeLink = document.getElementById('dupeLink');
-        if (dupeLink) {
-            dupeLink.addEventListener('click', function() {
-                const dupes = document.querySelectorAll('.dupe');
-                if (dupes.length > 0) {
-                    let found = false;
-                    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-                    for (let i = 0; i < dupes.length; i++) {
-                        const dupe = dupes[i];
-                        if (dupe.offsetTop > currentScroll) {
-                            dupe.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                            found = true;
-                            break;
+  // DUPE NAVIGATION BUTTON
+    const dupeNotificationContainer = document.getElementById('dupe-notification');
+    if (dupeNotificationContainer) {
+        // Function to handle the setup of dupeLink when it's detected
+        function setupDupeLink() {
+            const dupeLink = document.getElementById('dupeLink');
+            if (dupeLink) {
+                dupeLink.onclick = function() {
+                    const dupes = document.querySelectorAll('.dupe');
+                    if (dupes.length > 0) {
+                        let found = false;
+                        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+                        for (let i = 0; i < dupes.length; i++) {
+                            const dupe = dupes[i];
+                            if (dupe.offsetTop > currentScroll) {
+                                dupe.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                found = true;
+                                break;
+                            }
+                        }
+                        if (!found) {
+                            dupes[0].scrollIntoView({ behavior: 'smooth', block: 'start' });
                         }
                     }
-                    if (!found) {
-                        dupes[0].scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
+                };
+                console.log("dupeLink button setup completed.");
+            }
+        }
+        // Create a MutationObserver to monitor changes in the container
+        const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                if (mutation.type === 'childList') {
+                    // Check if dupeLink is added (or potentially removed and re-added)
+                    setupDupeLink();
                 }
             });
-            console.log("dupeLink button setup completed.");
-            return true; // Return true when setup is successful
-        }
-        return false; // Return false if the button was not found
-    }
-    // Try to setup the dupeLink immediately
-    if (!setupDupeLink()) {
-        // If not immediately found, check periodically
-        const intervalId = setInterval(() => {
-            if (setupDupeLink()) {
-                clearInterval(intervalId); // Stop checking once the button is found and setup
-            }
-        }, 1000); // Check every second
+        });
+        // Configuration of the observer:
+        const config = { childList: true, subtree: true };
+        // Start observing the target node for configured mutations
+        observer.observe(dupeNotificationContainer, config);
     }
 
 
