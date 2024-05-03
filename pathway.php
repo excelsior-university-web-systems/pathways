@@ -71,8 +71,8 @@ function generate_educational_pathway() {
             					<li><a href='#year4term1'>Year 4</a></li> 
           					</ul>
        					 </li>
-						 <li id='notificationContainer'>
-                			<div role='status' aria-live='polite' class='notification-bar'>
+						 <li id='dupeNotificationContainer'>
+                			<div id='dupe-notification' role='status' aria-live='polite'>
 								<span></span>
 							</div>
 						</li>
@@ -157,7 +157,7 @@ function generate_educational_pathway() {
 								</div>
 							<div class='modal-body'>
 								<p><strong>Click on a course to replace your current selection. <span class='options-count'></span></strong></p>
-								<p><i class='fa-solid fa-triangle-exclamation' title='This icon indicates that this course already appears in your pathway.' aria-label='Indicates that this course already appears in your pathway.' role='img'></i> This icon denotes courses that already appear in your pathway.</p>
+								<p><i class='fa-solid fa-circle-exclamation' title='This icon indicates that this course already appears in your pathway.' aria-label='Indicates that this course already appears in your pathway.' role='img'></i> This icon denotes courses that already appear in your pathway.</p>
 							<ul class='options-list'>
 								<li aria-live='polite'>
 									<div class='alert alert-success mb-0'>
