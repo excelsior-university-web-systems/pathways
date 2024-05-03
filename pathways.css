@@ -185,7 +185,7 @@ h1, h2, .path-description{
   top:14px;
 }
 #dupe-notification .dupe-alert span {
-  margin-left:1em;
+  margin-left:.5em;
 }
 /* LIST UTILITIES */
 #pathwaycontainer li{
