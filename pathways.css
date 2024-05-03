@@ -244,13 +244,6 @@ h1, h2, .path-description{
   flex-wrap:wrap;
 }
 /* COURSE OPTIONS/ALTERNATIVES MODAL STYLING */
-#sortable-list .options-list .dupe-alert{
-  position:absolute;
-  top:9px;
-}
-#sortable-list .options-list .alert .dupe-alert{
-  top:48px;
-}
 #sortable-list .options-list .modal-content{
   max-height:80% !important;
 }
@@ -277,6 +270,17 @@ h1, h2, .path-description{
 }
 #sortable-list .options-list button[aria-expanded="false"] .fa-plus, #sortable-list .accordion button[aria-expanded="false"] .fa-plus{
     transform:rotate(0deg);
+}
+/* DUPES  */
+#sortable-list .options-list .dupe-alert{
+  position:absolute;
+  top:9px;
+}
+#sortable-list .options-list .alert .dupe-alert{
+  top:48px;
+}
+#sortable-list .dupe .course-name{
+  background:var(--dark-red);
 }
 /* Create the checkmark/indicator (hidden when not checked) */
 #sortable-list .checkmark:after{
