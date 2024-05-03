@@ -214,21 +214,21 @@ document.addEventListener('DOMContentLoaded', function () {
       });
   });
 
-  // COLLAPSE ALL DESCRIPTIONS WHEN MODAL IS CLOSED
+  // COLLAPSE ALL DESCRIPTIONS WHEN ANY MODAL IS CLOSED
   const modals = document.querySelectorAll('.modal');
   modals.forEach(modal => {
       // Listen for the modal closing event
       modal.addEventListener('hide.bs.modal', function() {
-          // Find all expanded collapsible elements within this modal
-          const expandedItems = modal.querySelectorAll('.collapse.show');
+          // Find all expanded collapsible elements in any modal
+          const expandedItems = document.querySelectorAll('.modal .collapse.show');
           // Collapse each expanded item
           expandedItems.forEach(item => {
               const collapseInstance = new bootstrap.Collapse(item, {
                   toggle: false // This option disables toggling: it won't toggle to shown if it's already hidden
-            });
-            collapseInstance.hide(); // Explicitly hide the collapsible element
-        });
-    });
+              });
+              collapseInstance.hide(); // Explicitly hide the collapsible element
+          });
+      });
   });
 
 });
