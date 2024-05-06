@@ -37,6 +37,7 @@ a{
 }
 .ast-main-header-wrap{
   width:100% !important;
+  overflow-x:hidden;
 }
 .ast-below-header-bar .site-below-header-wrap{
   height:auto !important;
