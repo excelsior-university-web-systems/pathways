@@ -230,48 +230,79 @@ document.addEventListener('DOMContentLoaded', function () {
       });
   });
 
-  // DUPE NAVIGATION BUTTON
-    const dupeNotificationContainer = document.getElementById('dupe-notification');
-    if (dupeNotificationContainer) {
-        // Function to handle the setup of dupeLink when it's detected
-        function setupDupeLink() {
-            const dupeLink = document.getElementById('dupeLink');
-            if (dupeLink) {
-                dupeLink.onclick = function() {
-                    const dupes = document.querySelectorAll('.dupe');
-                    if (dupes.length > 0) {
-                        let found = false;
-                        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-                        for (let i = 0; i < dupes.length; i++) {
-                            const dupe = dupes[i];
-                            if (dupe.offsetTop > currentScroll) {
-                                dupe.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                                found = true;
-                                break;
+// DUPE NOTATION
+modals.forEach(modal => {
+    modal.addEventListener('hide.bs.modal', function() {
+        const courseIDs = document.querySelectorAll('.courseid');
+        const courses = Array.from(courseIDs);
+        let ids = courses.map(course => course.textContent.trim());
+
+        courses.forEach(course => {
+            course.closest('.course').classList.remove('dupe');
+        });
+        const dupeNotification = document.getElementById('dupe-notification');
+        if (dupeNotification) {
+            dupeNotification.innerHTML = ''; // Clear any previous notifications
+
+            ids.forEach((id, index) => {
+                if (ids.filter(x => x === id).length > 1) {
+                    courses.forEach((course, idx) => {
+                        if (course.textContent.trim() === id) {
+                            const courseElement = courses[idx].closest('.course');
+                            courseElement.classList.add('dupe');
+                            if (!dupeNotification.innerHTML) {
+                                dupeNotification.innerHTML = `<i class='dupe-alert fa-solid fa-circle-exclamation' title='This course already appears in your pathway.' aria-label='This course already appears in your pathway.' role='img'></i> Duplicate Courses Found in Pathway`;
                             }
                         }
-                        if (!found) {
-                            dupes[0].scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        }
-                    }
-                };
-                console.log("dupeLink button setup completed.");
-            }
-        }
-        // Create a MutationObserver to monitor changes in the container
-        const observer = new MutationObserver(function(mutations) {
-            mutations.forEach(function(mutation) {
-                if (mutation.type === 'childList') {
-                    // Check if dupeLink is added (or potentially removed and re-added)
-                    setupDupeLink();
+                    });
                 }
             });
+        } else {
+            console.error('Dupe notification element not found in the DOM.');
+        }
+        // Collapse expanded elements in any modal
+        const expandedItems = document.querySelectorAll('.modal .collapse.show');
+        expandedItems.forEach(item => {
+            const collapseInstance = new bootstrap.Collapse(item, {
+                toggle: false
+            });
+            collapseInstance.hide();
         });
-        // Configuration of the observer:
-        const config = { childList: true, subtree: true };
-        // Start observing the target node for configured mutations
-        observer.observe(dupeNotificationContainer, config);
-    }
+    });
+});
 
+
+  // DUPE NAVIGATION BUTTON
+  const dupeNotificationContainer = document.getElementById('dupe-notification');
+  if (dupeNotificationContainer) {
+      let currentIndex = 0; // To track the current index of the visible dupe
+      // Function to handle the setup of dupeLink when it's detected
+      function setupDupeLink() {
+          const dupeLink = document.getElementById('dupeLink');
+          if (dupeLink) {
+              dupeLink.onclick = function() {
+                  const dupes = document.querySelectorAll('.dupe');
+                  if (dupes.length > 0) {
+                      currentIndex = (currentIndex + 1) % dupes.length; // Move to the next dupe, wrap around to the first
+                      dupes[currentIndex].scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
+              };
+              console.log("dupeLink button setup completed.");
+          }
+      }
+      // Create a MutationObserver to monitor changes in the container
+      const observer = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+              if (mutation.type === 'childList') {
+                  // Check if dupeLink is added (or potentially removed and re-added)
+                  setupDupeLink();
+              }
+          });
+      });
+      // Configuration of the observer:
+      const config = { childList: true, subtree: true };
+      // Start observing the target node for configured mutations
+      observer.observe(dupeNotificationContainer, config);
+  }
 
 });
