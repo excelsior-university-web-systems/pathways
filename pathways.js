@@ -215,7 +215,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // COLLAPSE ALL DESCRIPTIONS WHEN MODAL IS CLOSED
-  const modals = document.querySelectorAll('.modal');\
+  const modals = document.querySelectorAll('.modal');
   modals.forEach(modal => {
       // Listen for the modal closing event using the correct event name in Bootstrap 5
       modal.addEventListener('hidden.bs.modal', function() {
