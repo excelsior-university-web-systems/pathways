@@ -241,12 +241,12 @@ h1, h2, .path-description{
 #sortable-list .dupe .course-name{
   background:var(--light-red) !important;
 }
-#sortable-list #dupeLink i {
+#dupeLink i {
   position:absolute;
   top:14px;
   color:var(--light-red);
 }
-#sortable-list #dupeLink span {
+#dupeLink span {
   margin-left:1.5em;
 }
 #sortable-list .options-list .dupe-alert{
