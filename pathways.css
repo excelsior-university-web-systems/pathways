@@ -241,7 +241,7 @@ h1, h2, .path-description{
   flex-wrap:wrap;
 }
 /* DUPES */
-#dupeLink {
+#dupeLink, #dupe-notification {
   height:100% !important;
 }
 #sortable-list .dupe .course-name{
