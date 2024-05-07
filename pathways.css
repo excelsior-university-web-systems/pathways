@@ -31,6 +31,10 @@ a{
 .text-green{
   color:var(--green);
 }
+/* TEMPORARY */
+.bpress-sidebar, .ast-below-header-wrap{
+  display:none;
+}
 /* PORTAL PAGE OVERRIDES */
 #wpadminbar{
   display:none !important;
