@@ -271,11 +271,10 @@ modals.forEach(modal => {
     });
 });
 
-
   // DUPE NAVIGATION BUTTON
   const dupeNotificationContainer = document.getElementById('dupe-notification');
   if (dupeNotificationContainer) {
-      let currentIndex = 0; // To track the current index of the visible dupe
+      let currentIndex = -1; // To track the current index of the visible dupe
       // Function to handle the setup of dupeLink when it's detected
       function setupDupeLink() {
           const dupeLink = document.getElementById('dupeLink');
