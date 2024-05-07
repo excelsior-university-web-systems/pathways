@@ -241,15 +241,15 @@ h1, h2, .path-description{
   flex-wrap:wrap;
 }
 /* COURSE OPTIONS/ALTERNATIVES MODAL STYLING */
-.dupe{
+#sortable-list .dupe .course-name{
   background:var(--light-red) !important;
 }
-#dupeLink i {
+#sortable-list #dupeLink i {
   position:absolute;
   top:14px;
   color:var(--light-red);
 }
-#dupeLink span {
+#sortable-list #dupeLink span {
   margin-left:1.5em;
 }
 #sortable-list .options-list .dupe-alert{
