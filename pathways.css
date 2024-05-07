@@ -240,6 +240,7 @@ h1, h2, .path-description{
 /* COURSE OPTIONS/ALTERNATIVES MODAL STYLING */
 #sortable-list .dupe .course-name{
   background:var(--light-red) !important;
+  color: white !important;
 }
 #dupeLink i {
   position:absolute !important;
