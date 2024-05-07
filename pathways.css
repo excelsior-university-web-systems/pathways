@@ -122,6 +122,10 @@ h1, h2, .path-description{
   margin:0;
 }
 /* NAVIGATION */
+#pathwaynav nav ul{
+  display:flex;
+  justify-content:space-between;
+}
 #pathwaynav ul li ul{
   display:none;
 }
@@ -135,6 +139,7 @@ h1, h2, .path-description{
   top:0;
   z-index:1;
   height:35px;
+  width:100%;
 }
 #pathwaycontainer .button, #jumpToYearContainer button, #toggleCourseVisibilityContainer label, #toggleCourseVisibility, #sortable-list .course label, #sortable-list .course button{
   cursor:pointer !important;
@@ -145,11 +150,12 @@ h1, h2, .path-description{
 #pathwaycontainer .sticky-shadow{
   box-shadow:0 8px 6px -6px black;
 }
-/* HIDE COMPLETED COURSES */
+/* HIDE COMPLETED COURSES 
 #toggleCourseVisibilityContainer, #jumpToYearContainer{
   float:right;
   position:relative;
-}
+} */
+
 /* JUMP TO YEAR */
 #jumpToYearContainer ul{
   display:none;
