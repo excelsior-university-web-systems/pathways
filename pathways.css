@@ -78,6 +78,9 @@ h1, h2, .path-description{
   #sortable-list .accordion{
     margin-left:30px !important;
   }
+  #dupeLink span{
+    display:none !important;
+  }
 }
 /* REQUIREMENTS */
 #sortable-list .requirement{
@@ -251,7 +254,7 @@ h1, h2, .path-description{
   color:var(--light-red) !important;
 }
 #dupeLink span {
-  margin-left:1.5em !important;
+  margin-left:1.25em !important;
 }
 #sortable-list .options-list .dupe-alert{
   position:absolute;
