@@ -215,20 +215,19 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // COLLAPSE ALL DESCRIPTIONS WHEN MODAL IS CLOSED
-  const modals = document.querySelectorAll('.modal');
+  const modals = document.querySelectorAll('.modal');\
   modals.forEach(modal => {
-      // Listen for the modal closing event
-      modal.addEventListener('hide.bs.modal', function() {
+      // Listen for the modal closing event using the correct event name in Bootstrap 5
+      modal.addEventListener('hidden.bs.modal', function() {
           // Find all expanded collapsible elements within this modal
           const expandedItems = modal.querySelectorAll('.collapse.show');
           // Collapse each expanded item
           expandedItems.forEach(item => {
-              const collapseInstance = new bootstrap.Collapse(item, {
+              new bootstrap.Collapse(item, {
                   toggle: false // This option disables toggling: it won't toggle to shown if it's already hidden
-            });
-            collapseInstance.hide(); // Explicitly hide the collapsible element
-        });
-    });
+              }).hide(); // Explicitly hide the collapsible element
+          });
+      });
   });
 
 });
