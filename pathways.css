@@ -238,6 +238,9 @@ h1, h2, .path-description{
   flex-wrap:wrap;
 }
 /* COURSE OPTIONS/ALTERNATIVES MODAL STYLING */
+#dupe-notification {
+  height:100% !important;
+}
 #sortable-list .dupe .course-name{
   background:var(--light-red) !important;
   color: white !important;
