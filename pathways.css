@@ -242,12 +242,12 @@ h1, h2, .path-description{
   background:var(--light-red) !important;
 }
 #dupeLink i {
-  position:absolute;
-  top:14px;
-  color:var(--light-red);
+  position:absolute !important;
+  top:14px !important;
+  color:var(--light-red) !important;
 }
 #dupeLink span {
-  margin-left:1.5em;
+  margin-left:1.5em !important;
 }
 #sortable-list .options-list .dupe-alert{
   position:absolute;
