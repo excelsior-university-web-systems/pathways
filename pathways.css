@@ -141,10 +141,7 @@ h1, h2, .path-description{
   height:35px;
   width:100%;
 }
-#pathwaycontainer .button, #jumpToYearContainer button, #toggleCourseVisibilityContainer label, #toggleCourseVisibility, #sortable-list .course label, #sortable-list .course button{
-  cursor:pointer !important;
-}
-#pathwaycontainer #resetPathway button{
+#pathwaycontainer #dupeLink, #pathwaycontainer #resetPathway button, #pathwaycontainer .button, #jumpToYearContainer button, #toggleCourseVisibilityContainer label, #toggleCourseVisibility, #sortable-list .course label, #sortable-list .course button{
   cursor:pointer !important;
 }
 #pathwaycontainer .sticky-shadow{
