@@ -240,8 +240,8 @@ h1, h2, .path-description{
   display:flex;
   flex-wrap:wrap;
 }
-/* COURSE OPTIONS/ALTERNATIVES MODAL STYLING */
-#dupe-notification {
+/* DUPES */
+#dupeLink {
   height:100% !important;
 }
 #sortable-list .dupe .course-name{
@@ -263,6 +263,7 @@ h1, h2, .path-description{
 #sortable-list .options-list .alert .dupe-alert{
   top:49px;
 }
+/* COURSE OPTIONS/ALTERNATIVES MODAL STYLING */
 #sortable-list .options-list .modal-content{
   max-height:80% !important;
 }
