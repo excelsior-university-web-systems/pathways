@@ -26,12 +26,13 @@
   cursor:not-allowed !important;
 }
 /* TEMPORARY */
-.bpress-sidebar, .ast-below-header-wrap{
+#wpadminbar, .bpress-sidebar, .ast-below-header-wrap{
   display:none;
 }
 /* PORTAL PAGE OVERRIDES */
 .ast-main-header-wrap{
   width:100% !important;
+  overflow-x:hidden;
 }
 .ast-below-header-bar .site-below-header-wrap{
   height:auto !important;
