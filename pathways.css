@@ -241,6 +241,9 @@ h1, h2, .path-description{
   flex-wrap:wrap;
 }
 /* COURSE OPTIONS/ALTERNATIVES MODAL STYLING */
+.dupe{
+  background:var(--light-red) !important;
+}
 #dupeLink i {
   position:absolute;
   top:14px;
