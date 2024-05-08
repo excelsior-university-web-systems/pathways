@@ -306,10 +306,13 @@ modals.forEach(modal => {
 
   // ADD/REMOVE YEARS 5-7 WITH TERMS
     const addYearButton = document.getElementById('addYear');
+    const removeYearButton = document.getElementById('removeYear');
     const sortableList = document.getElementById('sortable-list');
     let currentYear = 5; // Start from Year 5
     const maxYear = 7;
+    const minYear = 5; // Don't remove years less than 5
     const termsPerYear = 6;
+
     // Function to add a full year of terms
     function addYearTerms(year) {
         for (let term = 1; term <= termsPerYear; term++) {
@@ -322,15 +325,37 @@ modals.forEach(modal => {
             sortableList.appendChild(li);
         }
     }
+    // Function to remove a full year of terms
+    function removeYearTerms(year) {
+        for (let term = 1; term <= termsPerYear; term++) {
+            const li = document.getElementById(`year${year}term${term}`);
+            if (li) {
+                sortableList.removeChild(li);
+            }
+        }
+    }
+    // Function to update button states based on the current year
+    function updateButtonStates() {
+        addYearButton.disabled = (currentYear > maxYear);
+        removeYearButton.disabled = (currentYear <= minYear);
+    }
     // Click event to add 6 terms for each year
     addYearButton.addEventListener('click', function() {
         if (currentYear <= maxYear) {
             addYearTerms(currentYear);
             currentYear++; // Increment to the next year
-        } else {
-            alert("Maximum years added.");
+            updateButtonStates(); // Update button states
         }
     });
-
+    // Click event to remove the most recent year
+    removeYearButton.addEventListener('click', function() {
+        if (currentYear > minYear) {
+            currentYear--; // Decrement to the previous year
+            removeYearTerms(currentYear);
+            updateButtonStates(); // Update button states
+        }
+    });
+    // Initialize button states
+    updateButtonStates();
 
 });
