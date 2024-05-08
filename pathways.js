@@ -304,4 +304,33 @@ modals.forEach(modal => {
       observer.observe(dupeNotificationContainer, config);
   }
 
+  // ADD/REMOVE YEARS 5-7 WITH TERMS
+    const addYearButton = document.getElementById('addYear');
+    const sortableList = document.getElementById('sortable-list');
+    let currentYear = 5; // Start from Year 5
+    const maxYear = 7;
+    const termsPerYear = 6;
+    // Function to add a full year of terms
+    function addYearTerms(year) {
+        for (let term = 1; term <= termsPerYear; term++) {
+            const li = document.createElement('li');
+            li.className = 'term';
+            li.id = `year${year}term${term}`;
+            li.innerHTML = `Year ${year} - <strong>Term ${term}</strong>
+                <i class='fas fa-chevron-up'></i>
+                <i class='fas fa-chevron-down'></i>`;
+            sortableList.appendChild(li);
+        }
+    }
+    // Click event to add 6 terms for each year
+    addYearButton.addEventListener('click', function() {
+        if (currentYear <= maxYear) {
+            addYearTerms(currentYear);
+            currentYear++; // Increment to the next year
+        } else {
+            alert("Maximum years added.");
+        }
+    });
+
+
 });
