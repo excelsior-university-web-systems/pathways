@@ -308,12 +308,12 @@ modals.forEach(modal => {
     const addYearButton = document.getElementById('addYear');
     const removeYearButton = document.getElementById('removeYear');
     const sortableList = document.getElementById('sortable-list');
+    const yearList = document.getElementById('yearList');
     let currentYear = 5; // Start from Year 5
     const maxYear = 7;
     const minYear = 5; // Don't remove years less than 5
     const termsPerYear = 6;
-
-    // Function to add a full year of terms
+    // Function to add a full year of terms to the sortable-list
     function addYearTerms(year) {
         for (let term = 1; term <= termsPerYear; term++) {
             const li = document.createElement('li');
@@ -324,14 +324,27 @@ modals.forEach(modal => {
                 <i class='fas fa-chevron-down'></i>`;
             sortableList.appendChild(li);
         }
+        // Add corresponding year navigation link to yearList
+        const yearLi = document.createElement('li');
+        const yearLink = document.createElement('a');
+        yearLink.href = `#year${year}term1`;
+        yearLink.textContent = `Year ${year}`;
+        yearLi.appendChild(yearLink);
+        yearLi.id = `yearLink${year}`;
+        yearList.appendChild(yearLi);
     }
-    // Function to remove a full year of terms
+    // Function to remove a full year of terms from the sortable-list
     function removeYearTerms(year) {
         for (let term = 1; term <= termsPerYear; term++) {
             const li = document.getElementById(`year${year}term${term}`);
             if (li) {
                 sortableList.removeChild(li);
             }
+        }
+        // Remove corresponding year navigation link from yearList
+        const yearLi = document.getElementById(`yearLink${year}`);
+        if (yearLi) {
+            yearList.removeChild(yearLi);
         }
     }
     // Function to update button states based on the current year
@@ -357,5 +370,6 @@ modals.forEach(modal => {
     });
     // Initialize button states
     updateButtonStates();
+
 
 });
