@@ -103,3 +103,14 @@
 #sortable-list .prerequisites strong, #sortable-list .credit-hours strong{
   color:var(--green);
 }
+/* ICON ANIMATION */
+#sortable-list .accordion button .fa-plus{
+    transition:transform 0.3s ease-in-out;
+    transform:rotate(0deg);
+}
+#sortable-list .accordion button[aria-expanded="true"] .fa-plus{
+    transform:rotate(45deg);
+}
+#sortable-list .accordion button[aria-expanded="false"] .fa-plus{
+    transform:rotate(0deg);
+}
