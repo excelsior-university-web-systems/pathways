@@ -45,6 +45,9 @@
     padding-left:0;
     margin:0;
 }
+#pathwaycontainer ul li{
+    margin-top:0 !important;
+}
 /* COURSE STYLING */
 #sortable-list .course-name, #sortable-list .courseid{
     font-weight:bold;
@@ -77,4 +80,34 @@
 #sortable-list .course, #sortable-list label{
     display:flex;
     flex-wrap:wrap;
-}  
+} 
+#sortable-list .courseid{
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  min-width:105px;
+  padding:1em;
+}
+#sortable-list .course-name{
+  background:white;
+  padding:.5em;
+  line-height:1.25em;
+  display:flex;
+  align-items:center;
+  width:100%;
+  padding-right:40px !important;
+}
+/* COURSE DETAILS */
+#sortable-list .course-pre-cred{
+  display:flex;
+  margin-top:1em;
+}
+#sortable-list .prerequisites{
+  margin-right:3em;
+  max-width:60%;
+}
+#sortable-list .prerequisites strong, #sortable-list .credit-hours strong{
+  color:var(--green);
+}
