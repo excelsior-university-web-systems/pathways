@@ -155,7 +155,6 @@ h1, h2, .path-description{
   float:right;
   position:relative;
 } */
-
 /* JUMP TO YEAR */
 #jumpToYearContainer ul{
   display:none;
@@ -239,6 +238,24 @@ h1, h2, .path-description{
 #sortable-list .course, #sortable-list label{
   display:flex;
   flex-wrap:wrap;
+}
+#sortable-list .courseid{
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  min-width:105px;
+  padding:1em;
+}
+#sortable-list .course-name{
+  background:white;
+  padding:.5em;
+  line-height:1.25em;
+  display:flex;
+  align-items:center;
+  width:100%;
+  padding-right:40px !important;
 }
 /* DUPES */
 #dupeLink, #dupe-notification {
@@ -326,24 +343,6 @@ h1, h2, .path-description{
 }
 #sortable-list label{
   margin-left:40px;
-}
-#sortable-list .courseid{
-  color:white;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  min-width:105px;
-  padding:1em;
-}
-#sortable-list .course-name{
-  background:white;
-  padding:.5em;
-  line-height:1.25em;
-  display:flex;
-  align-items:center;
-  width:100%;
-  padding-right:40px !important;
 }
 /* COURSE DETAILS */
 #sortable-list .course-pre-cred{
