@@ -42,9 +42,6 @@
 #pathwaycontainer .accordion-body{
     background:white;padding:1em;
 }
-#sortable-list .accordion{
-    margin-left:45px;
-}
 #sortable-list .accordion-item button i{
     position:absolute;
     right:15px;
