@@ -1,19 +1,5 @@
-#sortable-list .accordion{
-    margin-left:15px !important;
-    margin-right:15px !important;
-}
-#sortable-list .course, #jumpToYearContainer ul li{
-    margin-top:0 !important;
-}#pathwaycontainer .term{
-    cursor:initial !important;
-}#pathwaycontainer strong{
+#pathwaycontainer strong{
     color:inherit !important;
-}#jumpToYearContainer{
-    margin-top:.25em !important;
-}#pathwaycontainer .accordion-body{
-    background:white;padding:1em;
-}h3{
-    width:600px;margin:0 auto .5em auto !important;
 }
 /* REQUIREMENTS */
 #sortable-list .requirement{
@@ -53,6 +39,9 @@
     font-weight:bold;
 }
 /* ACCORDION STYLING */
+#pathwaycontainer .accordion-body{
+    background:white;padding:1em;
+}
 #sortable-list .accordion{
     margin-left:45px;
 }
