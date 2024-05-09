@@ -1,0 +1,80 @@
+#sortable-list .accordion{
+    margin-left:15px !important;
+    margin-right:15px !important;
+}
+#sortable-list .course, #jumpToYearContainer ul li{
+    margin-top:0 !important;
+}#pathwaycontainer .term{
+    cursor:initial !important;
+}#pathwaycontainer strong{
+    color:inherit !important;
+}#jumpToYearContainer{
+    margin-top:.25em !important;
+}#pathwaycontainer .accordion-body{
+    background:white;padding:1em;
+}h3{
+    width:600px;margin:0 auto .5em auto !important;
+}
+/* REQUIREMENTS */
+#sortable-list .requirement{
+    width:fit-content;
+}
+.major, .english, .science, .elective{
+    background-image:linear-gradient(to left, var(--light-purple), var(--dark-purple));
+    color:white !important;
+}
+.major-elective, .humanities, .math{
+    background-image:linear-gradient(to left, var(--light-blue), var(--dark-blue));
+    color:white !important;
+}
+.prereq, .ethics, .science-or-math{
+    background-image:linear-gradient(to left, var(--light-red), var(--dark-red));
+    color:white !important;
+}
+.university, .history, .arts{
+    background-image:linear-gradient(to left, var(--light-green), var(--dark-green));
+    color:white !important;
+}
+.concentration{
+    background:var(--dark-purple);
+    color:white !important;
+}
+/* LIST */
+#pathwaycontainer ul{
+    list-style:none;
+    padding-left:0;
+    margin:0;
+}
+/* COURSE STYLING */
+#sortable-list .course-name, #sortable-list .courseid{
+    font-weight:bold;
+}
+/* ACCORDION STYLING */
+#sortable-list .accordion{
+    margin-left:45px;
+}
+#sortable-list .accordion-item button i{
+    position:absolute;
+    right:15px;
+    top:20px;
+}
+#sortable-list .accordion-item{
+    position:relative;
+}
+#sortable-list .accordion-button::after{
+    display:none;
+}
+#sortable-list .accordion, #sortable-list .accordion-item > button{
+    width:100% !important;
+}
+#sortable-list .course .accordion-button, #sortable-list .course .options{
+    display:flex;
+    align-self:flex-start !important;
+}
+#sortable-list .course label span:hover, #sortable-list .accordion:hover, #sortable-list .options:hover{
+    box-shadow:0 0 2px 1px var(--light-purple);
+}
+#sortable-list .course, #sortable-list label{
+    display:flex;
+    flex-wrap:wrap;
+}  
