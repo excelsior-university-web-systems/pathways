@@ -20,19 +20,27 @@ document.addEventListener('DOMContentLoaded', function() {
     // Create an object to hold each year's terms
     const years = {};
 
-    // Iterate through the items and group them by year
+    // Iterate through the items and group them by year and term
     listItems.forEach(item => {
         const match = item.id && item.id.match(yearTermPattern);
         if (match) {
             const year = `Year ${match[1]}`;
+            const term = `Term ${match[2]}`;
+
             if (!years[year]) {
-                years[year] = [];
+                years[year] = {};
             }
-            years[year].push(item);
-        } else {
+            if (!years[year][term]) {
+                years[year][term] = [];
+            }
+
+            years[year][term].push(item);
+        } else if (item.classList.contains('course')) {
+            // Place the course item in the last available year and term
             const lastYear = Object.keys(years).pop();
             if (lastYear) {
-                years[lastYear].push(item);
+                const lastTerm = Object.keys(years[lastYear]).pop();
+                years[lastYear][lastTerm].push(item);
             }
         }
     });
@@ -45,12 +53,16 @@ document.addEventListener('DOMContentLoaded', function() {
         const div = document.createElement('div');
         div.className = `year-container ${year.toLowerCase().replace(' ', '-')}`;
 
-        const ul = document.createElement('ul');
-        ul.className = `year-list ${year.toLowerCase().replace(' ', '-')}`;
+        Object.keys(years[year]).forEach(term => {
+            const ul = document.createElement('ul');
+            ul.className = `year-list ${year.toLowerCase().replace(' ', '-')} ${term.toLowerCase().replace(' ', '-')}`;
+            ul.innerHTML = `<li class='year-title'>${year} - ${term}</li>`;
 
-        years[year].forEach(item => ul.appendChild(item));
+            years[year][term].forEach(item => ul.appendChild(item));
 
-        div.appendChild(ul);
+            div.appendChild(ul);
+        });
+
         groupedContainer.appendChild(div);
     });
 
