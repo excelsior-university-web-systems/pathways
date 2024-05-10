@@ -249,7 +249,7 @@ h1, h2, .path-description{
   padding:1em;
 }
 #sortable-list .course-name{
-  /*background:white;*/
+  background:white;
   padding:.5em;
   line-height:1.25em;
   display:flex;
