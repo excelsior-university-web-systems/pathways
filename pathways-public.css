@@ -51,11 +51,17 @@
 #pathwaycontainer ul li{
     margin-top:0 !important;
 }
-/* COURSE STYLING */
+/* FONTS */
 #pathwaycontainer .course-name, #pathwaycontainer .courseid{
     font-weight:bold;
 }
 /* COURSE ACCORDION STYLING */
+#pathwaycontainer .accordion{
+    border:none;
+}
+#pathwaycontainer .accordion-button{
+    background:white;
+}
 #pathwaycontainer .course:first-of-type{
     margin-bottom:.5em;
 }
