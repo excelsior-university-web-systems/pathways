@@ -51,6 +51,9 @@
 #pathwaycontainer ul li{
     margin-top:0 !important;
 }
+#pathwaycontainer .courseid{
+    margin-left:-4px;
+}
 /* FONTS */
 #pathwaycontainer .course-name, #pathwaycontainer .courseid{
     font-weight:bold;
