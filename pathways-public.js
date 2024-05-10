@@ -43,18 +43,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Function to safely get or create an `ul` list within an accordion body
     function getOrCreateYearAccordionBody(year) {
-        const accordionBodyId = `accordion${year.replace(' ', '')}`;
-        const accordionBody = document.getElementById(accordionBodyId);
-        if (accordionBody) {
-            let yearUl = accordionBody.querySelector('ul');
-            if (!yearUl) {
-                yearUl = document.createElement('ul');
-                yearUl.className = `year-container ${year.toLowerCase().replace(' ', '-')}`;
-                accordionBody.appendChild(yearUl);
+        const accordionId = `accordion${year.replace(' ', '')}`;
+        const accordionParent = document.getElementById(accordionId);
+        if (accordionParent) {
+            let accordionBody = accordionParent.querySelector('.accordion-body');
+            if (accordionBody) {
+                let yearUl = accordionBody.querySelector('ul');
+                if (!yearUl) {
+                    yearUl = document.createElement('ul');
+                    yearUl.className = `year-container ${year.toLowerCase().replace(' ', '-')}`;
+                    accordionBody.appendChild(yearUl);
+                }
+                return yearUl;
+            } else {
+                console.error(`Accordion body not found within ${accordionId}`);
+                return null;
             }
-            return yearUl;
         } else {
-            console.error(`Accordion body for ${year} not found.`);
+            console.error(`Accordion parent ${accordionId} not found.`);
             return null;
         }
     }
