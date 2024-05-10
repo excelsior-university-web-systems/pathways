@@ -54,9 +54,6 @@ document.addEventListener('DOMContentLoaded', function() {
         yearDiv.className = `year-container ${year.toLowerCase().replace(' ', '-')}`;
 
         Object.keys(years[year]).forEach(term => {
-            const termLi = document.createElement('li');
-            termLi.className = `term ${year.toLowerCase().replace(' ', '-')} ${term.toLowerCase().replace(' ', '-')}`;
-            termLi.innerHTML = `${year} - <strong>${term}</strong>`;
 
             const courseUl = document.createElement('ul');
             courseUl.className = `course-list ${year.toLowerCase().replace(' ', '-')} ${term.toLowerCase().replace(' ', '-')}`;
