@@ -48,7 +48,10 @@
 #pathwaycontainer .course-name, #pathwaycontainer .courseid{
     font-weight:bold;
 }
-/* ACCORDION STYLING */
+/* COURSE ACCORDION STYLING */
+#pathwaycontainer .course:first-of-type{
+    margin-bottom:.5em;
+}
 #pathwaycontainer .accordion-body{
     background:white;padding:1em;
 }
