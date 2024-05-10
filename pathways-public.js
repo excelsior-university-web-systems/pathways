@@ -45,9 +45,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Clear the sortable list
-    sortableList.innerHTML = '';
-
     // Create a new ul for each year, and append terms and courses
     Object.keys(years).forEach(year => {
         const yearUl = document.createElement('ul');
@@ -64,8 +61,6 @@ document.addEventListener('DOMContentLoaded', function() {
             years[year][term].forEach(item => {
                 if (item.classList.contains('course')) {
                     courseUl.appendChild(item);
-                } else {
-                    termLi.appendChild(item);
                 }
             });
 
@@ -78,4 +73,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Append the grouped container after the sortable list
     pathwayContainer.appendChild(groupedContainer);
+
+    // Clear the original sortable list and remove all term elements matching the pattern
+    Array.from(sortableList.children).forEach(item => {
+        const match = item.id && item.id.match(yearTermPattern);
+        if (match) {
+            item.remove();
+        }
+    });
 });
