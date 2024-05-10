@@ -124,4 +124,5 @@
 }
 #pathwaycontainer .year-container-shell .accordion-item button{
     background:var(--dark-purple);
+    color:white;
 }
