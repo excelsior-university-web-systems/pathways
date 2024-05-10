@@ -57,7 +57,7 @@
 }
 /* COURSE ACCORDION STYLING */
 #pathwaycontainer .accordion{
-    border:none;
+    border:none !important;
 }
 #pathwaycontainer .accordion-button{
     background:white;
