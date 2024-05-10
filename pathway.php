@@ -1,6 +1,6 @@
 function add_pathway_files(){
     global $post;
-    if (is_singular('knowledgebase') && isset($post) && $post->ID == 947) {
+    if (is_single('degree-pathway') || is_page('review')) {
 		wp_enqueue_script('sortable-js', 'https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.2/Sortable.min.js', array(), null, true);
 		wp_enqueue_script('bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js', array(), null, true);
 		wp_enqueue_style('bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css', array(), null, 'all');
@@ -10,7 +10,9 @@ function add_pathway_files(){
     }
 }
 add_action('wp_enqueue_scripts', 'add_pathway_files');
-// This code snippet creates a shortcode [educational_pathway]. When placed on a page, it will render the pathway UI.
+
+// This code snippet creates a shortcode [degree_pathway]. When placed on a page, it will render the pathway UI.
+
 // Function to fetch alternative courses for a given requirement_id
 function fetch_alternative_courses($requirement_id, $pathway_id) {
     global $wpdb;
@@ -25,37 +27,48 @@ function fetch_alternative_courses($requirement_id, $pathway_id) {
     );
     return $wpdb->get_results($query);
 }
-// Main function to generate educational pathway
-function generate_educational_pathway() {
+// Main function to generate degree pathway
+function generate_degree_pathway() {
     global $wpdb;
     $prefix = 'pathways_';
-	$data = call_sis_api();
-    $combination_id = $data['mapDegrees'][0]['programCombinationIdSeq'] ?? null;
-    $audit_id = $data['mapDegrees'][0]['auditDegreeIdSeq'] ?? null;		
-    $degree_name = htmlspecialchars($data['mapDegrees'][0]['programName'] ?? 'Not available');
-	echo '<script>console.log("Combination ID: ' . $combination_id . '");
-		console.log("Audit ID: ' . $audit_id . '");</script>';
-    // Prepare the SQL query to avoid SQL injection
-    $query = $wpdb->prepare(
-        "SELECT pathway_id FROM {$prefix}pathway WHERE pathway_combination = $combination_id AND pathway_audit = $audit_id",
-    );
+
+	if(is_single('degree-pathway')) {
+		$data = call_sis_api();
+	    $combination_id = $data['mapDegrees'][0]['programCombinationIdSeq'] ?? null;
+	   	$audit_id = $data['mapDegrees'][0]['auditDegreeIdSeq'] ?? null;
+	   	$degree_name = htmlspecialchars($data['mapDegrees'][0]['programName'] ?? 'Not available');
+		// Prepare the SQL query
+		$query = $wpdb->prepare(
+			"SELECT pathway_id FROM {$prefix}pathway WHERE pathway_combination = $combination_id AND pathway_audit = $audit_id AND pathway_publish = 'Y'",
+		);		
+	}
+	if(is_page('review')) {
+	   	$combination_id = sanitize_text_field($_GET['combination']);
+		$audit_id = sanitize_text_field($_GET['audit']);
+		$degree_name = sanitize_text_field($_GET['degree']);
+		$published = sanitize_text_field($_GET['publish']);
+		// Prepare the SQL query
+		$query = $wpdb->prepare(
+			"SELECT pathway_id FROM {$prefix}pathway WHERE pathway_combination = $combination_id AND pathway_audit = $audit_id",
+		);				
+	}	
+
     // Execute the query
     $pathway_id = $wpdb->get_var($query);
-	echo '<script>console.log("Pathway ID: ' . $pathway_id . '");</script>';
-	
 	if (!$pathway_id) {
-		echo "No pathway found for the combination (" . $combination_id . ") and audit (" . $audit_id . ") IDs.";
-		// return;
-	}	
-	$query = "
-		SELECT pc.course_id, pc.course_number, pc.course_title, pc.course_description, pc.course_hours, pc.course_prereqs, pcl.year, pcl.term, pr.requirement_id, pr.requirement_name, pr.requirement_identifier
-        FROM {$prefix}courses AS pc
-        INNER JOIN {$prefix}course_link AS pcl ON pc.course_id = pcl.course_id
-        INNER JOIN {$prefix}requirements AS pr ON pcl.requirement_id = pr.requirement_id
-        WHERE pcl.pathway_id = %d
-        ORDER BY pcl.year, pcl.term_order, pcl.course_id;
-    ";
-	$results = $wpdb->get_results($wpdb->prepare($query, $pathway_id));
+		echo "<div class='alert alert-danger mt-5 text-center'><p><strong>This pathway is currently unavailable. Please contact your advisor.</strong></p><p>Reference: combination ID (" . $combination_id . ") and audit ID (" . $audit_id . ").</p></div><style>h1{display:none !important;}</style>";
+	} else {
+
+		$query = "
+			SELECT pc.course_id, pc.course_number, pc.course_title, pc.course_description, pc.course_hours, pc.course_prereqs, pcl.year, pcl.term, pr.requirement_id, pr.requirement_name, pr.requirement_identifier
+			FROM {$prefix}courses AS pc
+			INNER JOIN {$prefix}course_link AS pcl ON pc.course_id = pcl.course_id
+			INNER JOIN {$prefix}requirements AS pr ON pcl.requirement_id = pr.requirement_id
+			WHERE pcl.pathway_id = %d
+			ORDER BY pcl.year, pcl.term_order, pcl.course_id;
+		";
+		$results = $wpdb->get_results($wpdb->prepare($query, $pathway_id));
+	
 	echo "<h2 class='mt-0'>$degree_name</h2>
 		<p class='path-description pb-2'>Drag term bars between courses to customize your pathway.</p>
 		<div id='pathwaycontainer'>
@@ -64,21 +77,25 @@ function generate_educational_pathway() {
      				 <ul>
         				<li id='jumpToYearContainer'>
 							<button aria-haspopup='true' aria-expanded='false'>Jump to Year</button>
-							<ul>
+							<ul id='yearList'>
             					<li><a href='#year1term1'>Year 1</a></li>
             					<li><a href='#year2term1'>Year 2</a></li>
             					<li><a href='#year3term1'>Year 3</a></li>
             					<li><a href='#year4term1'>Year 4</a></li> 
           					</ul>
        					 </li>
-        			<li id='toggleCourseVisibilityContainer'>
-          				<input id='toggleCourseVisibility' type='checkbox' name='toggleCourseVisibility' aria-checked='false'>
-         				<label for='toggleCourseVisibility'><span id='toggleLabel'>Hide Completed </span><span id='hiddenCourseCount' aria-live='polite'></span>
-						</label>
-        			</li>
-      			</ul>
-    		</nav>
-  		</div>
+						 <li>
+                			<div id='dupe-notification' role='status' aria-live='polite'>
+							</div>
+						</li>
+						<li id='toggleCourseVisibilityContainer'>
+							<input id='toggleCourseVisibility' type='checkbox' name='toggleCourseVisibility' aria-checked='false'>
+							<label for='toggleCourseVisibility'><span id='toggleLabel'>Hide Completed </span><span id='hiddenCourseCount' aria-live='polite'></span>
+							</label>
+						</li>
+					</ul>
+				</nav>
+			</div>
 		<ul id='sortable-list'>
 		";
 	$current_term = null;
@@ -151,11 +168,11 @@ function generate_educational_pathway() {
 									</button>
 								</div>
 							<div class='modal-body'>
-								<strong>Click on a course to replace your current selection. <span class='options-count'></span></strong>
-								</br>
+								<p><strong>Click on a course to replace your current selection. <span class='options-count'></span></strong></p>
+								<p><i class='fa-solid fa-circle-exclamation' title='This icon indicates that this course already appears in your pathway.' aria-label='Indicates that this course already appears in your pathway.' role='img'></i> This icon denotes courses that already appear in your pathway.</p>
 							<ul class='options-list'>
 								<li aria-live='polite'>
-									<div class='alert alert-success mb-0 mt-2'>
+									<div class='alert alert-success mb-0'>
 										<h4 class='m-0 text-green'>Recommended Course</h4>
 										<div class='options-container'>
 											<button type='button' class='option-course'><span>{$course->course_number}</span> &nbsp;|&nbsp; <span>{$course->course_title}</span></button>
@@ -215,8 +232,10 @@ function generate_educational_pathway() {
         }
         echo "
 		<!-- Pathway Reset Switch -->
-		<div class='w-100 text-center'>
+		<div class='w-100 text-center d-flex justify-content-around'>
 			<button class='button' type='button' data-bs-toggle='modal' data-bs-target='#resetPathway' aria-controls='resetPathway'><strong>Reset Pathway</strong></button>
+			<button id='addYear' type='button' class='button' aria-label='Add Year'><strong>Add Year</strong></button>
+			<button id='removeYear' type='button' class='button' aria-label='Remove Year'><strong>Remove Year</strong></button>
 		</div>
 		<div class='modal fade' id='resetPathway' tabindex='-1' aria-labelledby='resetPathwayLabel' aria-modal='true' role='dialog'>
 			<div class='modal-dialog modal-dialog-centered modal-dialog-scrollable' role='document'>
@@ -236,18 +255,18 @@ function generate_educational_pathway() {
 					</div>
 				</div>
 				<div class='modal-footer'>
-				<button class='close' type='button' class='button' data-bs-dismiss='modal' aria-label='Close'>Close</button>
+				<button type='button' data-bs-dismiss='modal' aria-label='Close'><strong>Close</strong></button>
 				</div>
 				</div>
 			</div>
 		</div>
-
 		</div>";
-    }
+	}
+}
 // Shortcode integration
-function educational_pathway_shortcode($atts) {
+function degree_pathway_shortcode($atts) {
     ob_start();
-    generate_educational_pathway();
+   	generate_degree_pathway();
     return ob_get_clean();
 }
-add_shortcode('educational_pathway', 'educational_pathway_shortcode');
+add_shortcode('degree_pathway', 'degree_pathway_shortcode');
