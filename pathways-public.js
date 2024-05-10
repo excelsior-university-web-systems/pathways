@@ -48,12 +48,15 @@ document.addEventListener('DOMContentLoaded', function() {
     // Clear the sortable list
     sortableList.innerHTML = '';
 
-    // Create a new div and ul for each year, and append to the grouped container
+    // Create a new ul for each year, and append terms and courses
     Object.keys(years).forEach(year => {
-        const yearDiv = document.createElement('ul');
-        yearDiv.className = `year-container ${year.toLowerCase().replace(' ', '-')}`;
+        const yearUl = document.createElement('ul');
+        yearUl.className = `year-container ${year.toLowerCase().replace(' ', '-')}`;
 
         Object.keys(years[year]).forEach(term => {
+            const termLi = document.createElement('li');
+            termLi.className = `term ${year.toLowerCase().replace(' ', '-')} ${term.toLowerCase().replace(' ', '-')}`;
+            termLi.innerHTML = `${year} - <strong>${term}</strong>`;
 
             const courseUl = document.createElement('ul');
             courseUl.className = `course-list ${year.toLowerCase().replace(' ', '-')} ${term.toLowerCase().replace(' ', '-')}`;
@@ -67,10 +70,10 @@ document.addEventListener('DOMContentLoaded', function() {
             });
 
             termLi.appendChild(courseUl);
-            yearDiv.appendChild(termLi);
+            yearUl.appendChild(termLi);
         });
 
-        groupedContainer.appendChild(yearDiv);
+        groupedContainer.appendChild(yearUl);
     });
 
     // Append the grouped container after the sortable list
