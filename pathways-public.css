@@ -122,7 +122,7 @@
   max-width:60%;
 }
 #pathwaycontainer .prerequisites strong, #pathwaycontainer .credit-hours strong{
-  color:var(--green);
+  color:var(--green) !important;
 }
 /* ICON ANIMATION */
 #pathwaycontainer .accordion button .fa-plus{
@@ -144,5 +144,6 @@
     color:white;
 }
 #pathwaycontainer .year-container-shell > .accordion-item > button > i{
-    top:8px !important;
+    top:6px !important;
+    right:9px !important;
 }
