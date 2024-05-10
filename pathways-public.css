@@ -119,6 +119,9 @@
     transform:rotate(0deg);
 }
 /* YEAR CONTAINERS */
+#pathwaycontainer .year-container-shell{
+    margin-top:1em;
+}
 #pathwaycontainer .year-container-shell i{
     top:8px !important;
 }
