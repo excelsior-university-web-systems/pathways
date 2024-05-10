@@ -108,6 +108,9 @@
   color:var(--green);
 }
 /* ICON ANIMATION */
+#pathwaycontainer .year-container-shell i{
+    top:8px !important;
+}
 #pathwaycontainer .accordion button .fa-plus{
     transition:transform 0.3s ease-in-out;
     transform:rotate(0deg);
