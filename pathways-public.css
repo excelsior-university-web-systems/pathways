@@ -102,6 +102,7 @@
   line-height:1.25em;
   display:flex;
   align-items:center;
+  text-align:left;
   width:100%;
   padding-right:40px !important;
 }
@@ -132,10 +133,10 @@
 #pathwaycontainer .year-container-shell{
     margin-top:1em;
 }
-#pathwaycontainer .year-container-shell i{
-    top:8px !important;
-}
 #pathwaycontainer .year-container-shell .accordion-item button{
     background:var(--dark-purple);
     color:white;
+}
+#pathwaycontainer .year-container-shell > .accordion-item > button > i{
+    top:8px !important;
 }
