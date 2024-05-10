@@ -10,6 +10,11 @@
         gap:1.5em;
     }
 }
+@media only screen and (max-width: 989px) {
+    #pathwaycontainer .term:not(:first-of-type){
+        padding-top:1em;
+    }
+}
 #pathwaycontainer strong{
     color:inherit !important;
 }
