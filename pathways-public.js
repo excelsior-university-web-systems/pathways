@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Create a new div and ul for each year, and append to the grouped container
     Object.keys(years).forEach(year => {
-        const yearDiv = document.createElement('div');
+        const yearDiv = document.createElement('ul');
         yearDiv.className = `year-container ${year.toLowerCase().replace(' ', '-')}`;
 
         Object.keys(years[year]).forEach(term => {
