@@ -133,7 +133,7 @@
 #pathwaycontainer .year-container-shell{
     margin-top:1em;
 }
-#pathwaycontainer .year-container-shell .accordion-item button{
+#pathwaycontainer .year-container-shell > .accordion-item  > button{
     background:var(--dark-purple);
     color:white;
 }
