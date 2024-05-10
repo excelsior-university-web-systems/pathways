@@ -47,7 +47,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const ul = document.createElement('ul');
         ul.className = `year-list ${year.toLowerCase().replace(' ', '-')}`;
-        ul.innerHTML = `<li class='year-title'>${year}</li>`;
 
         years[year].forEach(item => ul.appendChild(item));
 
