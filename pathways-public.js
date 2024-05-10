@@ -50,20 +50,30 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Create a new div and ul for each year, and append to the grouped container
     Object.keys(years).forEach(year => {
-        const div = document.createElement('div');
-        div.className = `year-container ${year.toLowerCase().replace(' ', '-')}`;
+        const yearDiv = document.createElement('div');
+        yearDiv.className = `year-container ${year.toLowerCase().replace(' ', '-')}`;
 
         Object.keys(years[year]).forEach(term => {
-            const ul = document.createElement('ul');
-            ul.className = `year-list ${year.toLowerCase().replace(' ', '-')} ${term.toLowerCase().replace(' ', '-')}`;
-            ul.innerHTML = `<li class='year-title'>${year} - ${term}</li>`;
+            const termLi = document.createElement('li');
+            termLi.className = `term ${year.toLowerCase().replace(' ', '-')} ${term.toLowerCase().replace(' ', '-')}`;
+            termLi.innerHTML = `${year} - <strong>${term}</strong>`;
 
-            years[year][term].forEach(item => ul.appendChild(item));
+            const courseUl = document.createElement('ul');
+            courseUl.className = `course-list ${year.toLowerCase().replace(' ', '-')} ${term.toLowerCase().replace(' ', '-')}`;
 
-            div.appendChild(ul);
+            years[year][term].forEach(item => {
+                if (item.classList.contains('course')) {
+                    courseUl.appendChild(item);
+                } else {
+                    termLi.appendChild(item);
+                }
+            });
+
+            termLi.appendChild(courseUl);
+            yearDiv.appendChild(termLi);
         });
 
-        groupedContainer.appendChild(div);
+        groupedContainer.appendChild(yearDiv);
     });
 
     // Append the grouped container after the sortable list
