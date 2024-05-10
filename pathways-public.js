@@ -7,6 +7,10 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
 
+    // Create a container for all the year groups
+    const groupedContainer = document.createElement('div');
+    groupedContainer.id = 'year-groups';
+
     // Retrieve all the list items from the sortable list
     const listItems = Array.from(sortableList.children);
 
@@ -36,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Clear the sortable list
     sortableList.innerHTML = '';
 
-    // Create a new div and ul for each year, and append to the sortable list
+    // Create a new div and ul for each year, and append to the grouped container
     Object.keys(years).forEach(year => {
         const div = document.createElement('div');
         div.className = `year-container ${year.toLowerCase().replace(' ', '-')}`;
@@ -48,6 +52,9 @@ document.addEventListener('DOMContentLoaded', function() {
         years[year].forEach(item => ul.appendChild(item));
 
         div.appendChild(ul);
-        sortableList.appendChild(div);
+        groupedContainer.appendChild(div);
     });
+
+    // Append the grouped container after the sortable list
+    pathwayContainer.appendChild(groupedContainer);
 });
