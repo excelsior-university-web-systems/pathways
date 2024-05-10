@@ -7,10 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
 
-    // Create a container for all the year groups
-    const groupedContainer = document.createElement('div');
-    groupedContainer.id = 'year-groups';
-
     // Retrieve all the list items from the sortable list
     const listItems = Array.from(sortableList.children);
 
@@ -45,34 +41,47 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Create a new ul for each year, and append terms and courses
+    // Function to safely get or create an `ul` list within an accordion body
+    function getOrCreateYearAccordionBody(year) {
+        const accordionBodyId = `accordion${year.replace(' ', '')}`;
+        const accordionBody = document.getElementById(accordionBodyId);
+        if (accordionBody) {
+            let yearUl = accordionBody.querySelector('ul');
+            if (!yearUl) {
+                yearUl = document.createElement('ul');
+                yearUl.className = `year-container ${year.toLowerCase().replace(' ', '-')}`;
+                accordionBody.appendChild(yearUl);
+            }
+            return yearUl;
+        } else {
+            console.error(`Accordion body for ${year} not found.`);
+            return null;
+        }
+    }
+
+    // Create and append each year and its terms/courses into the corresponding accordion body
     Object.keys(years).forEach(year => {
-        const yearUl = document.createElement('ul');
-        yearUl.className = `year-container ${year.toLowerCase().replace(' ', '-')}`;
+        const yearUl = getOrCreateYearAccordionBody(year);
+        if (yearUl) {
+            Object.keys(years[year]).forEach(term => {
+                const termLi = document.createElement('li');
+                termLi.className = `term ${year.toLowerCase().replace(' ', '-')} ${term.toLowerCase().replace(' ', '-')}`;
+                termLi.innerHTML = `${year} - <strong>${term}</strong>`;
 
-        Object.keys(years[year]).forEach(term => {
-            const termLi = document.createElement('li');
-            termLi.className = `term ${year.toLowerCase().replace(' ', '-')} ${term.toLowerCase().replace(' ', '-')}`;
-            termLi.innerHTML = `${year} - <strong>${term}</strong>`;
+                const courseUl = document.createElement('ul');
+                courseUl.className = `course-list ${year.toLowerCase().replace(' ', '-')} ${term.toLowerCase().replace(' ', '-')}`;
 
-            const courseUl = document.createElement('ul');
-            courseUl.className = `course-list ${year.toLowerCase().replace(' ', '-')} ${term.toLowerCase().replace(' ', '-')}`;
+                years[year][term].forEach(item => {
+                    if (item.classList.contains('course')) {
+                        courseUl.appendChild(item);
+                    }
+                });
 
-            years[year][term].forEach(item => {
-                if (item.classList.contains('course')) {
-                    courseUl.appendChild(item);
-                }
+                termLi.appendChild(courseUl);
+                yearUl.appendChild(termLi);
             });
-
-            termLi.appendChild(courseUl);
-            yearUl.appendChild(termLi);
-        });
-
-        groupedContainer.appendChild(yearUl);
+        }
     });
-
-    // Append the grouped container after the sortable list
-    pathwayContainer.appendChild(groupedContainer);
 
     // Clear the original sortable list and remove all term elements matching the pattern
     Array.from(sortableList.children).forEach(item => {
