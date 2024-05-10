@@ -8,7 +8,7 @@
     color:inherit !important;
 }
 /* REQUIREMENTS */
-#sortable-list .requirement{
+#pathwaycontainer .requirement{
     width:fit-content;
 }
 .major, .english, .science, .elective{
@@ -41,39 +41,39 @@
     margin-top:0 !important;
 }
 /* COURSE STYLING */
-#sortable-list .course-name, #sortable-list .courseid{
+#pathwaycontainer .course-name, #pathwaycontainer .courseid{
     font-weight:bold;
 }
 /* ACCORDION STYLING */
 #pathwaycontainer .accordion-body{
     background:white;padding:1em;
 }
-#sortable-list .accordion-item button i{
+#pathwaycontainer .accordion-item button i{
     position:absolute;
     right:15px;
     top:20px;
 }
-#sortable-list .accordion-item{
+#pathwaycontainer .accordion-item{
     position:relative;
 }
-#sortable-list .accordion-button::after{
+#pathwaycontainer .accordion-button::after{
     display:none;
 }
-#sortable-list .accordion, #sortable-list .accordion-item > button{
+#pathwaycontainer .accordion, #pathwaycontainer .accordion-item > button{
     width:100% !important;
 }
-#sortable-list .course .accordion-button, #sortable-list .course .options{
+#pathwaycontainer .course .accordion-button, #pathwaycontainer .course .options{
     display:flex;
     align-self:flex-start !important;
 }
-#sortable-list .course label span:hover, #sortable-list .accordion:hover, #sortable-list .options:hover{
+#pathwaycontainer .course label span:hover, #pathwaycontainer .accordion:hover, #pathwaycontainer .options:hover{
     box-shadow:0 0 2px 1px var(--light-purple);
 }
-#sortable-list .course, #sortable-list label{
+#pathwaycontainer .course, #pathwaycontainer label{
     display:flex;
     flex-wrap:wrap;
 } 
-#sortable-list .courseid{
+#pathwaycontainer .courseid{
   color:white;
   display:flex;
   align-items:center;
@@ -82,7 +82,7 @@
   min-width:105px;
   padding:1em;
 }
-#sortable-list .course-name{
+#pathwaycontainer .course-name{
   background:white;
   padding:.5em;
   line-height:1.25em;
@@ -92,25 +92,25 @@
   padding-right:40px !important;
 }
 /* COURSE DETAILS */
-#sortable-list .course-pre-cred{
+#pathwaycontainer .course-pre-cred{
   display:flex;
   margin-top:1em;
 }
-#sortable-list .prerequisites{
+#pathwaycontainer .prerequisites{
   margin-right:3em;
   max-width:60%;
 }
-#sortable-list .prerequisites strong, #sortable-list .credit-hours strong{
+#pathwaycontainer .prerequisites strong, #pathwaycontainer .credit-hours strong{
   color:var(--green);
 }
 /* ICON ANIMATION */
-#sortable-list .accordion button .fa-plus{
+#pathwaycontainer .accordion button .fa-plus{
     transition:transform 0.3s ease-in-out;
     transform:rotate(0deg);
 }
-#sortable-list .accordion button[aria-expanded="true"] .fa-plus{
+#pathwaycontainer .accordion button[aria-expanded="true"] .fa-plus{
     transform:rotate(45deg);
 }
-#sortable-list .accordion button[aria-expanded="false"] .fa-plus{
+#pathwaycontainer .accordion button[aria-expanded="false"] .fa-plus{
     transform:rotate(0deg);
 }
