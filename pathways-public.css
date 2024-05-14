@@ -22,25 +22,23 @@
 #pathwaycontainer .requirement{
     width:fit-content;
 }
-.major, .english, .science, .elective{
-    background-image:linear-gradient(to left, var(--light-purple), var(--dark-purple));
-    color:white !important;
-}
-.major-elective, .humanities, .math{
-    background-image:linear-gradient(to left, var(--light-blue), var(--dark-blue));
-    color:white !important;
-}
-.prereq, .ethics, .science-or-math{
-    background-image:linear-gradient(to left, var(--light-red), var(--dark-red));
-    color:white !important;
-}
-.university, .history, .arts{
-    background-image:linear-gradient(to left, var(--light-green), var(--dark-green));
-    color:white !important;
-}
 .concentration{
-    background:var(--dark-purple);
-    color:white !important;
+	background:var(--dark-purple);
+}
+.prereq{
+	background:orange;
+}
+.university{
+	background-image:linear-gradient(to left, var(--light-red), var(--dark-red));
+}
+.major, .major-elective{
+	background-image:linear-gradient(to left, var(--light-purple), var(--dark-purple));
+}
+.arts, .elective, .free-elective{
+	background-image:linear-gradient(to left, var(--light-green), var(--dark-green));
+}
+.english, .humanities, .ethics, .history, .science, .math, .science-or-math{
+	background-image:linear-gradient(to left, var(--light-blue), var(--dark-blue));
 }
 /* LIST */
 #pathwaycontainer ul{
