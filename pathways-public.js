@@ -96,4 +96,31 @@ document.addEventListener('DOMContentLoaded', function() {
             item.remove();
         }
     });
+
+// DYNAMICALLY LOAD PATHWAY SHORTCODE 
+    // Handle click event on the container element
+    $('#accordionPathway .accordion-button').on('click', function() {
+        // Get the combination_id and audit_id values (you can customize this as needed)
+        var combination_id = 'example_combination_id';
+        var audit_id = 'example_audit_id';
+        // Make AJAX request to load the shortcode content
+        $.ajax({
+            url: '<?php echo admin_url('admin-ajax.php'); ?>',
+            type: 'post',
+            data: {
+                action: 'load_degree_pathway',
+                nonce: '<?php echo wp_create_nonce('load_degree_pathway_nonce'); ?>',
+                combination_id: combination_id,
+                audit_id: audit_id
+            },
+            success: function(response) {
+                // Insert the response (shortcode output) into the container
+                $('#pathway').html(response);
+            },
+            error: function(xhr, status, error) {
+                console.error('AJAX error:', status, error);
+            }
+        });
+    });
+
 });
