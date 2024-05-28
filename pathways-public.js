@@ -97,12 +97,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-// DYNAMICALLY LOAD PATHWAY SHORTCODE 
+});
+// HANDLE DYNAMIC SHORTCODE
+jQuery(document).ready(function($) {
     // Handle click event on the container element
-    $('#accordionPathway .accordion-button').on('click', function() {
-        // Get the combination_id and audit_id values (you can customize this as needed)
-        var combination_id = 'example_combination_id';
-        var audit_id = 'example_audit_id';
+    $('#pathwaycontainer').on('click', function() {
+        // Get the combination_id and audit_id values from data attributes
+        var combination_id = $(this).data('combination-id');
+        var audit_id = $(this).data('audit-id');
+
         // Make AJAX request to load the shortcode content
         $.ajax({
             url: '<?php echo admin_url('admin-ajax.php'); ?>',
@@ -115,12 +118,11 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             success: function(response) {
                 // Insert the response (shortcode output) into the container
-                $('#pathway').html(response);
+                $('#pathwaycontainer').html(response);
             },
             error: function(xhr, status, error) {
                 console.error('AJAX error:', status, error);
             }
         });
     });
-
 });
