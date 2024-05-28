@@ -98,31 +98,3 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 });
-// HANDLE DYNAMIC SHORTCODE
-jQuery(document).ready(function($) {
-    // Handle click event on the container element
-    $('#pathwaycontainer').on('click', function() {
-        // Get the combination_id and audit_id values from data attributes
-        var combination_id = $(this).data('combination-id');
-        var audit_id = $(this).data('audit-id');
-
-        // Make AJAX request to load the shortcode content
-        $.ajax({
-            url: '<?php echo admin_url('admin-ajax.php'); ?>',
-            type: 'post',
-            data: {
-                action: 'load_degree_pathway',
-                nonce: '<?php echo wp_create_nonce('load_degree_pathway_nonce'); ?>',
-                combination_id: combination_id,
-                audit_id: audit_id
-            },
-            success: function(response) {
-                // Insert the response (shortcode output) into the container
-                $('#pathwaycontainer').html(response);
-            },
-            error: function(xhr, status, error) {
-                console.error('AJAX error:', status, error);
-            }
-        });
-    });
-});
