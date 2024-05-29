@@ -21,6 +21,7 @@
 /* REQUIREMENTS */
 #pathwaycontainer .requirement{
     width:fit-content;
+    color:white;
 }
 .concentration{
 	background:var(--dark-purple);
