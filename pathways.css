@@ -239,8 +239,6 @@ h1, h2, .path-description{
 }
 #sortable-list .courseid{
   color:white;
-  display:flex;
-  align-items:center;
   justify-content:center;
   text-align:center;
   min-width:105px;
@@ -250,8 +248,7 @@ h1, h2, .path-description{
   background:white;
   padding:.5em;
   line-height:1.25em;
-  display:flex;
-  align-items:center;
+  align-self:center;
   width:100%;
   padding-right:40px !important;
 }
