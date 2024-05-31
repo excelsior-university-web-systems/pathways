@@ -95,14 +95,14 @@
     display:flex;
     flex-wrap:wrap;
 } 
-#sortable-list .courseid{
+#pathwaycontainer .courseid{
     color:white;
     justify-content:center;
     text-align:center;
     min-width:105px;
     padding:1em;
   }
-#sortable-list .course-name{
+  #pathwaycontainer .course-name{
     background:white;
     padding:.5em;
     line-height:1.25em;
