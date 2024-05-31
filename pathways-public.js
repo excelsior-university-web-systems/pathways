@@ -96,6 +96,11 @@ function initializePathways(){
                 item.remove();
             }
         });
+        // Apply the fade-in effect to the pathway container
+        pathwayContainer.classList.add('fade-in');
+        setTimeout(() => {
+            pathwayContainer.classList.add('show');
+        }, 10); // Small delay to ensure the transition is triggered
 }
 document.addEventListener('DOMContentLoaded', function() {
     initializePathways();
