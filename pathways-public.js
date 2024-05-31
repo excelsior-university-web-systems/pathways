@@ -97,3 +97,6 @@ function initializePathways(){
             }
         });
 }
+document.addEventListener('DOMContentLoaded', function() {
+    initializePathways();
+});
