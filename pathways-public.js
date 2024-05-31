@@ -98,6 +98,7 @@ function initializePathways(){
         });
         // Apply the fade-in effect to the pathway container
         pathwayContainer.classList.add('fade-in');
+        pathwayContainer.classList.remove('d-none');
         setTimeout(() => {
             pathwayContainer.classList.add('show');
         }, 10); // Small delay to ensure the transition is triggered
