@@ -1,5 +1,4 @@
 function initializePathways(){
-    document.addEventListener('DOMContentLoaded', function() {
         const pathwayContainer = document.getElementById('pathwaycontainer');
         const sortableList = document.getElementById('sortable-list');
 
@@ -97,6 +96,4 @@ function initializePathways(){
                 item.remove();
             }
         });
-
-    });
 }
