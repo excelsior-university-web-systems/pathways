@@ -95,24 +95,20 @@
     display:flex;
     flex-wrap:wrap;
 } 
-#pathwaycontainer .courseid{
-  color:white;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  min-width:105px;
-  padding:1em;
-}
-#pathwaycontainer .course-name{
-  background:white;
-  padding:.5em;
-  line-height:1.25em;
-  display:flex;
-  align-items:center;
-  text-align:left;
-  width:100%;
-  padding-right:40px !important;
+#sortable-list .courseid{
+    color:white;
+    justify-content:center;
+    text-align:center;
+    min-width:105px;
+    padding:1em;
+  }
+#sortable-list .course-name{
+    background:white;
+    padding:.5em;
+    line-height:1.25em;
+    align-self:center;
+    width:100%;
+    padding-right:40px !important;
 }
 /* COURSE DETAILS */
 #pathwaycontainer .course-pre-cred{
