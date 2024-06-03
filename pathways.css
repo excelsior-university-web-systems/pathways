@@ -264,7 +264,7 @@ h1, h2, .path-description{
 }
 #dupeLink i {
   position:absolute !important;
-  top:14px !important;
+  top:10px !important;
   color:var(--light-red) !important;
 }
 #dupeLink span {
