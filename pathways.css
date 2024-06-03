@@ -262,10 +262,12 @@ h1, h2, .path-description{
   background:var(--light-red) !important;
   color: white !important;
 }
+#sortable-list .fa-circle-exclamation{
+  color:var(--light-red) !important;
+}
 #dupeLink i {
   position:absolute !important;
   top:10px !important;
-  color:var(--light-red) !important;
 }
 #dupeLink span {
   margin-left:1.25em !important;
