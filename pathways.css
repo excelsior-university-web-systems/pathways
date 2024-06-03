@@ -85,6 +85,7 @@ h1, h2, .path-description{
 /* REQUIREMENTS */
 #sortable-list .requirement{
   width:fit-content;
+  color:white;
 }
 .concentration{
 	background:var(--dark-purple);
@@ -101,7 +102,7 @@ h1, h2, .path-description{
 .arts, .elective, .free-elective{
 	background-image:linear-gradient(to left, var(--light-green), var(--dark-green));
 }
-.english, .humanities, .ethics, .history, .science, .math, .science-or-math{
+.english, .humanities, .ethics, .history, .science, .math, .science-or-math, .public-speaking{
 	background-image:linear-gradient(to left, var(--light-blue), var(--dark-blue));
 }
 /* CLEAR BUTTON STYLES */
