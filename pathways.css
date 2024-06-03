@@ -384,9 +384,9 @@ h1, h2, .path-description{
   transition:opacity .5s, visibility .5s, height .5s, padding .5s; /* Delay collapsing the height */
 }
 /* MODAL STYLING */
-#pathwaycontainer .modal-header, #pathwaycontainer .modal-footer{
+#pathwaycontainer .modal-header, #pathwaycontainer .modal-title, #pathwaycontainer .modal-footer{
   background:var(--dark-purple);
-  color:white;
+  color:white !important;
 }
 #pathwaycontainer .modal-header button span{
   font-size:2em;
