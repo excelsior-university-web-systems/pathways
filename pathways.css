@@ -342,6 +342,9 @@ h1, h2, .path-description{
   margin-left:40px;
 }
 /* COURSE DETAILS */
+#sortable-list .course-details{
+  text-align:left;
+}
 #sortable-list .course-pre-cred{
   display:flex;
   margin-top:1em;
