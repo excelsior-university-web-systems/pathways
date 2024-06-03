@@ -87,22 +87,22 @@ h1, h2, .path-description{
   width:fit-content;
   color:white;
 }
-.concentration{
+#sortable-list .concentration{
 	background:var(--dark-purple);
 }
-.prereq{
+#sortable-list .prereq{
 	background:orange;
 }
-.university{
+#sortable-list .university{
 	background-image:linear-gradient(to left, var(--light-red), var(--dark-red));
 }
-.major, .major-elective{
+#sortable-list .major, #sortable-list .major-elective{
 	background-image:linear-gradient(to left, var(--light-purple), var(--dark-purple));
 }
-.arts, .elective, .free-elective{
+#sortable-list .arts, #sortable-list .elective, #sortable-list .free-elective{
 	background-image:linear-gradient(to left, var(--light-green), var(--dark-green));
 }
-.english, .humanities, .ethics, .history, .science, .math, .science-or-math, .public-speaking{
+#sortable-list .english, #sortable-list .humanities, #sortable-list .ethics, #sortable-list .history, #sortable-list .science, #sortable-list .math, #sortable-list .science-or-math, #sortable-list .public-speaking{
 	background-image:linear-gradient(to left, var(--light-blue), var(--dark-blue));
 }
 /* CLEAR BUTTON STYLES */
