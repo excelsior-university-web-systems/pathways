@@ -23,22 +23,22 @@
     width:fit-content;
     color:white;
 }
-.concentration{
+#pathwaycontainer .concentration{
 	background:var(--dark-purple);
 }
-.prereq{
+#pathwaycontainer .prereq{
 	background:orange;
 }
-.university{
+#pathwaycontainer .university{
 	background-image:linear-gradient(to left, var(--light-red), var(--dark-red));
 }
-.major, .major-elective{
+#pathwaycontainer .major, #pathwaycontainer .major-elective{
 	background-image:linear-gradient(to left, var(--light-purple), var(--dark-purple));
 }
-.arts, .elective, .free-elective{
+#pathwaycontainer .arts, #pathwaycontainer .elective, #pathwaycontainer .free-elective{
 	background-image:linear-gradient(to left, var(--light-green), var(--dark-green));
 }
-.english, .humanities, .ethics, .history, .science, .math, .science-or-math, .public-speaking{
+#pathwaycontainer .english, #pathwaycontainer .humanities, #pathwaycontainer .ethics, #pathwaycontainer .history, #pathwaycontainer .science, #pathwaycontainer .math, #pathwaycontainer .science-or-math, #pathwaycontainer .public-speaking{
 	background-image:linear-gradient(to left, var(--light-blue), var(--dark-blue));
 }
 /* LIST */
