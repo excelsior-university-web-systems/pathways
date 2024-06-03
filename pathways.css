@@ -262,7 +262,7 @@ h1, h2, .path-description{
   background:var(--light-red) !important;
   color: white !important;
 }
-#sortable-list .fa-circle-exclamation{
+#pathwaycontainer .fa-circle-exclamation{
   color:var(--light-red) !important;
 }
 #dupeLink i {
