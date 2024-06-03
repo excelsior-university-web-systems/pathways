@@ -144,16 +144,13 @@ document.addEventListener('DOMContentLoaded', function () {
               }
           }
           // COMPARE COURSE OPTIONS TO SELECTED COURSES, ADD OR REMOVE DISABLED AS APPROPRIATE
-            const courseElement = this.closest('.course');
-           // const optionsList = courseElement.querySelector('.options-list');
-            const courseIds = Array.from(document.querySelectorAll('#sortable-list .courseid'))
-                                  .map(courseid => courseid.textContent.trim()); // Get all course IDs from sortable list
+            const courseIds = Array.from(document.querySelectorAll('#sortable-list .courseid')).map(courseid => courseid.textContent.trim()); // Get all course IDs from sortable list
             // Iterate over each option-course within the options list
             optionsList.querySelectorAll('.options-container').forEach(option => {
                 const parentLi = option.closest('li'); // Find the parent 'li' of the options-container
                 const spanText = option.querySelector('span').textContent; // Get the course ID from the first span of the option-course
                 const tooltipLinkHtml = "<i class='dupe-alert fa-solid fa-circle-exclamation' title='This course already appears in your pathway.' aria-label='This course already appears in your pathway.' role='img'></i>";
-                const existingTooltip = parentLi.querySelector('button[data-bs-toggle="tooltip"]');
+                const existingTooltip = parentLi.querySelector('i');
                 if (courseIds.includes(spanText)) {
                   if (!existingTooltip) {
                       option.insertAdjacentHTML('beforebegin', tooltipLinkHtml);
