@@ -112,6 +112,9 @@
     padding-right:40px !important;
 }
 /* COURSE DETAILS */
+#pathwaycontainer .course-details{
+    text-align:left;
+}
 #pathwaycontainer .course-pre-cred{
   display:flex;
   margin-top:1em;
