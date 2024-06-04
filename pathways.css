@@ -262,9 +262,10 @@ h1, h2, .path-description{
   color: white !important;
 }
 #pathwaycontainer .fa-circle-exclamation{
-  color:var(--light-red) !important;
+  color:var(--blue);
 }
 #dupeLink i {
+  color:var(--light-red) !important;
   position:absolute !important;
   top:10px !important;
 }
