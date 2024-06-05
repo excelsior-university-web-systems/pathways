@@ -248,7 +248,7 @@ modals.forEach(modal => {
                             const courseElement = courses[idx].closest('.course');
                             courseElement.classList.add('dupe');
                             if (!dupeNotification.innerHTML) {
-                                dupeNotification.innerHTML = `<button type="button" id="dupeLink"><i class='dupe-alert fa-solid fa-circle-exclamation' title='This course already appears in your pathway.' aria-label='This course already appears in your pathway.' role='img'></i><span>Duplicate Courses Found in Pathway</span></button>`;
+                                dupeNotification.innerHTML = `<button type="button" id="dupeLink"><i class='dupe-alert fa-solid fa-circle-exclamation' title='This course already appears in your pathway.' aria-label='This course already appears in your pathway.' role='img'></i><span><strong>Duplicate Courses Found in Pathway</strong></span></button>`;
                             }
                         }
                     });
