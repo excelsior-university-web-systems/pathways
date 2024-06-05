@@ -270,6 +270,7 @@ h1, h2, .path-description{
   top:10px !important;
 }
 #dupeLink span {
+  color:var(--light-red) !important;
   margin-left:1.25em !important;
 }
 #sortable-list .options-list .dupe-alert{
