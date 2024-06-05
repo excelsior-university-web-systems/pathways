@@ -40,13 +40,6 @@
 #pathwaycontainer h5{
   margin:0 !important;
 }
-.bpress-wrap, .ast-container{
-  padding:0;
-}
-h1, h2, .path-description{
-  width:600px;
-  margin:auto !important;
-}
 #pathwaycontainer{
   -webkit-user-select:none !important;
   -moz-user-select:none !important;
@@ -55,15 +48,6 @@ h1, h2, .path-description{
 }
 /* RESPONSIVE RULES */
 @media only screen and (max-width:768px){
-  .ast-container{
-    padding:0 !important;
-  }
-  .bpress-main-header, h2, .path-description{
-    margin-left:.5em !important;
-  }
-  h1, h2, .path-description{
-    width:auto !important;
-  }
   #pathwaycontainer{
     width:auto !important;
     padding:1px 0em 1em 0em !important;
