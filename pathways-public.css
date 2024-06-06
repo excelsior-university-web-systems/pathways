@@ -19,26 +19,26 @@
     color:inherit !important;
 }
 /* REQUIREMENTS */
-#pathwaycontainer .requirement{
+#accordionPathway .requirement{
     width:fit-content;
     color:white;
 }
-#pathwaycontainer .concentration{
+#accordionPathway .concentration{
 	background:var(--dark-purple);
 }
-#pathwaycontainer .prereq{
+#accordionPathway .prereq{
 	background:orange;
 }
-#pathwaycontainer .university{
+#accordionPathway .university{
 	background-image:linear-gradient(to left, var(--light-red), var(--dark-red));
 }
-#pathwaycontainer .major, #pathwaycontainer .major-elective{
+#accordionPathway .major, #accordionPathway .major-elective{
 	background-image:linear-gradient(to left, var(--light-purple), var(--dark-purple));
 }
-#pathwaycontainer .arts, #pathwaycontainer .elective, #pathwaycontainer .free-elective{
+#accordionPathway .arts, #accordionPathway .elective, #accordionPathway .free-elective{
 	background-image:linear-gradient(to left, var(--light-green), var(--dark-green));
 }
-#pathwaycontainer .english, #pathwaycontainer .humanities, #pathwaycontainer .ethics, #pathwaycontainer .history, #pathwaycontainer .science, #pathwaycontainer .math, #pathwaycontainer .science-or-math, #pathwaycontainer .public-speaking{
+#accordionPathway .english, #accordionPathway .humanities, #accordionPathway .ethics, #accordionPathway .history, #accordionPathway .science, #accordionPathway .math, #accordionPathway .science-or-math, #accordionPathway .public-speaking{
 	background-image:linear-gradient(to left, var(--light-blue), var(--dark-blue));
 }
 /* LIST */
