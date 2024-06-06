@@ -38,7 +38,7 @@
 #accordionPathway .arts, #accordionPathway .elective, #accordionPathway .free-elective{
 	background-image:linear-gradient(to left, var(--light-green), var(--dark-green));
 }
-#accordionPathway .english, #accordionPathway .humanities, #accordionPathway .ethics, #accordionPathway .history, #accordionPathway .science, #accordionPathway .math, #accordionPathway .science-or-math, #accordionPathway .public-speaking{
+#accordionPathway .nursing, #accordionPathway .english, #accordionPathway .humanities, #accordionPathway .ethics, #accordionPathway .history, #accordionPathway .science, #accordionPathway .math, #accordionPathway .science-or-math, #accordionPathway .public-speaking{
 	background-image:linear-gradient(to left, var(--light-blue), var(--dark-blue));
 }
 /* LIST */
