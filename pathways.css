@@ -86,7 +86,7 @@
 #sortable-list .arts, #sortable-list .elective, #sortable-list .free-elective{
 	background-image:linear-gradient(to left, var(--light-green), var(--dark-green));
 }
-#sortable-list .english, #sortable-list .humanities, #sortable-list .ethics, #sortable-list .history, #sortable-list .science, #sortable-list .math, #sortable-list .science-or-math, #sortable-list .public-speaking{
+#sortable-list .nursing, #sortable-list .english, #sortable-list .humanities, #sortable-list .ethics, #sortable-list .history, #sortable-list .science, #sortable-list .math, #sortable-list .science-or-math, #sortable-list .public-speaking{
 	background-image:linear-gradient(to left, var(--light-blue), var(--dark-blue));
 }
 /* CLEAR BUTTON STYLES */
