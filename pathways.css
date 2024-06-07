@@ -83,10 +83,10 @@
 #sortable-list .major, #sortable-list .major-elective{
 	background-image:linear-gradient(to left, var(--light-purple), var(--dark-purple));
 }
-#sortable-list .arts, #sortable-list .elective, #sortable-list .free-elective{
+#sortable-list .elective, #sortable-list .free-elective{
 	background-image:linear-gradient(to left, var(--light-green), var(--dark-green));
 }
-#sortable-list .nursing, #sortable-list .english, #sortable-list .humanities, #sortable-list .ethics, #sortable-list .history, #sortable-list .science, #sortable-list .math, #sortable-list .science-or-math, #sortable-list .public-speaking{
+#sortable-list .english, #sortable-list .humanities, #sortable-list .ethics, #sortable-list .history, #sortable-list .science, #sortable-list .math, #sortable-list .science-or-math, #sortable-list .arts, #sortable-list .public-speaking, #sortable-list .nursing, #sortable-list .english, #sortable-list .statistics{
 	background-image:linear-gradient(to left, var(--light-blue), var(--dark-blue));
 }
 /* CLEAR BUTTON STYLES */
