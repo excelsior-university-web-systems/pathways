@@ -247,7 +247,7 @@
 #dupeLink i {
   color:var(--light-red) !important;
   position:absolute !important;
-  top:4px !important;
+  top:13px !important;
 }
 #dupeLink span {
   color:var(--light-red) !important;
