@@ -245,7 +245,7 @@
   background:var(--light-red) !important;
   color: white !important;
 }
-#pathwaycontainer .fa-circle-exclamation{
+#pathwaycontainer .fa-road{
   color:var(--blue);
 }
 #dupeLink i {
