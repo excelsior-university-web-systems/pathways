@@ -238,6 +238,7 @@ modals.forEach(modal => {
           course.closest('.course').classList.remove('dupe');
       });
       const dupeNotification = document.getElementById('dupe-notification');
+      let duplicateFound = false; // Flag to check for duplicates
       if (dupeNotification) {
           dupeNotification.innerHTML = ''; // Clear any previous notifications
           ids.forEach((id, index) => {
@@ -255,6 +256,10 @@ modals.forEach(modal => {
           });
       } else {
           console.error('Dupe notification element not found in the DOM.');
+      }
+      // Show alert if duplicate is found
+      if (duplicateFound) {
+        alert('You have duplicate courses in your pathway. Click the alert icon at the top of the pathway to jump between duplicate courses. Click "Options Available" underneath a duplicate course to select an alternative.');
       }
       // Collapse expanded elements in any modal
       const expandedItems = document.querySelectorAll('.modal .collapse.show');
