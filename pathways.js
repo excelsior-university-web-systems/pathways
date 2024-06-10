@@ -229,7 +229,7 @@ modals.forEach(modal => {
 
 // DUPE NOTATION
 modals.forEach(modal => {
-  modal.addEventListener('hide.bs.modal', function() {
+  modal.addEventListener('hidden.bs.modal', function() {
       const courseIDs = document.querySelectorAll('.courseid');
       const courses = Array.from(courseIDs);
       let ids = courses.map(course => course.textContent.trim());
