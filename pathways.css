@@ -97,6 +97,7 @@
 }
 /* CONTAINER */
 #pathwaycontainer{
+  font-size:16px;
   width:600px;
   margin:auto;
   background:var(--app-background);
@@ -305,7 +306,7 @@
 /* Style the checkmark/indicator */
 #sortable-list .checkmark:after{
   left:1px;
-  top:-13px;
+  top:-5px;
   content:'\f00c';
   font-family:FontAwesome;
   font-size:1.75em;
@@ -314,7 +315,7 @@
 #sortable-list .checkmark{
   background:var(--app-background);
   position:absolute;
-  top:19px;
+  top:27px;
   left:15px;
   height:20px;
   width:20px;
