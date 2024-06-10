@@ -275,7 +275,6 @@ modals.forEach(modal => {
       function setupDupeLink() {
           const dupeLink = document.getElementById('dupeLink');
           if (dupeLink) {
-            alert('You have duplicate courses in your pathway. Click the alert icon at the top of the pathway to jump between duplicate courses. Click "Options Available" to select an alternative course.');
               dupeLink.onclick = function() {
                   const dupes = document.querySelectorAll('.dupe');
                   if (dupes.length > 0) {
