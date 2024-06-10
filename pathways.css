@@ -306,7 +306,7 @@
 /* Style the checkmark/indicator */
 #sortable-list .checkmark:after{
   left:1px;
-  top:-5px;
+  top:-12px;
   content:'\f00c';
   font-family:FontAwesome;
   font-size:1.75em;
