@@ -314,7 +314,7 @@
 #sortable-list .checkmark{
   background:var(--app-background);
   position:absolute;
-  top:25px;
+  top:19px;
   left:15px;
   height:20px;
   width:20px;
