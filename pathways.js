@@ -258,10 +258,6 @@ modals.forEach(modal => {
       } else {
           console.error('Dupe notification element not found in the DOM.');
       }
-      // Show alert if duplicate is found
-      if (duplicateFound) {
-        alert('You have duplicate courses in your pathway. Click the alert icon at the top of the pathway to jump between duplicate courses. Click "Options Available" underneath a duplicate course to select an alternative.');
-      }
       // Collapse expanded elements in any modal
       const expandedItems = document.querySelectorAll('.modal .collapse.show');
       expandedItems.forEach(item => {
@@ -270,6 +266,10 @@ modals.forEach(modal => {
           });
           collapseInstance.hide();
       });
+      // Show alert if duplicate is found
+      if (duplicateFound) {
+        alert('You now have duplicate courses in your pathway. Click the alert icon at the top of the pathway to jump between duplicate courses. Click "Options Available" underneath a duplicate course to select an alternative.');
+      }
   });
 });
 
