@@ -240,7 +240,7 @@ modals.forEach(modal => {
         const dupeNotification = document.getElementById('dupe-notification');
         if (dupeNotification) {
             dupeNotification.innerHTML = ''; // Clear any previous notifications
-
+            alert('You have duplicate courses in your pathway. Click the alert icon at the top of the pathway to jump between duplicate courses. Click "Options Available" to select an alternative course.');
             ids.forEach((id, index) => {
                 if (ids.filter(x => x === id).length > 1) {
                     courses.forEach((course, idx) => {
