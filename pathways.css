@@ -46,6 +46,11 @@
   -ms-user-select:none !important;
   user-select:none !important; 
 }
+@media only screen and (max-width: 768px) {
+  div.su-tabs-nav > span:nth-child(7), div.su-tabs-nav > span:nth-child(8){
+    width:100%;
+  }
+}
 /* RESPONSIVE RULES */
 @media only screen and (max-width:768px){
   #pathwaycontainer{
