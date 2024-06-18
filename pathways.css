@@ -29,6 +29,60 @@
 #wpadminbar, .bpress-sidebar, .ast-below-header-wrap{
   display:none;
 }
+/* PLANNING TOOLKIT PAGE */
+/* REMOVE PADDING */
+.ast-container{
+  margin:0 auto 0 auto !important;
+}
+.bpress-wrap{
+  padding:0 !important;
+  margin:0 !important;
+}
+@media only screen and (max-width: 990px) {
+  [data-title="Degree Pathway"]:not(#pathwaycontainer){
+    padding:2em 0 0 0 !important;
+  }
+  [data-title="Degree Pathway"] .pathway-text{
+    padding:0 15px 0 15px !important
+  }
+  .su-tabs-pane:not([data-title="Degree Pathway"]){
+    padding:0 1em 2em 1em !important;
+  }
+}
+div.su-tabs-nav > span:nth-child(7), div.su-tabs-nav > span:nth-child(8) {
+  background-color: #d3d3d3;
+  float: right;
+}
+@media only screen and (max-width: 768px) {
+  div.su-tabs-nav > span:nth-child(7), div.su-tabs-nav > span:nth-child(8){
+    width:100%;
+  }
+}
+/* HOVER ENLARGE CARD ANIMATION */
+[data-title="Planning"] .card:hover {
+  transform:scale(1.1) !important;
+  z-index:99 !important;
+}
+[data-title="Planning"] .card {
+  transition:.2s ease;
+}
+[data-title="Planning"] a {
+  text-decoration:none;
+}
+/* PAGE UTILITIES */
+.site-header,
+.bpress-sidebar.bpress-float-right,
+.perfecty-push-settings-container {
+    display:none !important;
+}
+.bpress-content-area.bpress-float-right {
+    width:100%;
+    padding-left:0px;
+}
+h1, h2 {
+    width:100%;
+    margin:0 0 1em 0 !important;
+}
 /* PORTAL PAGE OVERRIDES */
 .ast-main-header-wrap{
   width:100% !important;
@@ -45,11 +99,6 @@
   -moz-user-select:none !important;
   -ms-user-select:none !important;
   user-select:none !important; 
-}
-@media only screen and (max-width: 768px) {
-  div.su-tabs-nav > span:nth-child(7), div.su-tabs-nav > span:nth-child(8){
-    width:100%;
-  }
 }
 /* RESPONSIVE RULES */
 @media only screen and (max-width:768px){
