@@ -49,6 +49,9 @@
   .su-tabs-pane:not([data-title="Degree Pathway"]){
     padding:0 1em 2em 1em !important;
   }
+  [data-title="Planning"] h2{
+    padding-top:1.5em !important;
+  }
 }
 div.su-tabs-nav > span:nth-child(7), div.su-tabs-nav > span:nth-child(8) {
   background-color: #d3d3d3;
