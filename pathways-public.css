@@ -38,10 +38,10 @@
 #accordionPathway .major, #accordionPathway .major-elective{
     background-image:linear-gradient(to left, var(--light-purple), var(--bright-purple));
 }
-#accordionPathway .elective, #accordionPathway .free-elective{
+#accordionPathway .elective, #accordionPathway .free-elective, #accordionPathway .arts{
     background-image:linear-gradient(to left, var(--light-green), var(--dark-green));
 }
-#accordionPathway .general, #accordionPathway .english, #accordionPathway .sociology, #accordionPathway .math, #accordionPathway .science-or-math, #accordionPathway .arts, #accordionPathway .public-speaking, #accordionPathway .nursing, #accordionPathway .english, #accordionPathway .statistics{
+#accordionPathway .general, #accordionPathway .english, #accordionPathway .sociology, #accordionPathway .math, #accordionPathway .science-or-math, #accordionPathway .public-speaking, #accordionPathway .nursing, #accordionPathway .english, #accordionPathway .statistics{
     background-image:linear-gradient(to left, var(--light-blue), var(--dark-blue));
 }
 /* LIST */
