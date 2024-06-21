@@ -122,27 +122,27 @@ h1, h2 {
   }
 }
 /* REQUIREMENTS */
-.requirement{
+#pathway-div .requirement{
   width:fit-content;
   color:white;
 }
-.concentration{
-	background:var(--dark-purple);
+#pathway-div .concentration{
+  background:var(--dark-purple);
 }
-.prereq{
-	background:orange;
+#pathway-div .prereq{
+  background:orange;
 }
-.university{
-	background-image:linear-gradient(to left, var(--light-red), var(--dark-red));
+#pathway-div .university{
+  background-image:linear-gradient(to left, var(--light-red), var(--dark-red));
 }
-.major, .major-elective{
-	background-image:linear-gradient(to left, var(--light-purple), var(--bright-purple));
+#pathway-div .major, #pathway-div .major-elective{
+  background-image:linear-gradient(to left, var(--light-purple), var(--bright-purple));
 }
-.elective, .free-elective{
-	background-image:linear-gradient(to left, var(--light-green), var(--dark-green));
+#pathway-div .elective, #pathway-div .free-elective, #pathway-div .arts{
+  background-image:linear-gradient(to left, var(--light-green), var(--dark-green));
 }
-.english, .humanities, .ethics, .history, .science, .math, .science-or-math, .arts, .public-speaking, .nursing, .english, .statistics{
-	background-image:linear-gradient(to left, var(--light-blue), var(--dark-blue));
+#pathway-div .general, #pathway-div .english, #pathway-div .sociology, #pathway-div .math, #pathway-div .science-or-math, #pathway-div .public-speaking, #pathway-div .nursing, #pathway-div .english, #pathway-div .statistics{
+  background-image:linear-gradient(to left, var(--light-blue), var(--dark-blue));
 }
 /* CLEAR BUTTON STYLES */
 #pathwaycontainer button{
