@@ -46,9 +46,9 @@
   [data-title="Degree Pathway"] .pathway-text{
     padding:0 15px 0 15px !important
   }
-  .su-tabs-pane:not([data-title="Degree Pathway"]){
+  /*.su-tabs-pane:not([data-title="Degree Pathway"]){
     padding:0 1em 2em 1em !important;
-  }
+  }*/
 }
 div.su-tabs-nav > span:nth-child(7), div.su-tabs-nav > span:nth-child(8) {
   background-color: #d3d3d3;
