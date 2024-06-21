@@ -1,3 +1,6 @@
+:root{
+    --bright-purple:#a51ca8;
+}
 /* OVERRIDES */
 #pathwaycontainer ul li::before{
     all:inherit !important;
@@ -33,7 +36,7 @@
     background-image:linear-gradient(to left, var(--light-red), var(--dark-red));
 }
 #accordionPathway .major, #accordionPathway .major-elective{
-    background-image:linear-gradient(to left, var(--light-purple), var(--dark-purple));
+    background-image:linear-gradient(to left, var(--light-purple), var(--bright-purple));
 }
 #accordionPathway .elective, #accordionPathway .free-elective{
     background-image:linear-gradient(to left, var(--light-green), var(--dark-green));
