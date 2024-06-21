@@ -1,4 +1,5 @@
 :root{
+  --bright-purple:#a51ca8;
   --app-background:#e5e5e5;
   --blue:#005fc3;
   --darker-purple:#360040;
@@ -135,7 +136,7 @@ h1, h2 {
 	background-image:linear-gradient(to left, var(--light-red), var(--dark-red));
 }
 .major, .major-elective{
-	background-image:linear-gradient(to left, var(--light-purple), var(--dark-purple));
+	background-image:linear-gradient(to left, var(--light-purple), var(--bright-purple));
 }
 .elective, .free-elective{
 	background-image:linear-gradient(to left, var(--light-green), var(--dark-green));
