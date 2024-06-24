@@ -67,8 +67,11 @@
 #pathwaycontainer .accordion-button{
     background:white;
 }
-#pathwaycontainer .course:first-of-type{
+#pathwaycontainer .course{
     margin-bottom:.5em;
+}
+#pathwaycontainer .course:last-of-type{
+    margin-bottom:0;
 }
 #pathwaycontainer .accordion-body{
     background:white;padding:1em;
