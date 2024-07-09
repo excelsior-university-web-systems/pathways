@@ -21,11 +21,18 @@
 #pathwaycontainer strong{
     color:inherit !important;
 }
+/* Concentration Dropdown Select */
+#pathways{
+    border-radius:0.25em;
+    color:var(--dark-purple);
+    background:#C8E3F4;
+    font-size:130%;
+}
 /* REQUIREMENTS */
 #accordionPathway .requirement{
     width:fit-content;
     color:white;
-  }
+}
 #accordionPathway .concentration{
     background:var(--dark-purple);
 }
