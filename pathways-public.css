@@ -51,6 +51,10 @@
 #accordionPathway .general, #accordionPathway .english, #accordionPathway .sociology, #accordionPathway .math, #accordionPathway .science-or-math, #accordionPathway .public-speaking, #accordionPathway .nursing, #accordionPathway .english, #accordionPathway .statistics{
     background-image:linear-gradient(to left, var(--light-blue), var(--dark-blue));
 }
+/* REQUIREMENTS KEY */
+#pathway-key{
+    width:fit-content;
+}
 /* LIST */
 #pathwaycontainer ul{
     list-style:none;
