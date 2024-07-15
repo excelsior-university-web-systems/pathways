@@ -105,6 +105,7 @@
 #pathwaycontainer .course .accordion-button, #pathwaycontainer .course .options{
     display:flex;
     align-self:flex-start !important;
+    align-items:center;
 }
 #pathwaycontainer .course label span:hover, #pathwaycontainer .accordion:hover, #pathwaycontainer .options:hover{
     box-shadow:0 0 2px 1px var(--light-purple);
