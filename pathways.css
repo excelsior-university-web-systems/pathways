@@ -277,6 +277,8 @@ h1, h2 {
 }
 #sortable-list .courseid{
   color:white;
+  display:flex;
+  align-items:center;
   justify-content:center;
   text-align:center;
   min-width:105px;
