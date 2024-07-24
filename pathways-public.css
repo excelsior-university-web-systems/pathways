@@ -178,9 +178,10 @@
 }
 /* ZTC */
 .ztc{
+    font-size:10px !important;
     color:white !important;
 	font-weight:700;
-	background-color:var(--green);
+	background-color:#808080;
 	padding:.25em .4em;
 	border-radius:.25rem;
     margin-left:.3em;
@@ -189,7 +190,7 @@
 @media (max-width: 768px) {
 	.ztc{
         display:inline-block;
-        color:var(--green) !important;
+        color:#808080 !important;
 		overflow:hidden;
 		width:8px;
 		height:8px;
