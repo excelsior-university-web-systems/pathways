@@ -102,4 +102,22 @@ function initializePathways(){
         setTimeout(() => {
             pathwayContainer.classList.add('show');
         }, 10); // Small delay to ensure the transition is triggered
+// ZTC
+        // Function to get URL parameters
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        // Function to swap element content if URL parameter exists
+        function swapElementContentIfParamExists(param, elementId, newHtml) {
+            if (getUrlParameter(param)) {
+                document.getElementById(elementId).innerHTML = newHtml;
+            }
+        }
+
+        // Usage example
+            swapElementContentIfParamExists('ztc', 'targetElement', '<span class="ztc">ZTC</span>');
 }
