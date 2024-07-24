@@ -1,3 +1,5 @@
+
+
 <<<EOD
 <li class="course" data-course-id="{$courseid}" data-department="{$department}" data-credit-hours="{$credithours}" data-level="{$level}">
     <div class="accordion">
@@ -75,4 +77,4 @@ EOD;
 						</div> <!-- course number -->
 					</div> <!-- accordion-item -->
 				</div> <!-- accordion -->
-			</li>    
+			</li>        
