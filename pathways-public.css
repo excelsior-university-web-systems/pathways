@@ -185,6 +185,9 @@
 	border-radius:.25rem;
     margin-left:.3em;
 }
+.ztc sup{
+    top:0 !important;
+}
 @media (max-width: 768px) {
 	.ztc{
         display:inline-block;
