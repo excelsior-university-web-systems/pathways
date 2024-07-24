@@ -184,8 +184,6 @@
 	padding:.25em .4em;
 	border-radius:.25rem;
     margin-left:.3em;
-}
-.ztc sup{
     top:0 !important;
 }
 @media (max-width: 768px) {
@@ -197,5 +195,6 @@
 		height:8px;
 		border-radius:50% !important;
         padding:0 !important;
+        top:-.5em !important;
 	}
 }
