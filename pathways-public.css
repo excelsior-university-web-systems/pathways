@@ -178,7 +178,7 @@
 }
 /* ZTC */
 .ztc{
-    color:white;
+    color:white !important;
 	font-weight:700;
 	background-color:var(--green);
 	padding:.25em .4em;
