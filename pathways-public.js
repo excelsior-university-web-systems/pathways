@@ -131,4 +131,5 @@ function initializePathways(){
             console.error('Error swapping element content:', error);
         }
     }
+    swapElementContentIfParamExists("ztc", "ztc", "<span class=`ztc`>ZTC</span>");
 }
