@@ -119,5 +119,5 @@ function initializePathways(){
         }
 
         // Usage example
-            swapElementContentIfParamExists('ztc', 'targetElement', '<span class="ztc">ZTC</span>');
+            swapElementContentIfParamExists('ztc', 'ztc', '<span class="ztc">ZTC</span>');
 }
