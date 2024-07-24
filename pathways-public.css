@@ -176,3 +176,21 @@
 .fade-in.show{
     opacity:1;
 }
+/* ZTC */
+.ztc{
+	font-weight:700;
+	background-color:var(--green);
+	color:var(--green);
+	padding:.25em .4em;
+	border-radius:.25rem;
+}
+@media (max-width: 768px) {
+	.ztc{
+		overflow:hidden;
+		margin-left:.3em;
+		width:8px;
+		height:8px;
+		margin-top:.2em;
+		border-radius:50%;
+	}
+}
