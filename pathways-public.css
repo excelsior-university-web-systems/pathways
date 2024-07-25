@@ -142,7 +142,7 @@
   margin-right:3em;
   max-width:60%;
 }
-#pathwaycontainer .prerequisites strong, #pathwaycontainer .credit-hours strong{
+#pathwaycontainer .prerequisites strong, #pathwaycontainer .credit-hours strong, #pathwaycontainer .ztc-note strong{
   color:var(--green) !important;
 }
 /* ICON ANIMATION */
