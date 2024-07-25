@@ -177,7 +177,7 @@
     opacity:1;
 }
 /* ZTC */
-.ztc{
+.ztc-alert{
     font-size:10px !important;
     color:white !important;
 	font-weight:700;
@@ -188,7 +188,7 @@
     top:0 !important;
 }
 @media (max-width: 768px) {
-	.ztc{
+	.ztc-alert{
         display:inline-block;
         color:#808080 !important;
 		overflow:hidden;
