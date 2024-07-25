@@ -138,9 +138,9 @@
   display:flex;
   margin-top:1em;
 }
-#pathwaycontainer .prerequisites{
+#pathwaycontainer .prerequisites, #pathwaycontainer .credit-hours{
   margin-right:3em;
-  max-width:60%;
+  max-width:50%;
 }
 #pathwaycontainer .prerequisites strong, #pathwaycontainer .credit-hours strong, #pathwaycontainer .ztc-note strong{
   color:var(--green) !important;
