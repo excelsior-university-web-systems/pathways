@@ -141,6 +141,7 @@
 #pathwaycontainer .prerequisites, #pathwaycontainer .credit-hours{
   margin-right:3em;
   max-width:50%;
+  min-width:20%;
 }
 #pathwaycontainer .prerequisites strong, #pathwaycontainer .credit-hours strong, #pathwaycontainer .ztc-note strong{
   color:var(--green) !important;
