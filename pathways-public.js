@@ -102,4 +102,37 @@ function initializePathways(){
         setTimeout(() => {
             pathwayContainer.classList.add('show');
         }, 10); // Small delay to ensure the transition is triggered
+        function checkAndHideEmptyAccordions() {
+            var accordionIds = ['accordionYear1', 'accordionYear2', 'accordionYear3', 'accordionYear4'];
+            accordionIds.forEach(function(id) {
+                var accordion = document.getElementById(id);
+                if (accordion) {
+                    var accordionContent = accordion.querySelector('.accordion-body');
+                    if (accordionContent && accordionContent.innerHTML.trim() === '') {
+                        console.log('Empty Year detected');
+                        accordion.style.display = 'none';
+                    } else {
+                        console.log('No Empty Years detected');
+                    }
+                }
+            });
+        }
+        function hideloadandshowpathway() {
+            // Hide placeholder loading animation on Program Page
+            var loading = document.getElementById('bouncing-text');
+            if (loading) {
+                loading.classList.add('d-none');
+            }
+            
+            // Apply fade-in effect to pathway
+            var container = document.getElementById('pathway');
+            if (container) {
+                container.classList.add('fade-in');
+                setTimeout(() => {
+                    container.classList.add('show');
+                }, 10); // Small delay to ensure the transition is triggered
+            }    
+        }
+        checkAndHideEmptyAccordions();
+        hideloadandshowpathway();
 }
