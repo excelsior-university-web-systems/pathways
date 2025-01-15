@@ -120,15 +120,15 @@
 	padding:1em;
 }
 /* PATHWAY ZTC and ALT */
-#pathwaycontainer .ztc, #pathwaycontainer .alt{
+#accordionPathway .ztc, #accordionPathway .alt{
 	font-weight:normal;
 	font-size:14px;
 	padding:0 5px;
 }
-#pathwaycontainer .alt{
+#accordionPathway .alt{
 	border-color:#155724;
 }
-#pathwaycontainer .ztc{
+#accordionPathway .ztc{
 	color:#88288A;
 	background-color:#E7D4E8;
 	border-color:#88288A;
