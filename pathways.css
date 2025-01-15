@@ -319,6 +319,15 @@ h1, h2 {
 #sortable-list .options-list .alert .dupe-alert{
   top:50px;
 }
+/* ZTC */
+#sortable-list .ztc{
+	font-weight:normal;
+	font-size:14px;
+	padding:0 5px;
+	color:#88288A;
+	background-color:#E7D4E8;
+	border-color:#88288A;
+}
 /* COURSE OPTIONS/ALTERNATIVES MODAL STYLING */
 #sortable-list .options-list .modal-content{
   max-height:80% !important;
