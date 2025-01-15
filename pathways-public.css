@@ -65,9 +65,6 @@
 #pathwaycontainer ul li{
     margin-top:0 !important;
 }
-#pathwaycontainer .courseid{
-    margin-left:-4px;
-}
 /* FONTS */
 #pathwaycontainer .course-name, #pathwaycontainer .courseid{
     font-weight:bold;
@@ -115,20 +112,46 @@
     flex-wrap:wrap;
 } 
 #pathwaycontainer .courseid{
-    color:white;
-    justify-content:center;
-    text-align:center;
-    min-width:105px;
-    padding:1em;
-  }
-  #pathwaycontainer .course-name{
-    background:white;
-    padding:.5em;
-    line-height:1.25em;
-    align-self:center;
-    text-align:left;
-    width:100%;
-    padding-right:40px !important;
+	margin-left:-4px;
+	color:white;
+	justify-content:center;
+	text-align:center;
+	min-width:108px;
+	padding:1em;
+}
+/* PATHWAY ZTC and ALT */
+#pathwaycontainer .ztc, #pathwaycontainer .alt{
+	font-weight:normal;
+	font-size:14px;
+	padding:0 5px;
+}
+#pathwaycontainer .alt{
+	border-color:#155724;
+}
+#pathwaycontainer .ztc{
+	color:#88288A;
+	background-color:#E7D4E8;
+	border-color:#88288A;
+}
+#pathwaycontainer .course-name{
+	margin-left:108px;
+}
+#pathwaycontainer .courseid{
+	position:absolute;
+	display:grid;
+	align-items:center;
+}
+#pathwaycontainer .course-info{
+	min-height:60px
+}
+#pathwaycontainer .course-name{
+	background:white;
+	padding:.5em;
+	line-height:1.25em;
+	align-self:center;
+	text-align:left;
+	width:100%;
+	padding-right:40px !important;
 }
 /* COURSE DETAILS */
 #pathwaycontainer .course-details{
@@ -143,7 +166,7 @@
   max-width:50%;
   min-width:20%;
 }
-#pathwaycontainer .prerequisites strong, #pathwaycontainer .credit-hours strong, #pathwaycontainer .ztc-note strong{
+#pathwaycontainer .prerequisites strong, #pathwaycontainer .credit-hours strong{
   color:var(--green) !important;
 }
 /* ICON ANIMATION */
@@ -176,27 +199,4 @@
 }
 .fade-in.show{
     opacity:1;
-}
-/* ZTC */
-.ztc-alert{
-    font-size:10px !important;
-    color:white !important;
-	font-weight:700;
-	background-color:#757575;
-	padding:.25em .4em;
-	border-radius:.25rem;
-    margin-left:.3em;
-    top:0 !important;
-}
-@media (max-width: 768px) {
-	.ztc-alert{
-        display:inline-block;
-        color:#757575 !important;
-		overflow:hidden;
-		width:8px;
-		height:8px;
-		border-radius:50% !important;
-        padding:0 !important;
-        top:-.4em !important;
-	}
 }
