@@ -130,9 +130,9 @@
 	border-color:#155724;
 }
 #accordionPathway .ztc{
-	color:#88288A;
-	background-color:#E7D4E8;
-	border-color:#88288A;
+	color:var(--light-purple);
+	background-color:#FAF9FA;
+	border-color:var(--light-purple);	
 }
 #pathwaycontainer .course-name{
 	margin-left:108px;
