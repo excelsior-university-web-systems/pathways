@@ -121,9 +121,10 @@
 }
 /* PATHWAY ZTC and ALT */
 #accordionPathway .ztc, #accordionPathway .alt{
-	font-weight:normal;
-	font-size:14px;
+	font-weight:bold;
+	font-size:12px;
 	padding:0 5px;
+	letter-spacing:.1em;
 }
 #accordionPathway .alt{
 	border-color:#155724;
