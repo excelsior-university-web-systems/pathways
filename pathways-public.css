@@ -119,6 +119,9 @@
 	min-width:108px;
 	padding:1em;
 }
+#pathwaycontainer .course-title{
+	margin-right:.35em;
+}
 /* PATHWAY ZTC and ALT */
 #accordionPathway .ztc, #accordionPathway .alt{
 	font-weight:bold;
