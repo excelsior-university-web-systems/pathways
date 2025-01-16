@@ -292,6 +292,9 @@ h1, h2 {
   width:100%;
   padding-right:40px !important;
 }
+#sortable-list .course-title{
+  margin-right:.35em;
+}
 /* DUPES */
 #dupeLink, #dupe-notification {
   height:100% !important;
